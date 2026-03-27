@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Voiceover Dashboard</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../dashboard/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">VOX</div>
+        <ul>
+            <li><i class="fas fa-chart-line"></i> Dashboard</li>
+            <li><i class="fas fa-microphone"></i> Projects</li>
+            <li><i class="fas fa-users"></i> Clients</li>
+            <li><i class="fas fa-file-audio"></i> Assets</li>
+            <li><i class="fas fa-file-invoice-dollar"></i> Billing</li>
+        </ul>
+    </aside>
+
+    <main class="main">
+
+        <div class="navbar">
+
+            <button class="icon-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="nav-actions">
+
+                <button class="icon-btn" id="notifyBtn">
+                    <i class="fas fa-bell"></i>
+                </button>
+
+                <div class="notification-panel" id="notifyPanel">
+                    <p>🎙 New script uploaded</p>
+                    <p>💳 Invoice paid</p>
+                    <p>📁 Audio delivered</p>
+                </div>
+
+                <button class="icon-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/100" id="profileBtn">
+                    <div class="profile-drawer" id="profileDrawer">
+                        <h4>Admin Profile</h4>
+                        <p>View Profile</p>
+                        <p>Settings</p>
+                        <p>Sign Out</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="stats">
+            <div class="card stat-card"><div class="pie pie1"></div><h3>75% Projects</h3></div>
+            <div class="card stat-card"><div class="pie pie2"></div><h3>60% Revenue</h3></div>
+            <div class="card stat-card"><div class="pie pie3"></div><h3>80% Delivery</h3></div>
+            <div class="card stat-card"><div class="pie pie4"></div><h3>55% Payments</h3></div>
+        </section>
+
+        <section class="grid">
+
+            <div>
+
+                <div class="card">
+                    <h3>Animated Revenue Chart</h3>
+                    <div class="chart-box">
+                        <svg viewBox="0 0 500 200">
+                            <polyline fill="none"
+                            stroke="#5b5bff"
+                            stroke-width="4"
+                            points="0,180 100,140 200,150 300,90 400,110 500,40">
+                            <animate attributeName="points"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            values="
+                            0,180 100,160 200,170 300,120 400,140 500,80;
+                            0,180 100,140 200,150 300,90 400,110 500,40;
+                            0,180 100,160 200,170 300,120 400,140 500,80"/>
+                            </polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:20px;">
+                    <h3>Invoice Table</h3>
+                    <table class="invoice-table">
+                        <tr><th>Invoice</th><th>Client</th><th>Status</th></tr>
+                        <tr><td>#1023</td><td>Amazon</td><td>Paid</td></tr>
+                        <tr><td>#1024</td><td>Nike</td><td>Pending</td></tr>
+                    </table>
+                </div>
+
+                <div class="card" style="margin-top:20px;">
+    <h3>Worked Members</h3>
+
+    <div class="members-grid">
+
+        <div class="member-card">
+            <img src="https://i.pravatar.cc/100?img=12">
+            <h4>Sarah Johnson</h4>
+            <p>Voice Artist</p>
+            <span>Amazon Campaign</span>
+            <small>Available Today</small>
+        </div>
+
+        <div class="member-card">
+            <img src="https://i.pravatar.cc/100?img=22">
+            <h4>David Lee</h4>
+            <p>Audio Engineer</p>
+            <span>Nike Promo</span>
+            <small>Editing Session</small>
+        </div>
+
+        <div class="member-card">
+            <img src="https://i.pravatar.cc/100?img=32">
+            <h4>Emma Wilson</h4>
+            <p>Project Manager</p>
+            <span>Netflix Ad</span>
+            <small>Client Review</small>
+        </div>
+
+    </div>
+</div>
+
+                <div class="card" style="margin-top:20px;">
+                    <h3>Project Table</h3>
+                    <table>
+                        <tr><th>Project</th><th>Status</th><th>Amount</th></tr>
+                        <tr><td>Amazon Ad</td><td>Editing</td><td>$1200</td></tr>
+                        <tr><td>Nike Promo</td><td>Recording</td><td>$850</td></tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="card">
+                    <h3>Live Waveform</h3>
+                    <div class="wave-bars">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:20px;">
+                    <h3>Project Tracker</h3>
+                    <p style="margin-top:15px;">✔ Quote Approved</p>
+                    <p style="margin-top:10px;">✔ Recording</p>
+                    <p style="margin-top:10px;">✔ Editing</p>
+                    <div class="progress"><span></span></div>
+                </div>
+
+                <div class="card" style="margin-top:20px;">
+                    <h3>Upload Files</h3>
+                    <div class="upload-box">Drag & Drop Audio Files</div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+document.getElementById('themeToggle').onclick=()=>{
+    document.body.classList.toggle('dark');
+};
+
+document.getElementById('notifyBtn').onclick=()=>{
+    const panel=document.getElementById('notifyPanel');
+    panel.style.display=panel.style.display==='block'?'none':'block';
+};
+
+document.getElementById('profileBtn').onclick=()=>{
+    const drawer=document.getElementById('profileDrawer');
+    drawer.style.display=drawer.style.display==='block'?'none':'block';
+};
+
+document.getElementById('menuBtn').onclick=()=>{
+    document.getElementById('sidebar').classList.toggle('collapsed');
+};
+</script>
+
+</body>
+</html>

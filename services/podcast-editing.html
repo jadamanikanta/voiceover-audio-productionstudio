@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX Studio | Podcast Editing & Audio Production</title>
+
+    <link rel="stylesheet" href="../global-css/global.css">
+    <link rel="stylesheet" href="../services/services-detail.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+<section class="voiceover-hero" 
+    style="
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url('../global-images/podcast-editing.jpg') center/cover no-repeat;
+        color: #fff;
+    ">
+    <div class="hero-content" style="max-width: 700px; padding: 60px;">
+        <span>PODCAST EDITING SERVICE</span>
+        <h1>Professional Podcast Editing & Production</h1>
+        <p>
+            High-quality podcast editing, sound cleanup,
+            mixing, and mastering for creators and brands.
+        </p>
+    </div>
+</section>
+
+
+<section class="voiceover-main">
+
+    
+    <div class="voiceover-left">
+
+        <img src="../global-images/voice-over.jpg" alt="Podcast Editing">
+
+        <h2>Service Overview</h2>
+
+        <p>
+    Our professional podcast editing service transforms raw recordings into
+    polished, studio-quality episodes with crystal-clear audio and seamless flow.
+    We remove background noise, filler words, and unwanted pauses to ensure
+    a smooth listening experience.
+</p>
+
+<p>
+    Whether you're a beginner podcaster or a growing brand, we help you deliver
+    engaging content with clean audio, balanced sound levels, and a professional finish
+    that keeps your audience hooked.
+</p>
+
+<ul class="service-points">
+    <li>✔ Noise reduction & audio cleanup</li>
+    <li>✔ Removal of filler words, pauses & mistakes</li>
+    <li>✔ Volume balancing & voice enhancement</li>
+    <li>✔ Intro/outro music integration</li>
+    <li>✔ Multi-track editing for interviews</li>
+    <li>✔ Background music & sound effects (optional)</li>
+    <li>✔ Episode structuring & smooth transitions</li>
+    <li>✔ Export optimized for Spotify, Apple Podcasts & YouTube</li>
+</ul>
+
+<p>
+    We ensure your podcast sounds professional, consistent, and ready for publishing,
+    helping you build credibility and grow your audience faster.
+</p>
+
+        
+        <div class="recent-activities">
+            <h3>Recent Activities</h3>
+
+            <div class="activity-card">
+                <h4>Podcast Episode Cleanup</h4>
+                <p>Edited and enhanced weekly podcast episode audio.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Interview Podcast Editing</h4>
+                <p>Processed multi-speaker podcast with balanced sound.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Podcast Intro & Outro Design</h4>
+                <p>Created branded intro and outro audio segments.</p>
+            </div>
+        </div>
+
+        
+        <div class="pricing-section">
+            <h3>Pricing Plans</h3>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic</h4>
+                    <h2>₹799</h2>
+                    <p>Up to 15 min podcast editing</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Standard</h4>
+                    <h2>₹1999</h2>
+                    <p>Up to 45 min full episode editing</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Premium</h4>
+                    <h2>₹3999</h2>
+                    <p>Full production + music & mastering</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">How long does podcast editing take?</div>
+                <div class="faq-answer">Typically 24–72 hours depending on episode length.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you edit multi-speaker podcasts?</div>
+                <div class="faq-answer">Yes, we handle interviews and multiple tracks professionally.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Will you add music and effects?</div>
+                <div class="faq-answer">Yes, intro/outro music and sound effects can be included.</div>
+            </div>
+        </div>
+
+        
+        <div class="booking-cta">
+            <h2>Ready to Launch Your Podcast?</h2>
+            <p>Get your episodes edited to studio quality today.</p>
+            <button>Book Now</button>
+        </div>
+
+    </div>
+
+    
+    <div class="voiceover-right">
+        <div class="side-menu">
+            <h3>Quick Menu</h3>
+            <a href="#">Overview</a>
+            <a href="#">Recent Work</a>
+            <a href="#">Pricing</a>
+            <a href="#">Booking</a>
+        </div>
+    </div>
+
+</section>
+
+<div id="footer"></div>
+
+<script src="../global-js/global.js"></script>
+
+<script>
+fetch("../components/navbar.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    initializeNavbar();
+});
+
+fetch("../components/footer.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
+});
+
+document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>

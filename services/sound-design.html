@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX Studio | Sound Design & Audio Production</title>
+
+    <link rel="stylesheet" href="../global-css/global.css">
+    <link rel="stylesheet" href="../services/services-detail.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+<section class="voiceover-hero" 
+    style="
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url('../global-images/sound-design.jpg') center/cover no-repeat;
+        color: #fff;
+    ">
+    <div class="hero-content" style="max-width: 700px; padding: 60px;">
+        <span>SOUND DESIGN SERVICE</span>
+        <h1>Creative Sound Design & Audio Experience</h1>
+        <p>
+            Immersive sound design for films, ads, games,
+            and digital content that elevates storytelling.
+        </p>
+    </div>
+</section>
+
+
+<section class="voiceover-main">
+
+    
+    <div class="voiceover-left">
+
+        <img src="../global-images/voice-over.jpg" alt="Sound Design">
+
+        <h2>Service Overview</h2>
+
+        <p>
+    Our sound design service brings your visuals to life with rich, immersive,
+    and cinematic audio experiences. We craft custom sound effects, ambient layers,
+    and audio textures that perfectly match your content.
+</p>
+
+<p>
+    From films and advertisements to games and digital media, we create unique
+    soundscapes that enhance storytelling, evoke emotions, and keep your audience engaged.
+</p>
+
+<ul class="service-points">
+    <li>✔ Custom sound effects & Foley creation</li>
+    <li>✔ Background ambience & environmental audio</li>
+    <li>✔ Audio layering & cinematic mixing</li>
+    <li>✔ Sound design for films, ads & games</li>
+    <li>✔ Sync sound with visuals (frame-accurate)</li>
+    <li>✔ Creative transitions & audio effects</li>
+    <li>✔ High-quality mastering for final output</li>
+    <li>✔ Multi-platform optimized audio delivery</li>
+</ul>
+
+<p>
+    We ensure every sound element enhances your project, creating a powerful
+    and memorable audio experience for your audience.
+</p>
+
+        
+        <div class="recent-activities">
+            <h3>Recent Activities</h3>
+
+            <div class="activity-card">
+                <h4>Film Sound Design</h4>
+                <p>Created cinematic soundscape for short film project.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Ad Audio Enhancement</h4>
+                <p>Designed impactful sound effects for brand advertisement.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Game Audio Design</h4>
+                <p>Developed immersive sound effects for mobile game.</p>
+            </div>
+        </div>
+
+        
+        <div class="pricing-section">
+            <h3>Pricing Plans</h3>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic</h4>
+                    <h2>₹1499</h2>
+                    <p>Simple sound effects package</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Standard</h4>
+                    <h2>₹3499</h2>
+                    <p>Advanced sound design & mixing</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Premium</h4>
+                    <h2>₹6999</h2>
+                    <p>Full cinematic sound production</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">What is sound design?</div>
+                <div class="faq-answer">It involves creating and enhancing audio elements to match visuals.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you sync audio with video?</div>
+                <div class="faq-answer">Yes, we ensure frame-accurate synchronization.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can you create custom sound effects?</div>
+                <div class="faq-answer">Yes, all effects can be custom-designed for your project.</div>
+            </div>
+        </div>
+
+        
+        <div class="booking-cta">
+            <h2>Ready to Elevate Your Audio Experience?</h2>
+            <p>Bring your project to life with professional sound design.</p>
+            <button>Book Now</button>
+        </div>
+
+    </div>
+
+    
+    <div class="voiceover-right">
+        <div class="side-menu">
+            <h3>Quick Menu</h3>
+            <a href="#">Overview</a>
+            <a href="#">Recent Work</a>
+            <a href="#">Pricing</a>
+            <a href="#">Booking</a>
+        </div>
+    </div>
+
+</section>
+
+<div id="footer"></div>
+
+<script src="../global-js/global.js"></script>
+
+<script>
+fetch("../components/navbar.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    initializeNavbar();
+});
+
+fetch("../components/footer.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
+});
+
+document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>

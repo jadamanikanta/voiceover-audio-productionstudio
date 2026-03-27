@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX Studio | Voiceover & Audio Production</title>
+
+    <link rel="stylesheet" href="../global-css/global.css">
+    <link rel="stylesheet" href="../contact/contact.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+     
+   <section class="contact-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Let’s Create Powerful Audio Together</h1>
+        <p>Reach out for voiceovers, dubbing, podcast editing, and custom audio production.</p>
+        <a href="#contact-form" class="hero-btn">Request Custom Demo</a>
+    </div>
+
+</section>
+
+<section class="contact-main" id="contact-form">
+
+    <div class="contact-left">
+        <h2>Send Your Project Details</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+
+            <select>
+                <option>Select Project Type</option>
+                <option>Voice Over</option>
+                <option>Dubbing</option>
+                <option>Podcast Editing</option>
+                <option>Commercial Audio</option>
+            </select>
+
+            <input type="text" placeholder="Budget Range">
+            <input type="file">
+            <textarea rows="5" placeholder="Project Description"></textarea>
+
+            <button type="submit">Request Custom Demo</button>
+        </form>
+    </div>
+
+    <div class="contact-right">
+        <div class="info-card">
+            <h3>Studio Contact</h3>
+            <p>📍 Hyderabad, India</p>
+            <p>📞 +91 98765 43210</p>
+            <p>✉️ studio@voxstudio.com</p>
+        </div>
+
+        <div class="info-card">
+            <h3>Business Hours</h3>
+            <p>Mon - Fri : 9:00 AM - 8:00 PM</p>
+            <p>Saturday : 10:00 AM - 6:00 PM</p>
+            <p>Sunday : Closed</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="studio-map-section">
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.75277101748!2d78.38820787421105!3d17.452236100935636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb913aa8118e95%3A0xafc9ec950d04b87b!2sTechechos%20Innovation!5e1!3m2!1sen!2sin!4v1774508673654!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
+
+        <div class="floating-map-card">
+            <h3>Visit Our Studio</h3>
+            <p>Professional recording environment for voiceovers, dubbing, podcasts, and audio mastering.</p>
+            <span>📍 Hyderabad, India</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="final-cta">
+
+    <div class="cta-overlay"></div>
+
+    <div class="cta-content">
+        <h2>Ready to Bring Your Voice Project to Life?</h2>
+        <p>Let’s create professional voiceovers, dubbing, podcasts, and audio experiences tailored to your brand.</p>
+
+        <div class="cta-buttons">
+            <a href="tel:+919876543210" class="cta-call-btn">📞 Call Now</a>
+            <a href="mailto:studio@voxstudio.com" class="cta-email-btn">✉️ Send Email</a>
+        </div>
+    </div>
+
+</section>
+
+    <div id="footer"></div>
+
+    
+
+    
+    
+    
+    <script src="../global-js/global.js"></script>
+    
+
+    <script>
+        fetch("../components/navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        initializeNavbar();
+    });
+
+fetch("../components/footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
+    </script>
+    
+</body>
+</html>

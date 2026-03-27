@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX Studio | Voiceover & Audio Production</title>
+
+    <link rel="stylesheet" href="../global-css/global.css">
+    <link rel="stylesheet" href="../services/services-detail.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+<section class="voiceover-hero">
+    <div class="hero-content">
+        <span>VOICE OVER SERVICE</span>
+        <h1>Professional Voice Over Production</h1>
+        <p>
+            Premium voice recording for commercials, narration,
+            podcasts, explainer videos, and brand campaigns.
+        </p>
+    </div>
+</section>
+
+
+<section class="voiceover-main">
+
+    
+    <div class="voiceover-left">
+
+        <img src="../global-images/voice-over.jpg" alt="Voice Over">
+
+        <h2>Service Overview</h2>
+
+        <p>
+    Our professional voice over production delivers studio-quality sound with
+    crystal clarity, emotional depth, and precise articulation. Every recording
+    is crafted in an acoustically treated environment using high-end equipment
+    to ensure broadcast-ready output.
+</p>
+
+<p>
+    We specialize in creating engaging and impactful voice content tailored
+    to your audience — whether it's persuasive commercials, storytelling narration,
+    or corporate communication.
+</p>
+
+<ul class="service-points">
+    <li>✔ High-quality studio recording (noise-free & mastered audio)</li>
+    <li>✔ Multiple voice styles (professional, energetic, calm, cinematic)</li>
+    <li>✔ Support for ads, YouTube, reels, podcasts & e-learning</li>
+    <li>✔ Fast delivery within 24–48 hours</li>
+    <li>✔ Script proofreading & tone guidance</li>
+    <li>✔ Background music & sound effects (optional)</li>
+    <li>✔ Multi-language & accent support</li>
+    <li>✔ Commercial & branding rights included</li>
+</ul>
+
+<p>
+    From startups to established brands, we help elevate your content with a
+    voice that connects, converts, and builds trust with your audience.
+</p>
+
+        
+        <div class="recent-activities">
+            <h3>Recent Activities</h3>
+
+            <div class="activity-card">
+                <h4>Commercial Ad Recording</h4>
+                <p>Completed premium brand voice ad campaign.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Corporate Narration</h4>
+                <p>Delivered clean narration for product launch.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Podcast Intro Voice</h4>
+                <p>Created premium podcast intro branding voice.</p>
+            </div>
+        </div>
+
+        
+        <div class="pricing-section">
+            <h3>Pricing Plans</h3>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic</h4>
+                    <h2>₹999</h2>
+                    <p>Short voice script</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Standard</h4>
+                    <h2>₹2499</h2>
+                    <p>Commercial voice package</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Premium</h4>
+                    <h2>₹4999</h2>
+                    <p>Full studio production</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">How fast can I get my voice over?</div>
+                <div class="faq-answer">Delivery within 24–48 hours.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you provide revisions?</div>
+                <div class="faq-answer">Yes, up to 2 revisions included.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I choose voice styles?</div>
+                <div class="faq-answer">Yes, tone and style customization available.</div>
+            </div>
+        </div>
+
+        
+        <div class="booking-cta">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Book your professional voice over today.</p>
+            <button>Book Now</button>
+        </div>
+
+    </div>
+
+    
+    <div class="voiceover-right">
+        <div class="side-menu">
+            <h3>Quick Menu</h3>
+            <a href="#">Overview</a>
+            <a href="#">Recent Work</a>
+            <a href="#">Pricing</a>
+            <a href="#">Booking</a>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<div id="footer"></div>
+
+
+
+    
+    
+    
+    <script src="../global-js/global.js"></script>
+    
+
+    <script>
+        fetch("../components/navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        initializeNavbar();
+    });
+
+fetch("../components/footer.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("footer").innerHTML = data;
+    });
+
+    
+
+document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+
+
+
+
+</script>

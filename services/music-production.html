@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX Studio | Music Production & Audio Studio</title>
+
+    <link rel="stylesheet" href="../global-css/global.css">
+    <link rel="stylesheet" href="../services/services-detail.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+<section class="voiceover-hero" 
+    style="
+        position: relative;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url('../global-images/music-production.jpg') center/cover no-repeat;
+        color: #fff;
+    ">
+    <div class="hero-content" style="max-width: 700px; padding: 60px;">
+        <span>MUSIC PRODUCTION SERVICE</span>
+        <h1>Professional Music Production & Studio Services</h1>
+        <p>
+            High-quality music production, composition,
+            mixing, and mastering for artists and brands.
+        </p>
+    </div>
+</section>
+
+
+<section class="voiceover-main">
+
+    
+    <div class="voiceover-left">
+
+        <img src="../global-images/voice-over.jpg" alt="Music Production">
+
+        <h2>Service Overview</h2>
+
+        <p>
+    Our music production service helps you turn your ideas into fully produced,
+    studio-quality tracks. From composition to final mastering, we handle every
+    step of the music creation process with precision and creativity.
+</p>
+
+<p>
+    Whether you're an independent artist, content creator, or brand, we craft
+    unique soundtracks that match your style and elevate your project to a
+    professional level.
+</p>
+
+<ul class="service-points">
+    <li>✔ Custom music composition & arrangement</li>
+    <li>✔ Beat making & instrumental production</li>
+    <li>✔ Vocal recording, tuning & processing</li>
+    <li>✔ Mixing & mastering (studio quality)</li>
+    <li>✔ Background scores for videos & ads</li>
+    <li>✔ Genre-specific production (pop, hip-hop, cinematic, etc.)</li>
+    <li>✔ High-quality audio export for all platforms</li>
+    <li>✔ Creative direction & sound design support</li>
+</ul>
+
+<p>
+    We ensure your music sounds polished, powerful, and ready for release
+    across platforms like Spotify, YouTube, and more.
+</p>
+
+        
+        <div class="recent-activities">
+            <h3>Recent Activities</h3>
+
+            <div class="activity-card">
+                <h4>Original Track Production</h4>
+                <p>Produced full music track for independent artist.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Beat Creation</h4>
+                <p>Designed custom beats for hip-hop project.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>Mixing & Mastering</h4>
+                <p>Delivered studio-quality final master for release.</p>
+            </div>
+        </div>
+
+        
+        <div class="pricing-section">
+            <h3>Pricing Plans</h3>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic</h4>
+                    <h2>₹1999</h2>
+                    <p>Basic beat or short track</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Standard</h4>
+                    <h2>₹4999</h2>
+                    <p>Full track production + mixing</p>
+                </div>
+
+                <div class="price-card">
+                    <h4>Premium</h4>
+                    <h2>₹9999</h2>
+                    <p>Complete production + mastering</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you produce music for all genres?</div>
+                <div class="faq-answer">Yes, we work across multiple genres including pop, hip-hop, EDM, and cinematic.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I provide my own vocals?</div>
+                <div class="faq-answer">Absolutely, we can mix and enhance your recorded vocals.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you provide mastering services?</div>
+                <div class="faq-answer">Yes, mastering is included in premium packages.</div>
+            </div>
+        </div>
+
+        
+        <div class="booking-cta">
+            <h2>Ready to Create Your Music?</h2>
+            <p>Bring your sound to life with professional music production.</p>
+            <button>Book Now</button>
+        </div>
+
+    </div>
+
+    
+    <div class="voiceover-right">
+        <div class="side-menu">
+            <h3>Quick Menu</h3>
+            <a href="#">Overview</a>
+            <a href="#">Recent Work</a>
+            <a href="#">Pricing</a>
+            <a href="#">Booking</a>
+        </div>
+    </div>
+
+</section>
+
+<div id="footer"></div>
+
+<script src="../global-js/global.js"></script>
+
+<script>
+fetch("../components/navbar.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    initializeNavbar();
+});
+
+fetch("../components/footer.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("footer").innerHTML = data;
+});
+
+document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>
