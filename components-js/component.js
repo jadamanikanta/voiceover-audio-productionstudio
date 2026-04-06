@@ -13,12 +13,16 @@ fetch("components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+
+        lucide.createIcons();
     });
 
 fetch("home-1/home.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("home-content").innerHTML = data;
+
+        lucide.createIcons();
 
         const counters = document.querySelectorAll(".counter");
 
@@ -111,6 +115,9 @@ faqItems.forEach(item => {
         item.classList.toggle("active");
     });
 });
+
+
+
     });
 
 

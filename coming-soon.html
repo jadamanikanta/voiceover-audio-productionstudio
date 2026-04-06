@@ -63,10 +63,7 @@ body {
     Toggle
 </button>
 
-<a href="/" 
-   class="mt-6 inline-block px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full font-semibold shadow-lg transition">
-   🏠 Back to Home
-</a>
+
 
 <div class="min-h-screen flex flex-col justify-center items-center text-center px-6">
 
@@ -80,7 +77,7 @@ body {
     </div>
 
     
-    <h1 class="text-5xl md:text-7xl font-bold mb-4">
+    <h1 onclick="goHome()" class="text-5xl md:text-7xl font-bold mb-4">
         🎙️ VOX Studio
     </h1>
 
@@ -176,6 +173,10 @@ function toggleTheme() {
     document.body.classList.toggle("bg-white");
     document.body.classList.toggle("text-white");
     document.body.classList.toggle("text-black");
+}
+
+function goHome() {
+  window.location.href = "../index.html";
 }
 </script>
 

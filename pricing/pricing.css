@@ -268,8 +268,8 @@ tr:nth-child(even) td {
   }
 }
 
-.cta {
-  padding: 100px 20px;
+.cta-blogpage {
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
 }

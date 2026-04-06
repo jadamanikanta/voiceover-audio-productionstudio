@@ -39,9 +39,20 @@
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
-    font-size: 15px;
-    opacity: 0.9;
+    font-size: 14px;
+    color: #777;
+}
+
+.blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-meta i {
+    width: 16px;
+    height: 16px;
+    color: #f59e0b;
 }
 
 .blog-details-content p {
@@ -507,7 +518,7 @@ body.dark-mode .sidebar-card {
 }
 
 .blog-final-section {
-    padding: 80px 8%;
+    padding: 80px 8% 10px;
     background: var(--bg-color);
 }
 

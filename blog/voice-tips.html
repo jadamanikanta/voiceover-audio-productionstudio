@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="../global-css/global.css">
     <link rel="stylesheet" href="../blog/blog-details.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -20,11 +22,20 @@
         <span class="blog-category">Voice Tips</span>
         <h1>How to Improve Voice Clarity for Professional Recordings</h1>
 
-        <div class="blog-meta">
-            <span>📅 March 26, 2026</span>
-            <span>⏱ 5 min read</span>
-            <span>🎙 Audio Production</span>
-        </div>
+       <div class="blog-meta">
+    <span>
+        <i data-lucide="calendar"></i>
+        March 26, 2026
+    </span>
+    <span>
+        <i data-lucide="clock"></i>
+        5 min read
+    </span>
+    <span>
+        <i data-lucide="mic"></i>
+        Audio Production
+    </span>
+</div>
 
         <p>
             Learn essential techniques used by professional voice artists to
@@ -37,7 +48,7 @@
     <div class="audio-card">
 
         <div class="audio-left">
-            <h2>🎙 Listen to Voice Clarity Example</h2>
+            <h2>Listen to Voice Clarity Example</h2>
             <p>
                 Compare a raw recording and a professionally processed version
                 to understand clarity improvement techniques.
@@ -141,9 +152,9 @@
         </div>
 
         <div class="share-buttons">
-            <button>🔗 Share</button>
-            <button>📘 Facebook</button>
-            <button>🐦 Twitter</button>
+            <button> Share</button>
+            <button>Facebook</button>
+            <button>Twitter</button>
         </div>
 
     </div>
@@ -204,8 +215,10 @@
 
     <div id="footer"></div>
 
-    
-
+     <script>
+        lucide.createIcons();
+    </script>
+ 
     <script src="../global-js/global.js"></script>
     <script>
         fetch("../components/navbar.html")
@@ -220,5 +233,6 @@ fetch("../components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+         lucide.createIcons();
     });
     </script>

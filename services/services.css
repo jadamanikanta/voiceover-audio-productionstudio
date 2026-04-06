@@ -125,7 +125,6 @@
     }
 }
 
-
 .services-grid-section {
     padding: 110px 8%;
     background: var(--bg-color);
@@ -161,11 +160,13 @@ body.dark-mode .section-title p {
     color: #aaa;
 }
 
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 28px;
 }
+
 
 .service-card {
     background: rgba(255,255,255,0.95);
@@ -202,11 +203,30 @@ body.dark-mode .service-card {
         0 0 35px rgba(245,158,11,0.25);
 }
 
+
 .service-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(245,158,11,0.1);
+
     animation: floatIcon 3s ease-in-out infinite;
 }
+
+
+.service-icon i {
+    width: 42px;
+    height: 42px;
+    stroke-width: 2;
+    color: #f59e0b;
+}
+
 
 .service-card h3 {
     font-size: 22px;
@@ -223,6 +243,7 @@ body.dark-mode .service-card {
 body.dark-mode .service-card p {
     color: #aaa;
 }
+
 
 .service-btn {
     display: inline-block;
@@ -242,22 +263,17 @@ body.dark-mode .service-card p {
 
 .service-btn:hover {
     transform: translateY(-4px) scale(1.05);
-
     box-shadow:
         0 14px 28px rgba(245,158,11,0.35);
 }
 
+
 @keyframes floatIcon {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
 }
+
 
 @media(max-width:992px) {
     .services-grid {
@@ -510,6 +526,7 @@ body.dark-mode .sample-info p {
     background: var(--bg-color);
 }
 
+
 .why-grid {
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -517,15 +534,18 @@ body.dark-mode .sample-info p {
     margin-top: 60px;
 }
 
+
 .why-card {
     background: rgba(255,255,255,0.95);
     padding: 36px 28px;
     border-radius: 24px;
     text-align: center;
 
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.12),
+        0 0 35px rgba(245,158,11,0.18);
 
-    transition: 0.45s ease;
+    transition: all 0.45s ease;
 
     opacity: 0;
     transform: translateY(50px);
@@ -538,49 +558,68 @@ body.dark-mode .why-card {
         0 0 25px rgba(245,158,11,0.12);
 }
 
+
 .why-card.show {
     opacity: 1;
     transform: translateY(0);
 }
 
+
 .why-card:hover {
     transform: translateY(-12px);
     box-shadow:
         0 18px 45px rgba(0,0,0,0.12),
-        0 0 35px rgba(245,158,11,0.22);
+        0 0 35px rgba(245,158,11,0.25);
 }
 
+
 .why-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(245,158,11,0.1);
+
     animation: floatWhy 3s ease-in-out infinite;
 }
+
+
+.why-icon i {
+    width: 36px;
+    height: 36px;
+    stroke-width: 2;
+    color: #f59e0b;
+}
+
 
 .why-card h3 {
     color: var(--text-color);
     margin-bottom: 14px;
+    font-size: 20px;
 }
 
 .why-card p {
     color: #777;
     line-height: 1.8;
+    font-size: 14.5px;
 }
 
 body.dark-mode .why-card p {
     color: #aaa;
 }
 
+
 @keyframes floatWhy {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
 }
+
 
 @media(max-width:992px){
     .why-grid {
@@ -595,7 +634,7 @@ body.dark-mode .why-card p {
 }
 
 .services-cta {
-    padding: 120px 8%;
+   padding: 100px 8% 40px;
     text-align: center;
     position: relative;
     overflow: hidden;

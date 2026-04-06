@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../services/services.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -50,35 +52,43 @@
 
     <div class="services-grid">
 
-        <div class="service-card">
-            <div class="service-icon">🎙️</div>
-            <h3>Voice Over Recording</h3>
-            <p>Studio-grade voice production for commercials, ads and narration.</p>
-            <a href="../services/voiceover-details.html" class="service-btn">View Details</a>
+    <div class="service-card">
+        <div class="service-icon">
+            <i data-lucide="mic"></i>
         </div>
-
-        <div class="service-card">
-            <div class="service-icon">🎧</div>
-            <h3>Podcast Editing</h3>
-            <p>Noise cleaning, mastering and premium episode enhancement.</p>
-            <a href="../services/podcast-editing.html" class="service-btn">View Details</a>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">🔊</div>
-            <h3>Sound Design</h3>
-            <p>Creative sound layering for media, ads and brand campaigns.</p>
-            <a href="../services/sound-design.html" class="service-btn">View Details</a>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">🎼</div>
-            <h3>Music Production</h3>
-            <p>Custom music arrangements for videos and digital experiences.</p>
-            <a href="../services/music-production.html" class="service-btn">View Details</a>
-        </div>
-
+        <h3>Voice Over Recording</h3>
+        <p>Studio-grade voice production for commercials, ads and narration.</p>
+        <a href="../services/voiceover-details.html" class="service-btn">View Details</a>
     </div>
+
+    <div class="service-card">
+        <div class="service-icon">
+            <i data-lucide="headphones"></i>
+        </div>
+        <h3>Podcast Editing</h3>
+        <p>Noise cleaning, mastering and premium episode enhancement.</p>
+        <a href="../services/podcast-editing.html" class="service-btn">View Details</a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">
+            <i data-lucide="volume-2"></i>
+        </div>
+        <h3>Sound Design</h3>
+        <p>Creative sound layering for media, ads and brand campaigns.</p>
+        <a href="../services/sound-design.html" class="service-btn">View Details</a>
+    </div>
+
+    <div class="service-card">
+        <div class="service-icon">
+            <i data-lucide="music"></i>
+        </div>
+        <h3>Music Production</h3>
+        <p>Custom music arrangements for videos and digital experiences.</p>
+        <a href="../services/music-production.html" class="service-btn">View Details</a>
+    </div>
+
+</div>
 
 </section>
 
@@ -201,31 +211,39 @@
 
     <div class="why-grid">
 
-        <div class="why-card">
-            <div class="why-icon">🎙️</div>
-            <h3>Studio Quality</h3>
-            <p>Crystal clear recording using premium equipment and controlled studio environment.</p>
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="mic"></i>
         </div>
-
-        <div class="why-card">
-            <div class="why-icon">⚡</div>
-            <h3>Fast Delivery</h3>
-            <p>Quick turnaround with professional workflow and quality assurance.</p>
-        </div>
-
-        <div class="why-card">
-            <div class="why-icon">🎧</div>
-            <h3>Expert Editing</h3>
-            <p>Noise cleanup, mastering and final polish for premium results.</p>
-        </div>
-
-        <div class="why-card">
-            <div class="why-icon">🌍</div>
-            <h3>Global Reach</h3>
-            <p>Serving creators, agencies and brands across multiple industries.</p>
-        </div>
-
+        <h3>Studio Quality</h3>
+        <p>Crystal clear recording using premium equipment and controlled studio environment.</p>
     </div>
+
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="zap"></i>
+        </div>
+        <h3>Fast Delivery</h3>
+        <p>Quick turnaround with professional workflow and quality assurance.</p>
+    </div>
+
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="headphones"></i>
+        </div>
+        <h3>Expert Editing</h3>
+        <p>Noise cleanup, mastering and final polish for premium results.</p>
+    </div>
+
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="globe"></i>
+        </div>
+        <h3>Global Reach</h3>
+        <p>Serving creators, agencies and brands across multiple industries.</p>
+    </div>
+
+</div>
 
 </section>
 
@@ -259,8 +277,12 @@
     
     
     <script src="../global-js/global.js"></script>
-    
 
+    <script>
+        lucide.createIcons();
+    </script>
+    
+   
     <script>
         fetch("../components/navbar.html")
     .then(response => response.text())
@@ -274,7 +296,9 @@ fetch("../components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+         lucide.createIcons();
     });
+
 
     const cards = document.querySelectorAll(".service-card");
 

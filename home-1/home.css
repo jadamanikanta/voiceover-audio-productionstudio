@@ -1,8 +1,8 @@
 .hero {
-    padding: 100px 0;
-    min-height: 90vh;
+    height: 100vh; 
     display: flex;
     align-items: center;
+    padding: 0; 
 }
 
 .hero-container {
@@ -11,33 +11,33 @@
     margin: auto;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 70px;
+    gap: 50px; 
     align-items: center;
 }
 
 .hero-tag {
     display: inline-block;
     color: #f59e0b;
-    padding: 10px 18px;
+    padding: 8px 16px;
     border: 1px solid var(--border-color);
     border-radius: 30px;
-    font-size: 14px;
-    margin-bottom: 25px;
+    font-size: 13px;
+    margin-bottom: 18px;
 }
 
 .hero-left h1 {
-    font-size: 64px;
+    font-size: 50px; 
     line-height: 1.1;
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     font-weight: 700;
 }
 
 .hero-left p {
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.7;
     color: #777;
-    max-width: 550px;
-    margin-bottom: 35px;
+    max-width: 520px;
+    margin-bottom: 25px;
 }
 
 body.dark-mode .hero-left p {
@@ -46,13 +46,13 @@ body.dark-mode .hero-left p {
 
 .hero-buttons {
     display: flex;
-    gap: 18px;
-    margin-bottom: 45px;
+    gap: 16px;
+    margin-bottom: 25px; 
 }
 
 .btn-primary,
 .btn-secondary {
-    padding: 14px 30px;
+    padding: 12px 26px;
     border-radius: 40px;
     text-decoration: none;
     font-weight: 500;
@@ -76,29 +76,29 @@ body.dark-mode .btn-primary {
 
 .btn-primary:hover,
 .btn-secondary:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .hero-stats {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
 .stat-box {
-    padding: 18px 25px;
+    padding: 14px 18px; 
     border: 1px solid var(--border-color);
-    border-radius: 18px;
-    min-width: 140px;
+    border-radius: 16px;
+    min-width: 120px;
 }
 
 .stat-box h3 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: 24px;
+    margin-bottom: 6px;
 }
 
 .stat-box p {
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
 }
 
@@ -110,8 +110,8 @@ body.dark-mode .btn-primary {
 }
 
 .audio-circle {
-    width: 380px;
-    height: 380px;
+    width: 340px; 
+    height: 340px;
     border-radius: 50%;
     border: 1px solid var(--border-color);
     position: absolute;
@@ -119,60 +119,61 @@ body.dark-mode .btn-primary {
 
 .wave-box {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
-    height: 220px;
+    height: 200px;
 }
 
 .wave {
-    width: 10px;
+    width: 8px;
     background: var(--text-color);
     border-radius: 20px;
     animation: waveAnim 1.2s infinite ease-in-out;
 }
 
 .wave:nth-child(1) { height: 40px; animation-delay: 0s; }
-.wave:nth-child(2) { height: 80px; animation-delay: 0.1s; }
-.wave:nth-child(3) { height: 120px; animation-delay: 0.2s; }
-.wave:nth-child(4) { height: 160px; animation-delay: 0.3s; }
-.wave:nth-child(5) { height: 140px; animation-delay: 0.4s; }
-.wave:nth-child(6) { height: 100px; animation-delay: 0.5s; }
-.wave:nth-child(7) { height: 70px; animation-delay: 0.6s; }
-.wave:nth-child(8) { height: 45px; animation-delay: 0.7s; }
+.wave:nth-child(2) { height: 70px; animation-delay: 0.1s; }
+.wave:nth-child(3) { height: 100px; animation-delay: 0.2s; }
+.wave:nth-child(4) { height: 130px; animation-delay: 0.3s; }
+.wave:nth-child(5) { height: 120px; animation-delay: 0.4s; }
+.wave:nth-child(6) { height: 90px; animation-delay: 0.5s; }
+.wave:nth-child(7) { height: 60px; animation-delay: 0.6s; }
+.wave:nth-child(8) { height: 40px; animation-delay: 0.7s; }
 
 @keyframes waveAnim {
     0%,100% {
         transform: scaleY(1);
     }
     50% {
-        transform: scaleY(1.5);
+        transform: scaleY(1.4);
     }
 }
 
 .floating-card {
     position: absolute;
-    bottom: -40px;
+    bottom: 0; 
     right: 20px;
-    padding: 18px 22px;
-    border-radius: 18px;
+    padding: 16px 20px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     background: var(--bg-color);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .floating-card h4 {
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
 .floating-card p {
-    font-size: 14px;
+    font-size: 13px;
     color: #777;
 }
 
 body.dark-mode .floating-card p {
     color: #aaa;
 }
+
 
 @media (max-width: 992px) {
     .hero-container {
@@ -181,7 +182,7 @@ body.dark-mode .floating-card p {
     }
 
     .hero-left p {
-        margin: auto auto 35px;
+        margin: auto auto 25px;
     }
 
     .hero-buttons,
@@ -191,20 +192,28 @@ body.dark-mode .floating-card p {
 
     .floating-card {
         position: static;
-        margin-top: 30px;
+        margin-top: 25px;
     }
 }
 
+
 @media (max-width: 768px) {
+    .hero {
+        height: auto; 
+        padding: 60px 0;
+    }
+
     .hero-left h1 {
-        font-size: 42px;
+        font-size: 38px;
     }
 
     .audio-circle {
-        width: 280px;
-        height: 280px;
+        width: 260px;
+        height: 260px;
     }
 }
+
+
 
 .services-section {
     padding: 110px 0;
@@ -282,9 +291,20 @@ body.dark-mode .service-card::before {
 }
 
 .service-icon {
-    font-size: 38px;
-    margin-bottom: 20px;
-    transition: transform 0.4s ease;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.service-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--text-color); 
 }
 
 .service-card:hover .service-icon {
@@ -667,15 +687,30 @@ body.dark-mode .why-card {
 }
 
 .why-icon {
-    font-size: 42px;
-    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    margin-left: 70px;
     animation: floatIcon 3s ease-in-out infinite;
 }
+
+.why-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--text-color);
+}
+
 
 .why-card h3 {
     font-size: 22px;
     margin-bottom: 15px;
     color: var(--text-color);
+    
 }
 
 .why-card p {
@@ -1090,7 +1125,7 @@ body.dark-mode .faq-answer p {
 }
 
 .cta-banner {
-    margin: 100px 8%;
+    margin: 60px 8% 10px;
     padding: 80px;
     border-radius: 30px;
     background: linear-gradient(135deg,#111827,#1f2937,#111827);

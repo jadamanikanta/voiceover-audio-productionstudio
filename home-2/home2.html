@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../home-2/home2.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -66,33 +67,41 @@
         <p>From commercials to storytelling, every voice is crafted to match your audience and brand identity.</p>
     </div>
 
-    <div class="voice-grid">
+   <div class="voice-grid">
 
-        <div class="voice-card">
-            <div class="voice-icon">🎙️</div>
-            <h3>Commercial Voice</h3>
-            <p>Clear, engaging and persuasive voiceovers built for modern advertising campaigns.</p>
+    <div class="voice-card">
+        <div class="voice-icon">
+            <i data-lucide="mic"></i>
         </div>
-
-        <div class="voice-card">
-            <div class="voice-icon">🎧</div>
-            <h3>Podcast Voice</h3>
-            <p>Warm conversational audio designed for premium podcast storytelling.</p>
-        </div>
-
-        <div class="voice-card">
-            <div class="voice-icon">📚</div>
-            <h3>Audiobook Voice</h3>
-            <p>Natural narration with emotional depth for books and storytelling projects.</p>
-        </div>
-
-        <div class="voice-card">
-            <div class="voice-icon">🎬</div>
-            <h3>Documentary Voice</h3>
-            <p>Professional cinematic narration for documentaries and educational content.</p>
-        </div>
-
+        <h3>Commercial Voice</h3>
+        <p>Clear, engaging and persuasive voiceovers built for modern advertising campaigns.</p>
     </div>
+
+    <div class="voice-card">
+        <div class="voice-icon">
+            <i data-lucide="headphones"></i>
+        </div>
+        <h3>Podcast Voice</h3>
+        <p>Warm conversational audio designed for premium podcast storytelling.</p>
+    </div>
+
+    <div class="voice-card">
+        <div class="voice-icon">
+            <i data-lucide="book-open"></i>
+        </div>
+        <h3>Audiobook Voice</h3>
+        <p>Natural narration with emotional depth for books and storytelling projects.</p>
+    </div>
+
+    <div class="voice-card">
+        <div class="voice-icon">
+            <i data-lucide="film"></i>
+        </div>
+        <h3>Documentary Voice</h3>
+        <p>Professional cinematic narration for documentaries and educational content.</p>
+    </div>
+
+</div>
 
 </section>
 
@@ -235,7 +244,9 @@
     
     <script src="../global-js/global.js"></script>
     
-
+    <script>
+        lucide.createIcons();
+    </script>
     <script>
         fetch("../components/navbar.html")
     .then(response => response.text())
@@ -249,7 +260,10 @@ fetch("../components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+
+         lucide.createIcons();
     });
+     
     </script>
     
 </body>

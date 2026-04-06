@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../contact/contact.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -55,11 +56,23 @@
 
     <div class="contact-right">
         <div class="info-card">
-            <h3>Studio Contact</h3>
-            <p>📍 Hyderabad, India</p>
-            <p>📞 +91 98765 43210</p>
-            <p>✉️ studio@voxstudio.com</p>
-        </div>
+    <h3>Studio Contact</h3>
+
+    <p>
+        <i data-lucide="map-pin"></i>
+        Hyderabad, India
+    </p>
+
+    <p>
+        <i data-lucide="phone"></i>
+        +91 98765 43210
+    </p>
+
+    <p>
+        <i data-lucide="mail"></i>
+        studio@voxstudio.com
+    </p>
+</div>
 
         <div class="info-card">
             <h3>Business Hours</h3>
@@ -79,7 +92,7 @@
         <div class="floating-map-card">
             <h3>Visit Our Studio</h3>
             <p>Professional recording environment for voiceovers, dubbing, podcasts, and audio mastering.</p>
-            <span>📍 Hyderabad, India</span>
+            <span> Hyderabad, India</span>
         </div>
     </div>
 
@@ -94,8 +107,8 @@
         <p>Let’s create professional voiceovers, dubbing, podcasts, and audio experiences tailored to your brand.</p>
 
         <div class="cta-buttons">
-            <a href="tel:+919876543210" class="cta-call-btn">📞 Call Now</a>
-            <a href="mailto:studio@voxstudio.com" class="cta-email-btn">✉️ Send Email</a>
+            <a href="tel:+919876543210" class="cta-call-btn"> Call Now</a>
+            <a href="mailto:studio@voxstudio.com" class="cta-email-btn">Send Email</a>
         </div>
     </div>
 
@@ -110,6 +123,9 @@
     
     <script src="../global-js/global.js"></script>
     
+    <script>
+        lucide.createIcons();
+    </script>
 
     <script>
         fetch("../components/navbar.html")
@@ -124,6 +140,7 @@ fetch("../components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+        lucide.createIcons();
     });
     </script>
     

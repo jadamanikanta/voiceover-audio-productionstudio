@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="../global-css/global.css">
     <link rel="stylesheet" href="../blog/blog-details.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
@@ -20,9 +21,9 @@
             <h1>Top Voice & Audio Production Trends Shaping 2026</h1>
 
             <div class="blog-meta">
-                <span>📅 March 26, 2026</span>
-                <span>⏱ 6 min read</span>
-                <span>📈 Media Insights</span>
+                <span><i data-lucide="calendar"></i> March 26, 2026</span>
+                <span><i data-lucide="clock"></i> 6 min read</span>
+                <span><i data-lucide="mic"></i> Media Insights</span>
             </div>
 
             <p>
@@ -137,9 +138,9 @@
             </div>
 
             <div class="share-buttons">
-                <button>🔗 Share</button>
-                <button>📘 Facebook</button>
-                <button>🐦 Twitter</button>
+                <button> Share</button>
+                <button> Facebook</button>
+                <button> Twitter</button>
             </div>
 
         </div>
@@ -196,6 +197,9 @@
     <div id="footer"></div>
 
     <script src="../global-js/global.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 
     <script>
         fetch("../components/navbar.html")
@@ -209,6 +213,7 @@
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer").innerHTML = data;
+                lucide.createIcons();
         });
     </script>
 

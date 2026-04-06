@@ -1,15 +1,15 @@
 function initializeNavbar() {
     const themeToggle = document.getElementById("theme-toggle");
+    const rtlToggle = document.getElementById("rtl-toggle"); // NEW
     const hamburger = document.getElementById("hamburger");
     const navMenu = document.getElementById("navMenu");
     const navLinks = document.querySelectorAll(".nav-links a");
     const navbar = document.querySelector(".navbar");
 
+    // ================= THEME =================
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
-        if (themeToggle) {
-            themeToggle.textContent = "☀";
-        }
+        if (themeToggle) themeToggle.textContent = "☀";
     }
 
     if (themeToggle) {
@@ -26,6 +26,29 @@ function initializeNavbar() {
         });
     }
 
+    // ================= RTL =================
+    if (localStorage.getItem("dir") === "rtl") {
+        document.documentElement.setAttribute("dir", "rtl");
+        if (rtlToggle) rtlToggle.textContent = "LTR";
+    }
+
+    if (rtlToggle) {
+        rtlToggle.addEventListener("click", () => {
+            const isRTL = document.documentElement.getAttribute("dir") === "rtl";
+
+            if (isRTL) {
+                document.documentElement.setAttribute("dir", "ltr");
+                localStorage.setItem("dir", "ltr");
+                rtlToggle.textContent = "RTL";
+            } else {
+                document.documentElement.setAttribute("dir", "rtl");
+                localStorage.setItem("dir", "rtl");
+                rtlToggle.textContent = "LTR";
+            }
+        });
+    }
+
+    // ================= HAMBURGER =================
     if (hamburger) {
         hamburger.addEventListener("click", () => {
             navMenu.classList.toggle("active");
@@ -40,6 +63,7 @@ function initializeNavbar() {
         });
     });
 
+    // ================= SCROLL SHADOW =================
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
             navbar.style.boxShadow = "0 12px 30px rgba(0,0,0,0.08)";
@@ -48,61 +72,34 @@ function initializeNavbar() {
         }
     });
 
+    // ================= MOBILE DROPDOWN =================
+    document.addEventListener("DOMContentLoaded", () => {
 
+        const dropdowns = document.querySelectorAll(".dropdown");
 
+        dropdowns.forEach(drop => {
+            drop.addEventListener("click", (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
 
+                    dropdowns.forEach(d => {
+                        if (d !== drop) d.classList.remove("active");
+                    });
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("navMenu");
-    const dropdowns = document.querySelectorAll(".dropdown");
-
-    
-    
-    
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    });
-
-    
-    
-    
-    dropdowns.forEach(drop => {
-        drop.addEventListener("click", (e) => {
-            if (window.innerWidth <= 900) {
-
-                
-                e.preventDefault();
-
-                
-                dropdowns.forEach(d => {
-                    if (d !== drop) d.classList.remove("active");
-                });
-
-                
-                drop.classList.toggle("active");
-            }
+                    drop.classList.toggle("active");
+                }
+            });
         });
-    });
 
-    
-    
-    
-    const navLinks = document.querySelectorAll(".nav-links a");
-
-    navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            if (window.innerWidth <= 900) {
-                navMenu.classList.remove("active");
-                hamburger.classList.remove("active");
-            }
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth <= 900) {
+                    navMenu.classList.remove("active");
+                    hamburger.classList.remove("active");
+                }
+            });
         });
-    });
 
-});
-    
+    });
 }
-
 

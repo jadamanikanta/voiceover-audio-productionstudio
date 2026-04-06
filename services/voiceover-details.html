@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../services/services-detail.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -178,6 +179,7 @@ fetch("../components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+         lucide.createIcons();
     });
 
     

@@ -367,10 +367,10 @@
 
 
 .final-cta {
-    padding: 120px 8%;
+    padding: 100px 8% 40px;
     text-align: center;
     border-radius: 30px;
-    margin: 80px 8%;
+    margin: 60px 8% 15px;
     background:
         linear-gradient(135deg,#111827,#1f2937);
     position: relative;

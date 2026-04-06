@@ -21,7 +21,7 @@
 }
 
 .voiceover-main {
-    padding: 100px 8%;
+    padding: 100px 8% 40px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 60px;

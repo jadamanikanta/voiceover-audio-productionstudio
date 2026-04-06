@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../about/about.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     
 </head>
 <body>
@@ -80,31 +81,39 @@
 
     <div class="why-grid">
 
-        <div class="why-card">
-            <div class="why-icon">🎙️</div>
-            <h3>Studio Quality</h3>
-            <p>High-end recording clarity with premium mastering workflow.</p>
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="mic"></i>
         </div>
-
-        <div class="why-card">
-            <div class="why-icon">⚡</div>
-            <h3>Fast Delivery</h3>
-            <p>Quick turnaround with zero compromise on production quality.</p>
-        </div>
-
-        <div class="why-card">
-            <div class="why-icon">🌍</div>
-            <h3>Global Reach</h3>
-            <p>Trusted by creators and brands across multiple industries.</p>
-        </div>
-
-        <div class="why-card">
-            <div class="why-icon">🎧</div>
-            <h3>Creative Sound Design</h3>
-            <p>Detailed voice tone matching and immersive sound treatment.</p>
-        </div>
-
+        <h3>Studio Quality</h3>
+        <p>High-end recording clarity with premium mastering workflow.</p>
     </div>
+
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="zap"></i>
+        </div>
+        <h3>Fast Delivery</h3>
+        <p>Quick turnaround with zero compromise on production quality.</p>
+    </div>
+
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="globe"></i>
+        </div>
+        <h3>Global Reach</h3>
+        <p>Trusted by creators and brands across multiple industries.</p>
+    </div>
+
+    <div class="why-card">
+        <div class="why-icon">
+            <i data-lucide="headphones"></i>
+        </div>
+        <h3>Creative Sound Design</h3>
+        <p>Detailed voice tone matching and immersive sound treatment.</p>
+    </div>
+
+</div>
 
 </section>
 
@@ -177,7 +186,9 @@
     
     <script src="../global-js/global.js"></script>
     
-
+ <script>
+        lucide.createIcons();
+    </script>
     <script>
         fetch("../components/navbar.html")
     .then(response => response.text())
@@ -191,6 +202,8 @@ fetch("../components/footer.html")
     .then(response => response.text())
     .then(data => {
         document.getElementById("footer").innerHTML = data;
+
+         lucide.createIcons();
     });
     </script>
     
