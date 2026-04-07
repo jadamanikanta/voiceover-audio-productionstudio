@@ -5,7 +5,7 @@ fetch("components/navbar.html")
 
         initializeNavbar();
         
-
+       
 
     });
 

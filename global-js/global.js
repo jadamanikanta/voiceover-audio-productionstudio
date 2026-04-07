@@ -100,6 +100,8 @@ function initializeNavbar() {
             });
         });
 
+         lucide.createIcons();
+
     });
 }
 
