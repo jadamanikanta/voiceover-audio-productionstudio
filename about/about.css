@@ -28,7 +28,7 @@
 }
 
 .about-hero-content span {
-    color: #f59e0b;
+    color:var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -67,14 +67,14 @@
 }
 
 .about-buttons a:first-child {
-    background: linear-gradient(135deg,#f59e0b,#f97316);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
     box-shadow: 0 10px 25px rgba(245,158,11,0.25);
 }
 
 .about-buttons a:last-child {
-    border: 1px solid rgba(255,255,255,0.35);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
 }
 
 .about-buttons a:hover {
@@ -134,7 +134,7 @@
 }
 
 .story-content span {
-    color: #f59e0b;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -179,18 +179,24 @@ body.dark-mode .story-features div {
     background: linear-gradient(145deg,#111827,#1f2937);
     color: #e2e8f0;
 }
+.story-content-button{
+    text-align: center;
+}
 
-.story-content a {
+.story-content-button a {
+    
     display: inline-block;
+    width:max-content;
     margin-top: 15px;
     padding: 14px 30px;
     border-radius: 14px;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
     box-shadow: 0 10px 25px rgba(245,158,11,0.2);
     transition: 0.35s ease;
+    
 }
 
 .story-content a:hover {
@@ -227,7 +233,7 @@ body.dark-mode .story-features div {
 
 
 .why-heading span {
-    color: #f59e0b;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -264,11 +270,18 @@ body.dark-mode .why-heading p {
     padding: 38px 28px;
     border-radius: 26px;
     background: linear-gradient(145deg,#ffffff,#f8fafc);
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
-                rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    box-shadow: rgba(255,255,255,0.2) 0px 0px 0px 1px inset,
+                rgba(0,0,0,0.9) 0px 0px 0px 1px;
     transition: all 0.45s ease;
     position: relative;
     overflow: hidden;
+
+    /* New */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
 }
 
 
@@ -330,7 +343,7 @@ body.dark-mode .why-card {
 
 
 .why-card:hover .why-icon {
-    border-color: #f59e0b;
+    border-color: var(--primary);
 }
 
 
@@ -338,12 +351,24 @@ body.dark-mode .why-card {
     font-size: 21px;
     margin-bottom: 14px;
     color: var(--text-color);
+
+    /* Equal heading space */
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .why-card p {
     font-size: 14px;
     color: #64748b;
     line-height: 1.7;
+
+    /* Makes all paragraphs start at same position */
+    flex-grow: 1;
+    margin: 0;
 }
 
 body.dark-mode .why-card p {
@@ -381,7 +406,7 @@ body.dark-mode .why-card p {
 }
 
 .team-heading span {
-    color: #f59e0b;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -514,7 +539,7 @@ body.dark-mode .team-card p {
 }
 
 .cta-inner span {
-    color: #f59e0b;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -556,15 +581,15 @@ body.dark-mode .team-card p {
 }
 
 .cta-actions a:first-child {
-    background: linear-gradient(135deg,#f59e0b,#f97316);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
     box-shadow:
         0 10px 25px rgba(245,158,11,0.25);
 }
 
 .cta-actions a:last-child {
-    border: 1px solid rgba(255,255,255,0.25);
-    color: white;
+     background: var(--primary);
+    color: var(--text-color);
 }
 
 .cta-actions a:hover {

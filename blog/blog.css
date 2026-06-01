@@ -66,7 +66,7 @@
 }
 
 .category-buttons button.active {
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
 }
 
@@ -97,15 +97,34 @@
 
 .blog-content {
     padding: 22px;
+     display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .blog-content span {
-    color: #0077ff;
+    color: var(--primary);
     font-weight: 600;
 }
 
 .blog-content h3 {
     margin: 12px 0;
+    min-height: 60px; /* Same heading area */
+    line-height: 1.4;
+    color: var(--text-color);
+}
+.blog-content p {
+    line-height: 1.8;
+    color: var(--text-color);
+    flex-grow: 1; /* Pushes button/link down */
+}
+
+.blog-content a {
+    margin-top: 20px;
+    align-self: flex-start;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-color);
 }
 
 .pagination {
@@ -116,7 +135,7 @@
 .pagination button {
     padding: 10px 18px;
     border: none;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     border-radius: 10px;
 }
@@ -150,7 +169,7 @@
     display: inline-block;
     margin-top: 15px;
     padding: 10px 18px;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -409,7 +428,7 @@
 }
 
 .cta-content span {
-    color: #f59e0b;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -451,15 +470,16 @@
 }
 
 .cta-buttons a:first-child {
-    background: linear-gradient(135deg,#f59e0b,#f97316);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
     box-shadow:
         0 0 25px rgba(245,158,11,0.4);
 }
 
 .cta-buttons a:last-child {
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
+    
 }
 
 .cta-buttons a:hover {

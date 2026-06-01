@@ -204,6 +204,29 @@
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar").innerHTML = data;
+
+ const currentPage = window.location.pathname.split('/').pop();
+
+const pageMap = {
+    
+
+    // Services pages
+    "blog.html": "../blog/blog.html",
+    "industry-trends.html": "../blog/blog.html",
+    "voice-tips.html": "../blog/blog.html",
+    "audio-tech.html": "../blog/blog.html",
+    
+    
+};
+
+const activeHref = pageMap[currentPage];
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === activeHref) {
+        link.classList.add('active');
+    }
+});
+
             initializeNavbar();
         });
 

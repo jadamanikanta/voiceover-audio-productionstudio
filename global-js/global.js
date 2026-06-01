@@ -72,36 +72,6 @@ function initializeNavbar() {
         }
     });
 
-    // ================= MOBILE DROPDOWN =================
-    document.addEventListener("DOMContentLoaded", () => {
-
-        const dropdowns = document.querySelectorAll(".dropdown");
-
-        dropdowns.forEach(drop => {
-            drop.addEventListener("click", (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-
-                    dropdowns.forEach(d => {
-                        if (d !== drop) d.classList.remove("active");
-                    });
-
-                    drop.classList.toggle("active");
-                }
-            });
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                if (window.innerWidth <= 900) {
-                    navMenu.classList.remove("active");
-                    hamburger.classList.remove("active");
-                }
-            });
-        });
-
-         lucide.createIcons();
-
-    });
+   
 }
 

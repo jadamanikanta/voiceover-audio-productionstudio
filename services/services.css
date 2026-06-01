@@ -36,7 +36,7 @@
 }
 
 .services-content span {
-    color: #f59e0b;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -46,7 +46,7 @@
 }
 
 .services-content h1 {
-    font-size: 62px;
+    font-size: 52px;
     color: white;
     margin: 22px 0;
     line-height: 1.2;
@@ -67,7 +67,7 @@
     margin-top: 32px;
     padding: 15px 34px;
     border-radius: 14px;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -138,7 +138,7 @@
 }
 
 .section-title span {
-    color: #f59e0b;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -163,15 +163,16 @@ body.dark-mode .section-title p {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 28px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: stretch;
 }
 
 
 .service-card {
     background: rgba(255,255,255,0.95);
     border-radius: 24px;
-    padding: 40px 28px;
+    padding: 20px 8px;
     text-align: center;
 
     box-shadow:
@@ -182,6 +183,12 @@ body.dark-mode .section-title p {
 
     opacity: 0;
     transform: translateY(50px);
+
+    /* NEW */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
 body.dark-mode .service-card {
@@ -224,7 +231,7 @@ body.dark-mode .service-card {
     width: 42px;
     height: 42px;
     stroke-width: 2;
-    color: #f59e0b;
+    color: var(--primary);
 }
 
 
@@ -232,12 +239,22 @@ body.dark-mode .service-card {
     font-size: 22px;
     margin-bottom: 14px;
     color: var(--text-color);
+
+    min-height: 60px; /* same space for all headings */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .service-card p {
     font-size: 15px;
     color: #777;
     line-height: 1.8;
+
+    flex-grow: 1; /* keeps all cards aligned */
+    margin: 0;
 }
 
 body.dark-mode .service-card p {
@@ -250,7 +267,7 @@ body.dark-mode .service-card p {
     margin-top: 22px;
     padding: 12px 24px;
     border-radius: 12px;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -309,7 +326,7 @@ body.dark-mode .process-section {
     top: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(#f59e0b,#f97316);
+    background: linear-gradient(var(--primary),#f59e0b);
     transform: translateX(-50%);
 }
 
@@ -342,7 +359,7 @@ body.dark-mode .process-section {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     font-weight: 700;
     display: flex;
@@ -474,7 +491,7 @@ body.dark-mode .sample-info p {
 .sample-wave span {
     width: 6px;
     border-radius: 20px;
-    background: linear-gradient(#f59e0b,#f97316);
+    background: linear-gradient(var(--primary),#f59e0b);
     animation: waveMove 1s infinite ease-in-out;
 }
 
@@ -493,7 +510,7 @@ body.dark-mode .sample-info p {
     border-radius: 50%;
     cursor: pointer;
 
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     font-size: 22px;
 
@@ -549,7 +566,14 @@ body.dark-mode .sample-info p {
 
     opacity: 0;
     transform: translateY(50px);
+
+    /* Alignment Fix */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
+
 
 body.dark-mode .why-card {
     background: rgba(18,18,18,0.95);
@@ -593,7 +617,7 @@ body.dark-mode .why-card {
     width: 36px;
     height: 36px;
     stroke-width: 2;
-    color: #f59e0b;
+    color: var(--primary);
 }
 
 
@@ -601,12 +625,25 @@ body.dark-mode .why-card {
     color: var(--text-color);
     margin-bottom: 14px;
     font-size: 20px;
+    line-height: 1.4;
+
+    /* Same height for all headings */
+    min-height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .why-card p {
     color: #777;
     line-height: 1.8;
     font-size: 14.5px;
+
+   
+    flex-grow: 1;
+    margin: 0;
 }
 
 body.dark-mode .why-card p {
@@ -678,7 +715,7 @@ body.dark-mode .why-card p {
 }
 
 .cta-content span {
-    color: #f59e0b;
+    color: var(--primary);
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -716,8 +753,8 @@ body.dark-mode .why-card p {
 }
 
 .primary-btn {
-    background: linear-gradient(135deg,#f59e0b,#f97316);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
 
     box-shadow:
         0 0 25px rgba(245,158,11,0.35);
@@ -728,13 +765,13 @@ body.dark-mode .why-card p {
 }
 
 .secondary-btn {
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    background: rgba(255,255,255,0.05);
+    
+    color: var(--text-color);
+    background: var(--primary);
 }
 
 .secondary-btn:hover {
-    background: rgba(255,255,255,0.1);
+    
 }
 
 @keyframes fadeUpCTA {

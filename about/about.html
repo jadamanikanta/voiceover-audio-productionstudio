@@ -56,6 +56,11 @@
             From voiceovers to full production, every project is carefully crafted
             with studio precision, modern equipment and creative direction.
         </p>
+        <p>
+    With a commitment to excellence and attention to detail, we collaborate closely
+    with clients to transform ideas into polished audio productions that inspire,
+    inform, and elevate every listening experience.
+</p>
 
         <div class="story-features">
             <div>✔ Premium Recording</div>
@@ -64,7 +69,9 @@
             <div>✔ Studio Mastering</div>
         </div>
 
+        <div class="story-content-button">
         <a href="../services/services.html">Learn More</a>
+         </div>
     </div>
 
 </section>
@@ -86,7 +93,7 @@
         <div class="why-icon">
             <i data-lucide="mic"></i>
         </div>
-        <h3>Studio Quality</h3>
+        <h3>Studio Quality Editing</h3>
         <p>High-end recording clarity with premium mastering workflow.</p>
     </div>
 
@@ -94,15 +101,15 @@
         <div class="why-icon">
             <i data-lucide="zap"></i>
         </div>
-        <h3>Fast Delivery</h3>
-        <p>Quick turnaround with zero compromise on production quality.</p>
+        <h3>Fast Project Delivery</h3>
+        <p>Quick turnaround with zero compromise on production.</p>
     </div>
 
     <div class="why-card">
         <div class="why-icon">
             <i data-lucide="globe"></i>
         </div>
-        <h3>Global Reach</h3>
+        <h3>Global Client Support</h3>
         <p>Trusted by creators and brands across multiple industries.</p>
     </div>
 
@@ -110,7 +117,7 @@
         <div class="why-icon">
             <i data-lucide="headphones"></i>
         </div>
-        <h3>Creative Sound Design</h3>
+        <h3>Sound Design</h3>
         <p>Detailed voice tone matching and immersive sound treatment.</p>
     </div>
 
@@ -195,6 +202,16 @@
     .then(response => response.text())
     .then(data => {
         document.getElementById("navbar").innerHTML = data;
+
+         const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
 
         initializeNavbar();
     });

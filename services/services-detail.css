@@ -186,14 +186,15 @@
     padding: 50px;
     text-align: center;
     border-radius: 20px;
-    background: linear-gradient(135deg, orange, #ff7a00);
+    background: var(--primary);
     color: var(--text-color);
 
     box-shadow: 0 20px 50px rgba(255,120,0,0.35);
 }
 
 .booking-cta button {
-    background: white;
+    background: var(--bg-color);
+    color:var(--text-color);
     border: none;
     padding: 12px 28px;
     border-radius: 30px;

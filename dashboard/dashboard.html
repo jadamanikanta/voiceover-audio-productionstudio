@@ -24,7 +24,7 @@
     <div>
       <h1 onclick="goHome()" class="text-xl font-bold cursor-pointer mb-6 flex items-center gap-2">
   <i data-lucide="mic" class="w-5 h-5"></i>
-  VoxStudio
+  VOX Studio
 </h1>
 
       <nav class="flex flex-col gap-3 text-sm">
@@ -252,6 +252,16 @@
 
 <script>
 lucide.createIcons();
+
+ const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
 
 function toggleDark() {
   document.documentElement.classList.toggle("dark");

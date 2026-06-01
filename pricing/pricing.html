@@ -17,63 +17,84 @@
 
     <div id="navbar"></div>
 
-    <section class="hero">
-    <h1>Voiceover & Audio Pricing</h1>
-    <p>Studio-quality sound with transparent pricing</p>
-  </section>
+    <section class="pricing-hero">
+    <div class="pricing-content">
+        <span class="pricing-badge">Affordable Audio Solutions</span>
+
+        <h1>Professional Audio Services at Transparent Prices</h1>
+
+        <p>
+            Choose the perfect package for voiceovers, podcast editing,
+            audio mixing, dubbing, and mastering. Premium quality,
+            flexible pricing, and fast delivery.
+        </p>
+
+        <a href="#pricing" class="pricing-btn">
+            View Pricing Plans
+        </a>
+    </div>
+</section>
 
 
-  <section class="container">
-    <h2>Plans</h2>
+ <section class="pricing-section">
+
+    <div class="pricing-heading">
+        <span>Pricing Plans</span>
+        <h2>Flexible Packages For Every Project</h2>
+        <p>Choose the perfect production package based on your creative needs.</p>
+    </div>
 
     <div class="pricing-grid">
 
-      <div class="card">
-        <h3>Basic</h3>
-        <p class="price">₹999/min</p>
-        <ul>
-          <li>1 Voice Style</li>
-          <li>Basic Editing</li>
-          <li>48h Delivery</li>
-        </ul>
-        <button>Get Started</button>
-      </div>
+        <div class="pricing-card">
+            <h3>Starter</h3>
+            <h2>₹4,999</h2>
+            <p>Basic voice recording package</p>
 
-      <div class="card highlight">
-        <h3>Standard</h3>
-        <p class="price">₹1999/min</p>
-        <ul>
-          <li>2 Voice Styles</li>
-          <li>Music + Mastering</li>
-          <li>24h Delivery</li>
-        </ul>
-        <button>Get Started</button>
-      </div>
+            <ul>
+                <li>1 Voice Track</li>
+                <li>Noise Reduction</li>
+                <li>MP3 Delivery</li>
+                <li>24 Hour Delivery</li>
+            </ul>
 
-      <div class="card">
-        <h3>Premium</h3>
-        <p class="price">₹3999/min</p>
-        <ul>
-          <li>Unlimited Revisions</li>
-          <li>Sound Design</li>
-          <li>Same-day Delivery</li>
-        </ul>
-        <button>Get Started</button>
-      </div>
+            <a href="#">Choose Plan</a>
+        </div>
 
-      <div class="card">
-        <h3>Enterprise</h3>
-        <p class="price">Custom</p>
-        <ul>
-          <li>Bulk Projects</li>
-          <li>Dedicated Producer</li>
-          <li>Priority Support</li>
-        </ul>
-        <button>Contact</button>
-      </div>
+        <div class="pricing-card featured-plan">
+            <div class="badge">Most Popular</div>
+            <h3>Professional</h3>
+            <h2>₹9,999</h2>
+            <p>Advanced production package</p>
+
+            <ul>
+                <li>3 Voice Tracks</li>
+                <li>Full Mixing</li>
+                <li>WAV + MP3</li>
+                <li>Priority Support</li>
+            </ul>
+
+            <a href="#">Choose Plan</a>
+        </div>
+
+        <div class="pricing-card">
+            <h3>Enterprise</h3>
+            <h2>₹18,999</h2>
+            <p>Complete premium production</p>
+
+            <ul>
+                <li>Unlimited Tracks</li>
+                <li>Mastering Included</li>
+                <li>Studio Support</li>
+                <li>Fast Delivery</li>
+            </ul>
+
+            <a href="#">Choose Plan</a>
+        </div>
 
     </div>
-  </section>
+
+</section>
 
   
   <section class="container">
@@ -173,6 +194,16 @@
     .then(response => response.text())
     .then(data => {
         document.getElementById("navbar").innerHTML = data;
+
+       const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
 
         initializeNavbar();
     });

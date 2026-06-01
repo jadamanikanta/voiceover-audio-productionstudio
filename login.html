@@ -1,168 +1,438 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
-  <title>Login - VoxStudio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VoxStudio</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
 
-  <script>
-    tailwind.config = {
-      darkMode: 'class'
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .bar {
+            width: 4px;
+            height: 20px;
+            background: #888;
+            animation: equalize 1s infinite ease-in-out;
+        }
+
+        .bar:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .bar:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .bar:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .bar:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes equalize {
+
+            0%,
+            100% {
+                height: 10px;
+            }
+
+            50% {
+                height: 40px;
+            }
+        }
+
+        .pulse-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .logo-wrap:hover {
+            opacity: .8;
+        }
+
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            color: currentColor;
+        }
+
+        .logo-text {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text b {
+            color: inherit;
+        }
+
+        /* =========================
+   Mobile (360px - 480px)
+========================= */
+@media (max-width: 360px) {
+
+    body {
+        padding: 12px;
     }
-  </script>
 
-  <style>
-    
-    .bar {
-      width: 4px;
-      height: 20px;
-      background: #a855f7;
-      animation: equalize 1s infinite ease-in-out;
-    }
-    .bar:nth-child(2) { animation-delay: 0.2s; }
-    .bar:nth-child(3) { animation-delay: 0.4s; }
-    .bar:nth-child(4) { animation-delay: 0.6s; }
-    .bar:nth-child(5) { animation-delay: 0.8s; }
-
-    @keyframes equalize {
-      0%, 100% { height: 10px; }
-      50% { height: 40px; }
+    .logo-wrap {
+        margin-bottom: 20px;
     }
 
-    
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+
     .pulse-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 2px solid rgba(168,85,247,0.4);
-      animation: pulse 3s infinite;
+        display: none;
     }
 
-    @keyframes pulse {
-      0% { transform: scale(0.8); opacity: 1; }
-      100% { transform: scale(2); opacity: 0; }
+    .relative.z-10 {
+        max-width: 100%;
+        padding: 20px !important;
+        border-radius: 22px;
     }
-  </style>
+
+    h2 {
+        font-size: 22px !important;
+    }
+
+    form {
+        gap: 12px;
+    }
+
+    input,
+    button {
+        height: 44px !important;
+        font-size: 14px;
+    }
+
+    .absolute.top-4.right-4 {
+        top: 10px;
+        right: 10px;
+        gap: 8px;
+    }
+
+    .absolute.top-4.right-4 button:first-child {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .absolute.top-4.right-4 button:last-child {
+        width: 36px;
+        height: 36px;
+        padding: 0;
+    }
+
+    .absolute.top-6.left-6 {
+        top: 12px;
+        left: 12px;
+    }
+}
+
+
+/* =========================
+   Tablet (768px - 1023px)
+========================= */
+@media (min-width: 768px) {
+
+    .relative.z-10 {
+        max-width: 560px;
+        padding: 32px !important;
+    }
+
+    .logo-text {
+        font-size: 34px;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+
+    input,
+    button {
+        height: 48px !important;
+    }
+}
+
+
+/* =========================
+   Laptop/Desktop (1024px+)
+========================= */
+@media (min-width: 1024px) {
+
+    .relative.z-10 {
+        max-width: 500px;
+        padding: 15px 50px !important;
+        border-radius: 30px;
+    }
+
+    .logo-text {
+        font-size: 25px;
+    }
+
+    .logo-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    input,
+    button {
+        height: 40px !important;
+        font-size: 15px;
+    }
+
+    .absolute.top-4.right-4 {
+        top: 20px;
+        right: 20px;
+    }
+}
+    </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center relative overflow-hidden transition duration-500 bg-white text-black dark:bg-black dark:text-white">
+<body
+    class="min-h-screen flex items-center justify-center relative overflow-hidden transition duration-500 bg-white text-black dark:bg-black dark:text-white px-4">
 
+   
 
-<div class="pulse-ring w-72 h-72"></div>
-<div class="pulse-ring w-96 h-96"></div>
-
-
-<div class="absolute top-6 left-6 flex gap-1 opacity-70">
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-  <div class="bar"></div>
-</div>
-
-
-<div class="absolute top-4 right-4 flex gap-3 z-10">
-  <button onclick="toggleRTL()" class="px-3 py-1 border rounded-lg text-sm">
-    RTL
-  </button>
-  <button onclick="toggleDark()" class="p-2 border rounded-lg">
-    <i data-lucide="moon"></i>
-  </button>
-</div>
-
-
-<div class="relative z-10 w-full max-w-md p-8 rounded-2xl shadow-2xl backdrop-blur-lg 
-bg-white/80 dark:bg-white/10 border border-gray-200 dark:border-white/20">
-
-  
-  <h1 onclick="goHome()" 
-      class="text-3xl font-bold text-center cursor-pointer mb-6 tracking-wide 
-      hover:text-purple-500 transition">
-    🎙 VoxStudio
-  </h1>
-
-  
-  <form class="flex flex-col gap-4">
-
-    
-    <input type="email" placeholder="Email"
-      class="w-full p-3 rounded-lg border 
-      bg-white text-black border-gray-300 
-      dark:bg-black/40 dark:text-white dark:border-gray-600 
-      focus:outline-none focus:ring-2 focus:ring-purple-500 
-      focus:shadow-lg focus:shadow-purple-500/20 transition">
-
-    
-    <div class="relative">
-      <input id="password" type="password" placeholder="Password"
-        class="w-full p-3 rounded-lg border 
-        bg-white text-black border-gray-300 
-        dark:bg-black/40 dark:text-white dark:border-gray-600 
-        focus:ring-2 focus:ring-purple-500 
-        focus:shadow-lg focus:shadow-purple-500/20 transition">
-
-      <i onclick="togglePassword()" data-lucide="eye"
-        class="absolute right-3 top-3 cursor-pointer text-gray-500 dark:text-gray-300"></i>
+    <!-- Audio Bars -->
+    <div class="absolute top-6 left-6 flex gap-1 opacity-60">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
 
-    
-    <div class="flex justify-between text-sm">
-      <label class="flex items-center gap-2">
-        <input type="checkbox"> Remember Me
-      </label>
-      <a href="#" class="text-purple-500 hover:underline">Forgot Password?</a>
+    <!-- Controls -->
+    <div class="absolute top-4 right-4 flex gap-3 z-20">
+
+        <button onclick="toggleRTL()"
+            class="px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-white/10 transition">
+            RTL
+        </button>
+
+        <button onclick="toggleDark()"
+    class="p-2 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition">
+    <i id="themeIcon" data-lucide="moon"></i>
+</button>
+
     </div>
 
-    
-    <button class="w-full bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-lg transition shadow-lg shadow-purple-600/30">
-      Login
-    </button>
+    <!-- Login Card -->
+    <div
+class="login-card relative z-10 w-full max-w-md rounded-3xl p-8 shadow-2xl backdrop-blur-xl bg-white/90 dark:bg-white/5 border border-gray-200 dark:border-white/10">
+        <!-- Logo -->
+        <a href="../index.html" class="logo-wrap mb-8">
+            <i data-lucide="mic" class="logo-icon"></i>
+            <span class="logo-text">
+                VOX <b>Studio</b>
+            </span>
+        </a>
 
-    
-    <div class="text-center text-gray-500 dark:text-gray-400">or</div>
+        <!-- Heading -->
+        <h2 class="text-2xl font-bold text-center mb-2">
+            Welcome Back
+        </h2>
 
-    
-    <div class="flex flex-col gap-3">
-      <button class="w-full flex items-center justify-center gap-2 border p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition">
-        <i data-lucide="chrome"></i> Continue with Google
-      </button>
-      <button class="w-full flex items-center justify-center gap-2 border p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10 transition">
-        <i data-lucide="apple"></i> Continue with Apple
-      </button>
+        <p class="text-center text-gray-500 dark:text-gray-400 mb-6">
+            Sign in to your account
+        </p>
+
+        <!-- Form -->
+        <form class="space-y-4">
+
+            <!-- Email -->
+            <input type="email" placeholder="Email Address"
+                class="w-full h-12 px-4 rounded-lg border border-gray-300 dark:border-gray-600
+                bg-white dark:bg-black/40
+                text-black dark:text-white
+                focus:outline-none focus:ring-2 focus:ring-gray-500
+                focus:shadow-lg focus:shadow-gray-500/20 transition">
+
+            <!-- Password -->
+            <div class="relative">
+
+                <input id="password" type="password" placeholder="Password"
+                    class="w-full h-12 px-4 rounded-lg border border-gray-300 dark:border-gray-600
+                    bg-white dark:bg-black/40
+                    text-black dark:text-white
+                    focus:outline-none focus:ring-2 focus:ring-gray-500
+                    focus:shadow-lg focus:shadow-gray-500/20 transition">
+
+                <i onclick="togglePassword()"
+                    data-lucide="eye"
+                    class="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500">
+                </i>
+
+            </div>
+
+            <!-- Remember Me -->
+            <div class="flex justify-between items-center text-sm">
+
+                <label class="flex items-center gap-2">
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+
+                <a href="#" class="hover:underline">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit"
+                class="w-full h-12 rounded-lg font-medium transition
+                bg-black text-white hover:bg-gray-800
+                dark:bg-white dark:text-black dark:hover:bg-gray-200">
+
+                Login
+
+            </button>
+
+            <!-- Divider -->
+            <div class="relative my-5">
+                <div class="border-t border-gray-300 dark:border-gray-700"></div>
+
+                <span
+                    class="absolute left-1/2 -translate-x-1/2 -top-3 px-3 bg-white dark:bg-black text-sm text-gray-500">
+                    OR
+                </span>
+            </div>
+
+            <!-- Google -->
+            <button type="button"
+                class="w-full h-12 flex items-center justify-center gap-3 rounded-lg border border-gray-300 dark:border-gray-600
+                bg-white dark:bg-black/40
+                text-black dark:text-white
+                hover:bg-gray-50 dark:hover:bg-white/10 transition">
+
+                <svg width="18" height="18" viewBox="0 0 48 48">
+                    <path fill="#FFC107"
+                        d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.3 36 24 36c-6.6 0-12-5.4-12-12S17.4 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C33.9 6.1 29.2 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z" />
+                    <path fill="#FF3D00"
+                        d="M6.3 14.7l6.6 4.8C14.7 15.3 19 12 24 12c3 0 5.7 1.1 7.8 2.9l5.7-5.7C33.9 6.1 29.2 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
+                    <path fill="#4CAF50"
+                        d="M24 44c5.1 0 9.8-2 13.3-5.2l-6.1-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.3-11.3-8l-6.5 5C9.5 39.5 16.2 44 24 44z" />
+                    <path fill="#1976D2"
+                        d="M43.6 20.5H42V20H24v8h11.3c-1.1 3.2-3.4 5.7-6.2 7.4l6.1 5.2C39.7 36.5 44 30.8 44 24c0-1.3-.1-2.4-.4-3.5z" />
+                </svg>
+
+                 Google
+            </button>
+
+            <!-- Apple -->
+            <button type="button"
+                class="w-full h-12 flex items-center justify-center gap-3 rounded-lg border border-gray-300 dark:border-gray-600
+                bg-white dark:bg-black/40
+                text-black dark:text-white
+                hover:bg-gray-50 dark:hover:bg-white/10 transition">
+
+                <i data-lucide="apple"></i>
+
+                Apple
+
+            </button>
+
+            <!-- Signup -->
+            <p class="text-center text-sm pt-2">
+                Don't have an account?
+                <a href="../signup.html"
+                    class="font-semibold hover:underline">
+                    Sign Up
+                </a>
+            </p>
+
+        </form>
+
     </div>
 
-    
-    <p class="text-center text-sm">
-      Don’t have an account?
-      <a href="../signup.html" class="text-purple-500">Sign Up</a>
-    </p>
+    <script>
+        lucide.createIcons();
 
-  </form>
-</div>
+        function togglePassword() {
+            const input = document.getElementById("password");
+            input.type = input.type === "password" ? "text" : "password";
+        }
 
-<script>
-lucide.createIcons();
+        function toggleRTL() {
+            document.documentElement.dir =
+                document.documentElement.dir === "rtl" ? "ltr" : "rtl";
+        }
 
-function togglePassword() {
-  const input = document.getElementById("password");
-  input.type = input.type === "password" ? "text" : "password";
+        function toggleDark() {
+    document.documentElement.classList.toggle("dark");
+
+    const isDark = document.documentElement.classList.contains("dark");
+    const icon = document.getElementById("themeIcon");
+
+    icon.setAttribute(
+        "data-lucide",
+        isDark ? "sun" : "moon"
+    );
+
+    lucide.createIcons();
 }
-
-function toggleRTL() {
-  document.documentElement.dir =
-    document.documentElement.dir === "rtl" ? "ltr" : "rtl";
-}
-
-function toggleDark() {
-  document.documentElement.classList.toggle("dark");
-}
-
-function goHome() {
-  window.location.href = "../index.html";
-}
-</script>
+    </script>
 
 </body>
+
 </html>

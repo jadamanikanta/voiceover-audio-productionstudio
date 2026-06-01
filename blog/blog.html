@@ -41,7 +41,7 @@
             <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81" alt="">
             <div class="blog-content">
                 <span>Voice Tips</span>
-                <h3>5 Warm-Up Exercises for Voice Artists</h3>
+                <h3> 5 Warm-Up Exercises for Voice Artists</h3>
                 <p>Improve vocal clarity before recording sessions.</p>
                 <a href="../blog/voice-tips.html" class="read-btn">Read More</a>
             </div>
@@ -52,7 +52,7 @@
             <div class="blog-content">
                 <span>Audio Tech</span>
                 <h3>Best Studio Microphones</h3>
-                <p>Professional mic selection guide.</p>
+                <p>Professional tools to remove unwanted sound.</p>
                 <a href="../blog/audio-tech.html" class="read-btn">Read More</a>
             </div>
         </div>
@@ -62,7 +62,7 @@
             <div class="blog-content">
                 <span>Industry Trends</span>
                 <h3>AI in Voice Production</h3>
-                <p>Future of smart audio workflows.</p>
+                <p>Why voice talent demand is increasing globally.</p>
                 <a href="../blog/industry-trends.html" class="read-btn">Read More</a>
             </div>
         </div>
@@ -188,6 +188,16 @@
     .then(response => response.text())
     .then(data => {
         document.getElementById("navbar").innerHTML = data;
+
+         const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
 
         initializeNavbar();
     });

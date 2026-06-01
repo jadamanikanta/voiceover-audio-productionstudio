@@ -17,7 +17,7 @@
 }
 
 .home2-left span {
-    color: #f59e0b;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -51,8 +51,8 @@ body.dark-mode .home2-left p {
 
 .btn-primary {
     padding: 15px 36px;
-    background: linear-gradient(135deg,#f59e0b,#ffb84d);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -70,20 +70,16 @@ body.dark-mode .home2-left p {
 
 .btn-secondary {
     padding: 15px 36px;
-    border: 1px solid rgba(8, 8, 8, 0.08);
+    background: var(--primary);
     border-radius: 50px;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
     transition: 0.4s;
-    background: rgba(255,255,255,0.6);
     backdrop-filter: blur(10px);
 }
 
-body.dark-mode .btn-secondary {
-    background: rgba(20,20,20,0.6);
-    border: 1px solid rgba(255,255,255,0.08);
-}
+
 
 .btn-secondary:hover {
     transform: translateY(-4px);
@@ -216,16 +212,19 @@ body.dark-mode .trusted-heading p {
 }
 
 .brand-card {
-    padding: 35px 20px;
+    padding: 15px 20px;
     border-radius: 20px;
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(10px);
     font-size: 22px;
     font-weight: 700;
     color: var(--text-color);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     transition: 0.45s;
     animation: floatBrand 4s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body.dark-mode .brand-card {
@@ -234,10 +233,8 @@ body.dark-mode .brand-card {
 
 .brand-card:hover {
     transform: translateY(-10px);
-    box-shadow:
-        0 18px 35px rgba(245,158,11,0.15),
-        0 0 20px rgba(245,158,11,0.08);
-    color: #f59e0b;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    color: var(--primary);
 }
 
 .brand-card:nth-child(2) {
@@ -286,7 +283,7 @@ body.dark-mode .brand-card {
 }
 
 .voice-heading span {
-    color: #f59e0b;
+    color:var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -445,7 +442,7 @@ body.dark-mode .voice-card p {
 }
 
 .projects-heading span {
-    color: #f59e0b;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -568,7 +565,7 @@ body.dark-mode .projects-heading p {
 }
 
 .pricing-heading span {
-    color: #f59e0b;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -626,7 +623,7 @@ body.dark-mode .pricing-card {
 
 .pricing-card h2 {
     font-size: 48px;
-    color: #f59e0b;
+    color: var(--primary);
     margin-bottom: 15px;
 }
 
@@ -658,7 +655,7 @@ body.dark-mode .pricing-card ul li {
     display: inline-block;
     padding: 13px 28px;
     border-radius: 14px;
-    background: linear-gradient(135deg,#f59e0b,#f97316);
+    background: var(--primary);
     color: white;
     text-decoration: none;
     font-weight: 600;
@@ -678,7 +675,7 @@ body.dark-mode .pricing-card ul li {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: #f59e0b;
+    background: var(--primary);
     color: white;
     font-size: 12px;
     padding: 6px 12px;
@@ -745,7 +742,7 @@ body.dark-mode .pricing-card ul li {
 }
 
 .cta-content span {
-    color: #f59e0b;
+    color: var(--primary);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -787,15 +784,16 @@ body.dark-mode .pricing-card ul li {
 }
 
 .cta-buttons a:first-child {
-    background: linear-gradient(135deg,#f59e0b,#f97316);
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
     box-shadow:
         0 0 25px rgba(245,158,11,0.4);
 }
 
 .cta-buttons a:last-child {
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
+    
+    background: var(--primary);
+    color: var(--text-color);
 }
 
 .cta-buttons a:hover {

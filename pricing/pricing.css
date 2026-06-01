@@ -6,9 +6,9 @@
   --hover-bg: rgba(0,0,0,0.04);
 
  --accent: #f59e0b;
-  --accent-light: #f97316;
+  --accent-light:#f59e0b;
 
-  --card-bg: rgba(255,255,255,0.6);
+  --card-bg: rgba(27, 26, 26, 0.6);
   --glass-blur: blur(12px);
 }
 
@@ -42,110 +42,229 @@ h1, h2 {
 }
 
 
-.hero {
-  text-align: center;
-  padding: 100px 20px 60px;
+.pricing-hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.hero h1 {
-  font-size: 38px;
-  font-weight: 700;
-  background: linear-gradient(to right, var(--accent), var(--accent-light));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.pricing-content {
+    max-width: 800px;
+    color: #fff;
 }
 
+.pricing-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.pricing-content h1 {
+    font-size: 52px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.pricing-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: rgba(255,255,255,0.85);
+}
+
+.pricing-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 12px;
+    background: #f59e0b;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.pricing-btn:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .pricing-hero {
+        min-height: 60vh;
+        padding: 100px 20px;
+    }
+
+    .pricing-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .pricing-content p {
+        font-size: 1rem;
+    }
+}
+
+
+
+.pricing-section {
+    padding: 110px 8%;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(245,158,11,0.05), transparent 40%);
+}
+
+.pricing-heading span {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.pricing-heading h2 {
+    font-size: 42px;
+    margin: 18px 0;
+    color: var(--text-color);
+}
+
+.pricing-heading p {
+    color: #666;
+    max-width: 700px;
+    margin: auto;
+}
+
+body.dark-mode .pricing-heading p {
+    color: #bbb;
+}
 
 .pricing-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    margin-top: 65px;
 }
 
-@media (min-width: 640px) {
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.pricing-card {
+    position: relative;
+    padding: 45px 30px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    transition: 0.45s;
+    animation: priceFade 1s ease forwards;
 }
 
-@media (min-width: 1024px) {
-  .pricing-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+body.dark-mode .pricing-card {
+    background: rgba(20,20,20,0.85);
 }
 
-
-.card {
-  background: var(--card-bg);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-color);
-  padding: 25px;
-  border-radius: 18px;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.pricing-card:hover {
+    transform: translateY(-12px);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+.pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-color);
 }
 
-
-.highlight {
-  border: 2px solid var(--accent);
-  transform: scale(1.03);
+.pricing-card h2 {
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 15px;
 }
 
-.highlight::after {
-  content: "Most Popular";
-  position: absolute;
-  top: 12px;
-  right: -35px;
-  background: var(--accent);
-  color: #fff;
-  padding: 5px 40px;
-  transform: rotate(45deg);
-  font-size: 11px;
+.pricing-card p {
+    color: #666;
+    margin-bottom: 25px;
 }
 
-
-.price {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 12px 0;
-  color: var(--accent);
+body.dark-mode .pricing-card p {
+    color: #bbb;
 }
 
-
-.card ul {
-  list-style: none;
-  margin: 15px 0;
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
 }
 
-.card ul li {
-  margin: 8px 0;
-  opacity: 0.85;
+.pricing-card ul li {
+    padding: 10px 0;
+    color: #666;
 }
 
-
-button {
-  margin-top: 10px;
-  padding: 12px 20px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: white;
-  transition: all 0.3s;
+body.dark-mode .pricing-card ul li {
+    color: #bbb;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+.pricing-card a {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 14px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.35s;
+}
+
+.pricing-card a:hover {
+    transform: scale(1.05);
+}
+
+.featured-plan {
+    transform: scale(1.05);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+@keyframes priceFade {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:992px){
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
@@ -343,8 +462,8 @@ tr:nth-child(even) td {
   border: none;
   font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: white;
+  background: var(--primary);
+  color: var(--text-color);
   transition: all 0.3s;
   animation: pulseGlow 2.5s infinite;
 }
@@ -357,16 +476,13 @@ tr:nth-child(even) td {
 .secondary-btn {
   padding: 14px 28px;
   border-radius: 12px;
-  border: 1px solid var(--border-color);
-  background: transparent;
+  background: var(--primary);
   color: var(--text-color);
   cursor: pointer;
   transition: 0.3s;
 }
 
-.secondary-btn:hover {
-  background: var(--hover-bg);
-}
+
 
 
 .cta-trust {

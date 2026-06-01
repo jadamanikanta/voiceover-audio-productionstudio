@@ -233,7 +233,7 @@
             <i data-lucide="headphones"></i>
         </div>
         <h3>Expert Editing</h3>
-        <p>Noise cleanup, mastering and final polish for premium results.</p>
+        <p>Noise cleanup, mastering and final polish for premium results for the editing.</p>
     </div>
 
     <div class="why-card">
@@ -289,6 +289,15 @@
     .then(response => response.text())
     .then(data => {
         document.getElementById("navbar").innerHTML = data;
+ const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
 
         initializeNavbar();
     });

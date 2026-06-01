@@ -17,7 +17,7 @@
 
 .hero-tag {
     display: inline-block;
-    color: #f59e0b;
+    color:var(--primary);
     padding: 8px 16px;
     border: 1px solid var(--border-color);
     border-radius: 30px;
@@ -60,17 +60,17 @@ body.dark-mode .hero-left p {
 }
 
 .btn-primary {
-    background: black;
-    color: white;
+    background: var(--primary);
+    color: var(--text-color);
 }
 
-body.dark-mode .btn-primary {
-    background: white;
-    color: black;
+body.dark-mode .btn-primary.btn-secondary {
+    
+    color: var(--text-color);
 }
 
 .btn-secondary {
-    border: 1px solid var(--border-color);
+    background: var(--primary);
     color: var(--text-color);
 }
 
@@ -259,10 +259,11 @@ body.dark-mode .floating-card p {
     border-radius: 24px;
     transition: all 0.45s ease;
     background: var(--bg-color);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(8px);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+   text-align: center;
 }
 
 .service-card::before {
@@ -283,7 +284,7 @@ body.dark-mode .service-card::before {
 .service-card:hover {
     transform: translateY(-10px);
     border-color: rgba(0,0,0,0.08);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
 }
 
 .service-card:hover::before {
@@ -291,20 +292,22 @@ body.dark-mode .service-card::before {
 }
 
 .service-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    border-radius: 50%;
+    background: var(--primary);
 }
 
-.service-icon svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--text-color); 
+.service-icon i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card:hover .service-icon {
@@ -501,6 +504,21 @@ body.dark-mode .why-card {
     margin-bottom: 60px;
     
 }
+.audio-demo-heading h2 {
+    font-size: 46px;
+    
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+}
+
+.audio-demo-heading p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #777;;
+    
+    margin: 0 auto;
+}
 
 .audio-demo-grid {
     display: grid;
@@ -645,6 +663,7 @@ body.dark-mode .demo-card:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    align-items: stretch;
 }
 
 .why-card {
@@ -652,9 +671,18 @@ body.dark-mode .demo-card:hover {
     border-radius: 22px;
     padding: 35px 28px;
     text-align: center;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-    transition: all 0.5s ease;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+                rgba(17, 17, 26, 0.1) 0px 8px 24px,
+                rgba(17, 17, 26, 0.1) 0px 16px 56px;
     backdrop-filter: blur(12px);
+
+    /* NEW */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    transition: all 0.5s ease;
     opacity: 0;
     transform: translateY(60px);
     animation: cardFadeUp 1s ease forwards;
@@ -687,16 +715,17 @@ body.dark-mode .why-card {
 }
 
 .why-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
-    margin-left: 70px;
-    animation: floatIcon 3s ease-in-out infinite;
+
+    /* Center properly */
+    margin: 0 auto 20px;
+    animation: floatIcon 4s ease-in-out infinite;
 }
 
 .why-icon svg {
@@ -710,13 +739,22 @@ body.dark-mode .why-card {
     font-size: 22px;
     margin-bottom: 15px;
     color: var(--text-color);
-    
+
+    /* Same title area */
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .why-card p {
     color: #777;
     line-height: 1.7;
     font-size: 15px;
+
+    /* Push content evenly */
+    flex-grow: 1;
 }
 
 body.dark-mode .why-card p {
@@ -743,13 +781,13 @@ body.dark-mode .why-card p {
 
 @keyframes floatIcon {
     0% {
-        transform: translateY(0px);
+        transform: translateY(0px) rotate(0deg);
     }
     50% {
-        transform: translateY(-8px);
+        transform: translateY(-12px) rotate(3deg);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0px) rotate(0deg);
     }
 }
 
@@ -1171,8 +1209,8 @@ body.dark-mode .faq-answer p {
     display: inline-block;
     padding: 15px 36px;
     border-radius: 50px;
-    background: #f59e0b;
-    color: white;
+    background:var(--primary);
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
     transition: 0.4s;

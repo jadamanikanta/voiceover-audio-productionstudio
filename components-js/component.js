@@ -1,11 +1,45 @@
 fetch("components/navbar.html")
     .then(response => response.text())
     .then(data => {
+
+
+
         document.getElementById("navbar").innerHTML = data;
 
+         const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+
+    links.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+
+    toggle.addEventListener("click", (e) => {
+
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            toggle.closest(".dropdown").classList.toggle("active");
+        }
+
+    });
+
+});
+
+
+
+
+
+
         initializeNavbar();
+
+         
         
-       
 
     });
 
@@ -24,26 +58,29 @@ fetch("home-1/home.html")
 
         lucide.createIcons();
 
-        const counters = document.querySelectorAll(".counter");
+       
+        
+const counters = document.querySelectorAll(".counter");
 
-        counters.forEach(counter => {
-            const target = +counter.getAttribute("data-target");
-            let count = 0;
+counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    const suffix = counter.getAttribute("data-suffix") || "";
+    let count = 0;
 
-            const updateCounter = () => {
-                const increment = target / 200;
+    const updateCounter = () => {
+        const increment = target / 100;
 
-                if (count < target) {
-                    count += increment;
-                    counter.innerText = Math.ceil(count);
-                    setTimeout(updateCounter, 40);
-                } else {
-                    counter.innerText = target;
-                }
-            };
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count) + suffix;
+            requestAnimationFrame(updateCounter);
+        } else {
+            counter.innerText = target + suffix;
+        }
+    };
 
-            updateCounter();
-        });
+    updateCounter();
+});
 
         const playButtons = document.querySelectorAll(".play-btn");
 
