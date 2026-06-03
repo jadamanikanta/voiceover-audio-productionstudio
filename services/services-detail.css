@@ -2,7 +2,7 @@
 
 
 .voiceover-hero {
-    min-height: 80vh;
+    min-height: 85vh;
     background:
     linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
     url('../global-images/voiceover-bg.jpg') center/cover;
@@ -15,9 +15,24 @@
 .hero-content {
     color: white;
 }
+.hero-content span {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
 .hero-content h1 {
-    font-size: 58px;
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+.hero-content p{
+    font-size: 16px;
+    line-height: 1.7;
+    margin-top: 10px;
+    
 }
 
 .voiceover-main {

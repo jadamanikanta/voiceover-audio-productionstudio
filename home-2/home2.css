@@ -21,20 +21,20 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .home2-left h1 {
-    font-size: 60px;
-    line-height: 1.15;
+    font-size: 50px;
+    line-height: 1.1;
     margin: 22px 0;
     color: var(--text-color);
     max-width: 620px;
 }
 
 .home2-left p {
-    font-size: 18px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.7;
     color: #666;
     max-width: 560px;
 }

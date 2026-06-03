@@ -215,6 +215,7 @@ body.dark-mode .navbar {
 /* Theme Icon */
 #theme-toggle {
     font-size: 18px;
+    border-radius:100px;
 }
 
 /* Hover Effect */

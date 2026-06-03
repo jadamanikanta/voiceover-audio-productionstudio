@@ -1,306 +1,973 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="dark">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
-  <title>Admin Dashboard - VoxStudio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOX Studio - Admin Dashboard</title>
+    
+    <meta name="description" content="Premium Voiceover & Audio Production Studio Admin Dashboard. Track customers, orders, revenue, and system analytics.">
+    <meta name="keywords" content="VOX Studio, Admin Dashboard, Voiceover, Audio Production, Analytics, Studio Management">
+    <meta name="author" content="VOX Studio">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <script>
-    tailwind.config = { darkMode: 'class' }
-  </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
 </head>
+<body>
+    <div class="dashboard-wrapper">
+        
+        <header class="dashboard-header" id="dashboard-header">
+            <h1 onclick="goHome()" class="text-[14px] font-bold cursor-pointer mb-6 flex items-center gap-2">
+           
+                  WELCOME TO ADMIN DASHBOARD
+            </h1>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
+            </button>
+            
+            <div class="header-right">
+                <button class="header-action-btn" id="rtl-toggle" title="Toggle Layout Direction (LTR/RTL)">
+                    <span class="btn-text">LTR</span>
+                </button>
+                
+                <button class="header-action-btn" id="theme-toggle" title="Toggle Light/Dark Theme">
+                    <svg id="theme-icon-sun" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                    <svg id="theme-icon-moon" class="theme-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                    </svg>
+                </button>
+                
+                <div class="header-dropdown-wrapper notification-wrapper">
+                    <button class="header-action-btn relative" id="notification-btn" title="Notifications">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                        </svg>
+                        <span class="notification-badge" id="notification-badge-count">3</span>
+                    </button>
+                    <div class="dropdown-panel notification-dropdown" id="notification-dropdown">
+                        <div class="dropdown-header">
+                            <h3>Notifications</h3>
+                            <button class="mark-all-read-btn" id="mark-all-read">Mark all as read</button>
+                        </div>
+                        <ul class="dropdown-list" id="notification-list">
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="header-dropdown-wrapper profile-wrapper">
+                    <button class="profile-trigger-btn" id="profile-btn" title="Admin Profile">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Admin Avatar" class="profile-avatar" id="avatar-img">
+                        <span class="profile-name-span">Sarah Connor</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-panel profile-dropdown" id="profile-dropdown">
+                        <div class="profile-dropdown-info">
+                            <span class="info-name">Sarah Connor</span>
+                            <span class="info-role">Chief Audio Engineer</span>
+                        </div>
+                        <ul class="dropdown-list">
+                            <li>
+                                <a href="#settings" class="profile-dropdown-link" data-target="settings" data-subtab="profile">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="panel-icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#settings" class="profile-dropdown-link" data-target="settings" data-subtab="account">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="panel-icon"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                    Account Settings
+                                </a>
+                            </li>
+                            <li class="border-top">
+                                <button class="profile-dropdown-btn logout-btn" id="profile-logout-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="panel-icon"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                                    Logout
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<body class="bg-gray-100 dark:bg-black text-black dark:text-white transition">
-
-<div class="flex h-screen overflow-hidden">
-
-  
-  <aside class="w-64 bg-white dark:bg-white/10 border-r dark:border-white/20 p-5 flex flex-col justify-between">
-
-    <div>
-      <h1 onclick="goHome()" class="text-xl font-bold cursor-pointer mb-6 flex items-center gap-2">
-  <i data-lucide="mic" class="w-5 h-5"></i>
-  VOX Studio
+        <aside class="dashboard-sidebar" id="dashboard-sidebar">
+            <div class="sidebar-brand-area">
+                <h1 onclick="goHome()" class="text-[24px] font-bold cursor-pointer mb-6 flex items-center gap-2">
+                   <i data-lucide="mic" class="logo-icon"></i>
+                    VOX Studio
 </h1>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="sidebar-mobile-actions">
+                    <div class="mobile-profile-info">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Admin Avatar" class="profile-avatar">
+                        <div class="mobile-profile-text">
+                            <strong class="mobile-profile-name">Sarah Connor</strong>
+                            <span class="mobile-profile-role">Chief Audio Engineer</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-toggles-row">
+                        <button class="mobile-action-btn" id="theme-toggle-mobile" title="Toggle Light/Dark Theme">
+                            <svg id="theme-icon-sun-mobile" class="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px;">
+                                <circle cx="12" cy="12" r="4"/>
+                                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                            </svg>
+                            <svg id="theme-icon-moon-mobile" class="theme-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px;">
+                                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                            </svg>
+                            <span class="btn-mobile-label">Theme</span>
+                        </button>
+                        
+                        <button class="mobile-action-btn" id="rtl-toggle-mobile" title="Toggle Layout Direction (LTR/RTL)">
+                            <span class="btn-text" id="rtl-toggle-text-mobile" style="font-size:0.75rem; font-weight:700;">LTR</span>
+                        </button>
 
-      <nav class="flex flex-col gap-3 text-sm">
+                        <button class="mobile-action-btn relative" id="notification-btn-mobile" title="Notifications">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px; height:16px;">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                            </svg>
+                            <span class="notification-badge" id="notification-badge-count-mobile">3</span>
+                            <span class="btn-mobile-label">Alerts</span>
+                        </button>
+                    </div>
 
-        <a class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-white/10">
-          <i data-lucide="layout-dashboard"></i> Dashboard
-        </a>
+                    <div class="mobile-notifications-panel hidden" id="mobile-notifications-panel">
+                        <div class="mobile-notif-header">
+                            <h4>Notifications</h4>
+                            <button id="mark-all-read-mobile" class="mark-all-read-btn" style="background:none; border:none; padding:0;">Clear</button>
+                        </div>
+                        <ul class="dropdown-list" id="notification-list-mobile" style="max-height:200px;">
+                        </ul>
+                    </div>
+                </div>
 
-        <a class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-white/10">
-          <i data-lucide="mic"></i> Projects
-        </a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-target="overview" id="nav-overview">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                            <span class="nav-label">Overview</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-target="customers" id="nav-customers">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <span class="nav-label">Customers</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-target="revenue" id="nav-revenue">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <span class="nav-label">Revenue</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-target="analytics" id="nav-analytics">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                            <span class="nav-label">Analytics</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-target="jobs" id="nav-jobs">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            <span class="nav-label">Audio Jobs</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-target="talents" id="nav-talents">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                            <span class="nav-label">Voice Talents</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-target="settings" id="nav-settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                            <span class="nav-label">Settings</span>
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="sidebar-bottom">
+                    <button class="nav-link logout-btn" id="sidebar-logout-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                        <span class="nav-label">Logout</span>
+                    </button>
+                </div>
+            </nav>
+        </aside>
 
-        <a class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-white/10">
-          <i data-lucide="users"></i> Clients
-        </a>
+        <main class="dashboard-main" id="dashboard-main">
+            
+            <section id="section-overview" class="dashboard-section active">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Overview</h1>
+                        <p class="section-subtitle">Real-time studio health, pipeline throughput, and revenue summary.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="primary-btn btn-icon-text" id="btn-quick-new-job">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                            New Audio Job
+                        </button>
+                    </div>
+                </div>
 
-        <a class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-white/10">
-          <i data-lucide="bar-chart-3"></i> Analytics
-        </a>
+                <div class="kpi-grid">
+                    <div class="kpi-card" id="kpi-customers">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Total Customers</span>
+                                <h2 class="kpi-value" id="val-total-customers">1,248</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +12.4% <span class="trend-period">vs last month</span>
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="kpi-revenue">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Total Revenue</span>
+                                <h2 class="kpi-value" id="val-total-revenue">$54,230</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +8.2% <span class="trend-period">vs last month</span>
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="kpi-orders">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Total Orders</span>
+                                <h2 class="kpi-value" id="val-total-orders">312</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +14.7% <span class="trend-period">vs last month</span>
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card" id="kpi-growth">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Growth Rate</span>
+                                <h2 class="kpi-value" id="val-growth-rate">22.4%</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +2.1% <span class="trend-period">month-over-month</span>
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <a class="flex items-center gap-2 p-2 rounded hover:bg-gray-100 dark:hover:bg-white/10">
-          <i data-lucide="settings"></i> Settings
-        </a>
+                <div class="charts-grid-overview">
+                    <div class="chart-card span-two-cols">
+                        <div class="chart-header">
+                            <h3>Revenue & Profit Performance</h3>
+                            <span class="chart-subtitle">Monthly breakdown for active calendar year</span>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="overview-line-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Project Distribution</h3>
+                            <span class="chart-subtitle">By audio production tier</span>
+                        </div>
+                        <div class="chart-body doughnut-body">
+                            <canvas id="overview-doughnut-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card span-three-cols">
+                        <div class="chart-header">
+                            <h3>Monthly Audio File Deliveries</h3>
+                            <span class="chart-subtitle">Volume of master outputs generated (GB vs Hours)</span>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="overview-bar-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
 
-      </nav>
+                <div class="content-split-grid">
+                    <div class="table-card">
+                        <div class="card-header-with-actions">
+                            <div class="header-text">
+                                <h3>Recent Audio Projects</h3>
+                                <span class="card-subtitle">Latest voiceover talent bookings and sound master orders</span>
+                            </div>
+                            <button class="secondary-btn btn-small" id="view-all-customers-btn">View All</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="recent-projects-table">
+                                <thead>
+                                    <tr>
+                                        <th>Project / ID</th>
+                                        <th>Client</th>
+                                        <th>Service Category</th>
+                                        <th>Talent Booking</th>
+                                        <th>Status</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="widget-card">
+                        <div class="widget-header">
+                            <h3>Studio Notifications Feed</h3>
+                            <span class="widget-subtitle">Live system triggers and studio logs</span>
+                        </div>
+                        <div class="widget-body" id="latest-notifications-widget-list">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-customers" class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Customers</h1>
+                        <p class="section-subtitle">Manage studio clients, active agency relations, and voice talent registry.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="primary-btn btn-icon-text" id="btn-add-customer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="16" x2="22" y1="11" y2="11"/></svg>
+                            Add New Client
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-mini-grid">
+                    <div class="mini-card">
+                        <span class="mini-label">Active Clients</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-active-clients">840</h3>
+                            <span class="mini-change text-up">87% rate</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">New Registrations</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-new-clients">+42</h3>
+                            <span class="mini-change text-up">This week</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Voice Talents Engaged</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-talents-engaged">126</h3>
+                            <span class="mini-change">Global roster</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Avg. Client Spend</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-avg-spend">$845</h3>
+                            <span class="mini-change text-up">+4.3% MoM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="table-toolbar">
+                        <div class="search-box-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+                            <input type="text" class="search-input" id="customer-search" placeholder="Search clients by name, company, email...">
+                        </div>
+                        <div class="toolbar-actions">
+                            <select class="custom-select-ui" id="customer-status-filter">
+                                <option value="all">All Statuses</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table" id="customers-list-table">
+                            <thead>
+                                <tr>
+                                    <th>Client Profile</th>
+                                    <th>Company / Agency</th>
+                                    <th>Total Spending</th>
+                                    <th>Completed Tracks</th>
+                                    <th>Status</th>
+                                    <th>Registered Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-pagination">
+                        <span class="pagination-info">Showing <strong id="pagination-start">1</strong> to <strong id="pagination-end">5</strong> of <strong id="pagination-total">12</strong> clients</span>
+                        <div class="pagination-buttons">
+                            <button class="pagination-btn" id="pagination-prev" disabled>Previous</button>
+                            <button class="pagination-btn" id="pagination-next">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-revenue" class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Revenue</h1>
+                        <p class="section-subtitle">Financial statement metrics, client billing invoices, and studio payouts.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="secondary-btn btn-icon-text" id="btn-export-financials">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                            Export Financial PDF
+                        </button>
+                    </div>
+                </div>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card bg-orange-tint">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Monthly Recurring Revenue</span>
+                                <h2 class="kpi-value" id="val-rev-mrr">$28,450</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +5.4% from last month
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper bg-orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">One-Time Audio Masters</span>
+                                <h2 class="kpi-value" id="val-rev-onetime">$18,300</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +12.1% from last month
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Voice Talent Payouts</span>
+                                <h2 class="kpi-value" id="val-rev-payouts">$7,480</h2>
+                                <span class="kpi-trend trend-down">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+                                    -3.2% payout cost ratio
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-inner">
+                            <div class="kpi-info">
+                                <span class="kpi-label">Average Order Basket</span>
+                                <h2 class="kpi-value" id="val-rev-avgbasket">$173.80</h2>
+                                <span class="kpi-trend trend-up">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="trend-icon"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                    +1.8% from last month
+                                </span>
+                            </div>
+                            <div class="kpi-icon-wrapper color-orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="kpi-icon"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Detailed Revenue Inflows vs Goals</h3>
+                        <span class="chart-subtitle">Quarterly cumulative metrics targeting $200k current year projections</span>
+                    </div>
+                    <div class="chart-body large-chart-container">
+                        <canvas id="revenue-monthly-chart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-analytics" class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Analytics</h1>
+                        <p class="section-subtitle">Voiceover processing performance, rendering workloads, and studio load.</p>
+                    </div>
+                    <div class="section-actions">
+                        <div class="button-group">
+                            <button class="secondary-btn active" id="analytics-filter-weekly">Weekly</button>
+                            <button class="secondary-btn" id="analytics-filter-monthly">Monthly</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="charts-grid-analytics">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Audio File Format Popularity</h3>
+                            <span class="chart-subtitle">Breakdown of export format types requested by clients</span>
+                        </div>
+                        <div class="chart-body small-doughnut-body">
+                            <canvas id="analytics-pie-format"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card span-two-cols">
+                        <div class="chart-header">
+                            <h3>Voiceover Job Turnaround Speed</h3>
+                            <span class="chart-subtitle">Average hours from script intake to audio master delivery</span>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="analytics-bar-turnaround"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card span-three-cols">
+                        <div class="chart-header">
+                            <h3>Studio Audio Rendering Server Workload</h3>
+                            <span class="chart-subtitle">Real-time processing queue length (jobs/minute peak averages)</span>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="analytics-line-workload"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-jobs" class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Audio Jobs</h1>
+                        <p class="section-subtitle">Monitor sound recording pipeline, review mixing queues, and track script execution states.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="primary-btn btn-icon-text" id="btn-add-job-direct">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+                            New Audio Job
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-mini-grid">
+                    <div class="mini-card">
+                        <span class="mini-label">Active Queue</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-jobs-active">5</h3>
+                            <span class="mini-change text-up">In progress</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Processing Load</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-jobs-processing">2</h3>
+                            <span class="mini-change text-up">Rendering</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Completed Today</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-jobs-completed">12</h3>
+                            <span class="mini-change">Delivered</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Avg. Rendering Time</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-jobs-avgtime">4.2m</h3>
+                            <span class="mini-change text-up">-12% faster</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div class="table-toolbar">
+                        <div class="search-box-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+                            <input type="text" class="search-input" id="jobs-search" placeholder="Search jobs by ID, client, talent...">
+                        </div>
+                        <div class="toolbar-actions">
+                            <select class="custom-select-ui" id="jobs-status-filter">
+                                <option value="all">All States</option>
+                                <option value="Delivered">Delivered</option>
+                                <option value="Processing Audio">Processing Audio</option>
+                                <option value="Pending Processing">Pending Processing</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table" id="jobs-list-table">
+                            <thead>
+                                <tr>
+                                    <th>Job ID</th>
+                                    <th>Client</th>
+                                    <th>Service Category</th>
+                                    <th>Talent Booking</th>
+                                    <th>Status</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-talents" class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Voice Talents</h1>
+                        <p class="section-subtitle">Roster of voice actors, booking statistics, language tags, and demo reel playback.</p>
+                    </div>
+                    <div class="section-actions">
+                        <button class="primary-btn btn-icon-text" id="btn-add-talent">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="16" x2="22" y1="11" y2="11"/></svg>
+                            Add Voice Talent
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-mini-grid">
+                    <div class="mini-card">
+                        <span class="mini-label">Total Roster</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-talents-count">126</h3>
+                            <span class="mini-change text-up">Global artists</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">On-Air Now</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-talents-onair">14</h3>
+                            <span class="mini-change text-up">Active sessions</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Accents/Languages</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-talents-languages">32</h3>
+                            <span class="mini-change">Supported</span>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-label">Avg. Roster Rating</span>
+                        <div class="mini-value-container">
+                            <h3 class="mini-value" id="val-talents-rating">4.85</h3>
+                            <span class="mini-change text-up">★ Out of 5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-card" style="margin-bottom: 24px;">
+                    <div class="table-toolbar">
+                        <div class="search-box-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+                            <input type="text" class="search-input" id="talents-search" placeholder="Search voice artists by name, language, accent...">
+                        </div>
+                        <div class="toolbar-actions">
+                            <select class="custom-select-ui" id="talents-language-filter">
+                                <option value="all">All Languages</option>
+                                <option value="English">English</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="German">German</option>
+                                <option value="Japanese">Japanese</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="talents-grid" id="talents-cards-container">
+                </div>
+            </section>
+
+            <section id="section-settings" class="dashboard-section">
+                <div class="section-header">
+                    <div class="header-title-area">
+                        <h1 class="section-title">Settings</h1>
+                        <p class="section-subtitle">Configure application settings, theme attributes, and account credentials.</p>
+                    </div>
+                </div>
+
+                <div class="settings-layout-wrapper">
+                    <aside class="settings-sub-sidebar">
+                        <ul class="sub-nav-menu">
+                            <li><button class="sub-nav-link active" data-subtab="profile" id="subnav-profile">Profile Settings</button></li>
+                            <li><button class="sub-nav-link" data-subtab="theme" id="subnav-theme">Theme Settings</button></li>
+                            <li><button class="sub-nav-link" data-subtab="account" id="subnav-account">Account & Privacy</button></li>
+                        </ul>
+                    </aside>
+
+                    <div class="settings-content-card">
+                        
+                        <div class="settings-subtab-pane active" id="subtab-profile">
+                            <h3 class="pane-title">Studio Profile Settings</h3>
+                            <p class="pane-subtitle">Update your personal identification, bio, avatar image, and title.</p>
+                            
+                            <form class="settings-form" id="form-profile-settings">
+                                <div class="avatar-upload-container">
+                                    <div class="avatar-preview-box">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80" alt="Avatar Target Preview" id="profile-avatar-preview">
+                                    </div>
+                                    <div class="avatar-upload-info">
+                                        <label class="secondary-btn btn-small relative cursor-pointer">
+                                            Change Avatar Image
+                                            <input type="file" class="hidden-file-input" id="avatar-file-input" accept="image/*">
+                                        </label>
+                                        <span class="upload-hint-span">Allowed formats: PNG, JPG, GIF. Max file size: 2MB.</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="prof-fullname">Full Name</label>
+                                        <input type="text" id="prof-fullname" class="form-control-input" value="Sarah Connor">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="prof-title">Studio Job Title</label>
+                                        <input type="text" id="prof-title" class="form-control-input" value="Chief Audio Engineer">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="prof-email">Email Address</label>
+                                        <input type="email" id="prof-email" class="form-control-input" value="sarah.c@voxstudio.com" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="prof-phone">Contact Number</label>
+                                        <input type="text" id="prof-phone" class="form-control-input" value="+1 (555) 382-9201">
+                                    </div>
+                                    <div class="form-group span-two-cols">
+                                        <label for="prof-bio">Bio / Professional Summary</label>
+                                        <textarea id="prof-bio" class="form-control-input textarea-control" rows="4">Oversees audio production, sound effects mixing, and voiceover processing at VOX Studio. 12+ years of sound engineering experience.</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-actions-bar">
+                                    <button type="submit" class="primary-btn">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="settings-subtab-pane" id="subtab-theme">
+                            <h3 class="pane-title">Theme Customization</h3>
+                            <p class="pane-subtitle">Customize the visual interface options of the VOX Studio Admin dashboard.</p>
+
+                            <div class="theme-settings-list">
+                                <div class="theme-setting-row">
+                                    <div class="setting-row-info">
+                                        <strong class="setting-title">Interface Mode</strong>
+                                        <span class="setting-desc">Switch between light mode and dark mode preferences.</span>
+                                    </div>
+                                    <div class="theme-choices-toggle-group">
+                                        <button class="choice-btn" id="theme-choice-light">Light Mode</button>
+                                        <button class="choice-btn active" id="theme-choice-dark">Dark Mode</button>
+                                    </div>
+                                </div>
+
+                                <div class="theme-setting-row">
+                                    <div class="setting-row-info">
+                                        <strong class="setting-title">Primary UI Accent Color</strong>
+                                        <span class="setting-desc">Select the highlight accent color. (Orange is Default theme highlight).</span>
+                                    </div>
+                                    <div class="accent-color-palette">
+                                        <button class="color-dot active" style="background-color: #F59E0B;" data-color="orange" title="Orange"></button>
+                                        <button class="color-dot" style="background-color: #EF4444;" data-color="red" title="Red" disabled></button>
+                                        <button class="color-dot" style="background-color: #3B82F6;" data-color="blue" title="Blue" disabled></button>
+                                        <button class="color-dot" style="background-color: #10B981;" data-color="green" title="Green" disabled></button>
+                                    </div>
+                                </div>
+
+                                <div class="theme-setting-row">
+                                    <div class="setting-row-info">
+                                        <strong class="setting-title">Sidebar Layout Position</strong>
+                                        <span class="setting-desc">Place sidebar on Left (LTR default) or Right (RTL mode support).</span>
+                                    </div>
+                                    <div class="theme-choices-toggle-group">
+                                        <button class="choice-btn active" id="dir-choice-ltr">Left Side (LTR)</button>
+                                        <button class="choice-btn" id="dir-choice-rtl">Right Side (RTL)</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-subtab-pane" id="subtab-account">
+                            <h3 class="pane-title">Account Credentials & Privacy</h3>
+                            <p class="pane-subtitle">Manage secure access credentials, administrative notifications, and security policies.</p>
+
+                            <form class="settings-form" id="form-account-settings">
+                                <div class="form-grid">
+                                    <div class="form-group span-two-cols">
+                                        <strong class="section-inline-heading">Change Dashboard Password</strong>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acc-curpass">Current Password</label>
+                                        <input type="password" id="acc-curpass" class="form-control-input" placeholder="••••••••">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="hidden-label-space">&nbsp;</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acc-newpass">New Password</label>
+                                        <input type="password" id="acc-newpass" class="form-control-input" placeholder="Min. 8 characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="acc-confpass">Confirm New Password</label>
+                                        <input type="password" id="acc-confpass" class="form-control-input" placeholder="Repeat new password">
+                                    </div>
+
+                                    <div class="form-group span-two-cols border-top-divider">
+                                        <strong class="section-inline-heading">Notification Policies</strong>
+                                    </div>
+                                    <div class="form-group span-two-cols">
+                                        <div class="toggle-checkbox-row">
+                                            <label class="switch-toggle-label">
+                                                <input type="checkbox" id="pref-email-orders" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <div class="toggle-text-info">
+                                                <strong>Email alerts for new voiceover orders</strong>
+                                                <span>Receive a daily summary of voiceover orders matching studio queue filters.</span>
+                                            </div>
+                                        </div>
+                                        <div class="toggle-checkbox-row">
+                                            <label class="switch-toggle-label">
+                                                <input type="checkbox" id="pref-system-sounds">
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                            <div class="toggle-text-info">
+                                                <strong>System sound notifications</strong>
+                                                <span>Trigger voice cues and alerts inside dashboard when rendering succeeds.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions-bar">
+                                    <button type="submit" class="primary-btn">Save Preferences</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
     </div>
 
-    <button class="flex items-center gap-2 text-red-500 p-2 rounded hover:bg-red-100 dark:hover:bg-red-900/20">
-      <i data-lucide="log-out"></i> Logout
-    </button>
-
-  </aside>
-
-  
-  <main class="flex-1 p-6 overflow-y-auto">
-
-    
-    <div class="flex justify-between items-center mb-6">
-
-      <div>
-        <h2 class="text-2xl font-bold">Admin Dashboard</h2>
-        <p class="text-sm text-gray-500 dark:text-gray-400">
-          Welcome back, Admin 👋 Manage your studio insights.
-        </p>
-      </div>
-
-     <div class="flex items-center gap-2">
-
-  
-  <button onclick="toggleRTL()" 
-    class="w-10 h-10 flex items-center justify-center border rounded-lg text-xs font-medium 
-    hover:bg-gray-100 dark:hover:bg-white/10 transition">
-    RTL
-  </button>
-
-  
-  <button onclick="toggleDark()" 
-    class="w-10 h-10 flex items-center justify-center border rounded-lg 
-    hover:bg-gray-100 dark:hover:bg-white/10 transition">
-    <i data-lucide="moon" class="w-4 h-4"></i>
-  </button>
-
-  
-  <button 
-    class="relative w-10 h-10 flex items-center justify-center border rounded-lg 
-    hover:bg-gray-100 dark:hover:bg-white/10 transition">
-
-    <i data-lucide="bell" class="w-4 h-4"></i>
-
-    
-    <span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
-  </button>
-
-  
-  <button 
-    class="w-10 h-10 flex items-center justify-center border rounded-lg 
-    hover:bg-gray-100 dark:hover:bg-white/10 transition">
-
-    <i data-lucide="user" class="w-4 h-4"></i>
-  </button>
-
-</div>
+    <div class="modal-overlay" id="quick-job-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Add New Audio Job</h3>
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="close-icon">
+                        <line x1="18" x2="6" y1="6" y2="18"/>
+                        <line x1="6" x2="18" y1="6" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="form-quick-job">
+                    <div class="form-group">
+                        <label for="job-title">Project Name</label>
+                        <input type="text" id="job-title" class="form-control-input" required placeholder="e.g. Mercedes-Benz Commercial Radio Ad">
+                    </div>
+                    <div class="form-group">
+                        <label for="job-client">Client / Agency</label>
+                        <input type="text" id="job-client" class="form-control-input" required placeholder="e.g. Leo Burnett Chicago">
+                    </div>
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="job-category">Audio Category</label>
+                            <select id="job-category" class="custom-select-ui" required>
+                                <option value="Commercial Voicover">Commercial Voiceover</option>
+                                <option value="Audiobook Narrating">Audiobook Narrating</option>
+                                <option value="Video Game Sound Design">Video Game Sound Design</option>
+                                <option value="Podcast Production">Podcast Production</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="job-talent">Voice Talent</label>
+                            <input type="text" id="job-talent" class="form-control-input" required placeholder="e.g. David Attenborough (Mock)">
+                        </div>
+                    </div>
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="job-amount">Budget / Value ($)</label>
+                            <input type="number" id="job-amount" class="form-control-input" min="0" required placeholder="e.g. 1500">
+                        </div>
+                        <div class="form-group">
+                            <label for="job-status">Initial Status</label>
+                            <select id="job-status" class="custom-select-ui">
+                                <option value="Pending Processing">Pending Processing</option>
+                                <option value="Processing Audio">Processing Audio</option>
+                                <option value="Delivered">Delivered</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions-bar">
+                        <button type="button" class="secondary-btn" id="modal-cancel-btn">Cancel</button>
+                        <button type="submit" class="primary-btn">Create Project</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     
-    <div class="grid grid-cols-6 gap-4 mb-6">
+    <script src="../dashboard/dashboard.js">
 
-  <div class="p-3 bg-white dark:bg-white/10 rounded shadow">
-    <p class="text-xs text-gray-500">Total Projects</p>
-    <h3 class="text-lg font-bold">128</h3>
-  </div>
 
-  <div class="p-3 bg-white dark:bg-white/10 rounded shadow">
-    <p class="text-xs text-gray-500">Active Clients</p>
-    <h3 class="text-lg font-bold">54</h3>
-  </div>
 
-  <div class="p-3 bg-white dark:bg-white/10 rounded shadow">
-    <p class="text-xs text-gray-500">Pending Jobs</p>
-    <h3 class="text-lg font-bold text-yellow-500">23</h3>
-  </div>
+    </script>
 
-  <div class="p-3 bg-white dark:bg-white/10 rounded shadow">
-    <p class="text-xs text-gray-500">Completed</p>
-    <h3 class="text-lg font-bold text-green-500">96</h3>
-  </div>
-
-  <div class="p-3 bg-white dark:bg-white/10 rounded shadow">
-    <p class="text-xs text-gray-500">Revenue</p>
-    <h3 class="text-lg font-bold">₹1.2L</h3>
-  </div>
-
-  <div class="p-3 bg-white dark:bg-white/10 rounded shadow">
-    <p class="text-xs text-gray-500">Avg Rating</p>
-    <h3 class="text-lg font-bold">4.8 ⭐</h3>
-  </div>
-
-</div>
-
-    
-    <div class="grid grid-cols-3 gap-4 mb-6">
-
-      
-      <div class="bg-white dark:bg-white/10 p-4 rounded shadow">
-        <h3 class="mb-2 text-sm">Monthly Projects</h3>
-        <canvas id="barChart"></canvas>
-      </div>
-
-      
-      <div class="bg-white dark:bg-white/10 p-4 rounded shadow">
-        <h3 class="mb-2 text-sm">Project Types</h3>
-        <canvas id="pieChart"></canvas>
-      </div>
-
-      
-      <div class="bg-white dark:bg-white/10 p-4 rounded shadow">
-        <h3 class="mb-2 text-sm">Revenue Growth</h3>
-        <canvas id="lineChart"></canvas>
-      </div>
-
-    </div>
-
-    
-    <div class="bg-white dark:bg-white/10 p-4 rounded shadow mb-6">
-      <h3 class="mb-3">Recent Projects</h3>
-
-      <table class="w-full text-sm">
-        <thead class="text-gray-500">
-          <tr>
-            <th class="text-left">Project</th>
-            <th>Status</th>
-            <th>Client</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr class="border-t">
-            <td class="py-2">Podcast Intro</td>
-            <td class="text-yellow-500">Pending</td>
-            <td>Rahul</td>
-          </tr>
-          <tr class="border-t">
-            <td class="py-2">Ad Voice</td>
-            <td class="text-green-500">Completed</td>
-            <td>Priya</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="grid grid-cols-3 gap-4">
-
-  
-  <div class="bg-white dark:bg-white/10 p-4 rounded shadow">
-    <h3 class="mb-3 text-sm font-semibold">Recent Activity</h3>
-
-    <div class="text-xs space-y-2 text-gray-500">
-      <p>🎧 New podcast uploaded</p>
-      <p>💰 Payment received from Client A</p>
-      <p>📝 Script approved</p>
-      <p>🔔 New client registered</p>
-    </div>
-  </div>
-
-  
-  <div class="col-span-2 bg-white dark:bg-white/10 p-4 rounded shadow">
-    <h3 class="mb-3 text-sm font-semibold">Top Clients</h3>
-
-    <table class="w-full text-sm">
-      <thead class="text-gray-500">
-        <tr>
-          <th class="text-left">Client</th>
-          <th>Projects</th>
-          <th>Revenue</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr class="border-t">
-          <td class="py-2">Rahul</td>
-          <td>12</td>
-          <td>₹25K</td>
-        </tr>
-
-        <tr class="border-t">
-          <td class="py-2">Priya</td>
-          <td>9</td>
-          <td>₹18K</td>
-        </tr>
-
-        <tr class="border-t">
-          <td class="py-2">Arjun</td>
-          <td>7</td>
-          <td>₹14K</td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-
-</div>
-
-  </main>
-</div>
-
-<script>
-lucide.createIcons();
-
- const links = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop();
-
-    links.forEach(link => {
-      const linkPage = link.getAttribute('href').split('/').pop();
-      if (linkPage === currentPage) {
-        link.classList.add('active');
-      }
-    });
-
-function toggleDark() {
-  document.documentElement.classList.toggle("dark");
-}
-
-function toggleRTL() {
-  document.documentElement.dir =
-    document.documentElement.dir === "rtl" ? "ltr" : "rtl";
-}
-
-function goHome() {
+    <script>
+        lucide.createIcons();
+        function goHome() {
   window.location.href = "../index.html";
 }
-
-
-new Chart(document.getElementById('barChart'), {
-  type: 'bar',
-  data: {
-    labels: ['Jan','Feb','Mar','Apr'],
-    datasets: [{ data: [10,20,30,25] }]
-  }
-});
-
-new Chart(document.getElementById('pieChart'), {
-  type: 'pie',
-  data: {
-    labels: ['Podcast','Ads','Audiobook'],
-    datasets: [{ data: [40,30,30] }]
-  }
-});
-
-new Chart(document.getElementById('lineChart'), {
-  type: 'line',
-  data: {
-    labels: ['Jan','Feb','Mar','Apr'],
-    datasets: [{ data: [1000,2000,1500,3000] }]
-  }
-});
-</script>
-
+    </script>
 </body>
 </html>
