@@ -223,6 +223,7 @@ body.dark-mode .navbar {
 /* Hover Effect */
 .login-btn:hover{
      transform: translateY(-2px);
+     color:var(--bg-color);
 }
 #theme-toggle:hover,
 #rtl-toggle:hover {
