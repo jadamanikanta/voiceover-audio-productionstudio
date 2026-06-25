@@ -126,21 +126,72 @@ playButtons.forEach(button => {
     });
 });
 
-const track = document.querySelector('.testimonial-track');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
+document.addEventListener("DOMContentLoaded", () => {
 
-let scrollAmount = 0;
-const cardWidth = document.querySelector('.testimonial-card').offsetWidth + 30; // card + gap
+    const track = document.querySelector(".testimonial-track");
+    const cards = document.querySelectorAll(".testimonial-card");
+    const leftBtn = document.querySelector(".left-arrow");
+    const rightBtn = document.querySelector(".right-arrow");
 
-leftArrow.addEventListener('click', () => {
-    scrollAmount -= cardWidth;
-    track.style.transform = `translateX(-${scrollAmount}px)`;
-});
+    if (!track || cards.length === 0) return;
 
-rightArrow.addEventListener('click', () => {
-    scrollAmount += cardWidth;
-    track.style.transform = `translateX(-${scrollAmount}px)`;
+    let currentIndex = 0;
+
+    function visibleCards() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    function maxIndex() {
+        return Math.max(0, cards.length - visibleCards());
+    }
+
+    function slideWidth() {
+        const gap = 30;
+        return cards[0].offsetWidth + gap;
+    }
+
+    function updateSlider() {
+        track.style.transform =
+            `translateX(-${currentIndex * slideWidth()}px)`;
+    }
+
+    rightBtn.addEventListener("click", () => {
+        currentIndex =
+            currentIndex >= maxIndex()
+                ? 0
+                : currentIndex + 1;
+
+        updateSlider();
+    });
+
+    leftBtn.addEventListener("click", () => {
+        currentIndex =
+            currentIndex <= 0
+                ? maxIndex()
+                : currentIndex - 1;
+
+        updateSlider();
+    });
+
+    window.addEventListener("resize", () => {
+        if (currentIndex > maxIndex()) {
+            currentIndex = maxIndex();
+        }
+        updateSlider();
+    });
+
+    setInterval(() => {
+        currentIndex =
+            currentIndex >= maxIndex()
+                ? 0
+                : currentIndex + 1;
+
+        updateSlider();
+    }, 5000);
+
+    updateSlider();
 });
 
 const faqItems = document.querySelectorAll(".faq-item");
