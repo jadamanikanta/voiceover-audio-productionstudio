@@ -28,8 +28,8 @@
     <div class="services-overlay"></div>
 
     <div class="services-content">
-        <span>Our Services</span>
-        <h1>Premium Audio Production Services For Modern Brands</h1>
+        <span class="services-badge"><span class="services-badge-dot"></span>Our Services</span>
+        <h1>Premium <span class="gradient-text">Audio Production</span> Services For Modern Brands</h1>
         <p>
             Professional voiceovers, sound design and studio production
             crafted for digital media, podcasts and commercial campaigns.
@@ -43,61 +43,88 @@
 <section class="services-grid-section">
 
     <div class="section-title">
-        <span>What We Offer</span>
-        <h2>Professional Audio Services</h2>
+        <span class="services-card-badge"><span class="services-card-badge-dot"></span>What We Offer</span>
+        <h2>Professional <span class="gradient-text">Audio Services</span></h2>
         <p>
             High quality production solutions crafted for brands,
             creators and media platforms.
         </p>
     </div>
 
-    <div class="services-grid">
+   <div class="cards-grid">
+                
+                <div class="service-card " data-service="voiceover">
+                    <div class="service-card-image" style="background-image: url('../global-images/commercial.png');"></div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Voice Over Recording</h3>
+                        <p class="service-card-tagline">Studio-grade voice production for commercials, ads and narration.</p>
+                        <button class="btn btn-view-details">View Details</button>
+                    </div>
+                </div>
 
-    <div class="service-card">
-        <div class="service-icon">
-            <i data-lucide="mic"></i>
-        </div>
-        <h3>Voice Over Recording</h3>
-        <p>Studio-grade voice production for commercials, ads and narration.</p>
-        <a href="../services/voiceover-details.html" class="service-btn">View Details</a>
-    </div>
+                
+                <div class="service-card" data-service="podcast">
+                    <div class="service-card-image" style="background-image: url('../global-images/audiobook.png');"></div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Podcast Editing</h3>
+                        <p class="service-card-tagline">Noise cleaning, mastering and premium episode enhancement.</p>
+                        <button class="btn btn-view-details">View Details</button>
+                    </div>
+                </div>
 
-    <div class="service-card">
-        <div class="service-icon">
-            <i data-lucide="headphones"></i>
-        </div>
-        <h3>Podcast Editing</h3>
-        <p>Noise cleaning, mastering and premium episode enhancement.</p>
-        <a href="../services/podcast-editing.html" class="service-btn">View Details</a>
-    </div>
+                
+                <div class="service-card" data-service="sound">
+                    <div class="service-card-image" style="background-image: url('../global-images/animation.png');"></div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Sound Design</h3>
+                        <p class="service-card-tagline">Creative sound layering for media, ads and brand campaigns.</p>
+                        <button class="btn btn-view-details">View Details</button>
+                    </div>
+                </div>
 
-    <div class="service-card">
-        <div class="service-icon">
-            <i data-lucide="volume-2"></i>
-        </div>
-        <h3>Sound Design</h3>
-        <p>Creative sound layering for media, ads and brand campaigns.</p>
-        <a href="../services/sound-design.html" class="service-btn">View Details</a>
-    </div>
-
-    <div class="service-card">
-        <div class="service-icon">
-            <i data-lucide="music"></i>
-        </div>
-        <h3>Music Production</h3>
-        <p>Custom music arrangements for videos and digital experiences.</p>
-        <a href="../services/music-production.html" class="service-btn">View Details</a>
-    </div>
-
-</div>
+                
+                <div class="service-card" data-service="music">
+                    <div class="service-card-image" style="background-image: url('../global-images/narration.png');"></div>
+                    <div class="service-card-content">
+                        <div class="service-card-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Music Production</h3>
+                        <p class="service-card-tagline">Custom music arrangements for videos and digital experiences.</p>
+                        <button class="btn btn-view-details">View Details</button>
+                    </div>
+                </div>
+            </div>
 
 </section>
 
 <section class="process-section">
 
     <div class="section-title">
-        <span>Our Process</span>
-        <h2>How We Create Premium Audio</h2>
+        <span class="process-badge"><span class="process-badge-dot"></span>Our Process</span>
+        <h2>How We Create <span class="gradient-text">Premium Audio</span></h2>
         <p>
             A smooth creative workflow designed for quality,
             speed and client satisfaction.
@@ -145,8 +172,8 @@
 <section class="studio-audio-section">
 
     <div class="section-title">
-        <span>Featured Samples</span>
-        <h2>Studio Audio Showcase</h2>
+        <span><span class="section-audio-badge"><span class="section-audio-badge-dot"></span>Featured Samples</span>
+        <h2>Studio <span class="gradient-text">Audio</span> Showcase</h2>
         <p>
             Premium voice and sound production samples crafted for modern media.
         </p>
@@ -203,8 +230,8 @@
 <section class="why-choose-section">
 
     <div class="section-title">
-        <span>Why Choose Us</span>
-        <h2>Trusted Audio Production Excellence</h2>
+        <span class="why-choose-badge"><span class="why-choose-badge-dot"></span>Why Choose Us</span>
+        <h2>Trusted <span class="gradient-text">Audio</span> Production Excellence</h2>
         <p>
             Premium studio experience built for brands, creators and media teams.
         </p>
