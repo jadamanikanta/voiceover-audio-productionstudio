@@ -46,6 +46,8 @@
     --status-danger-text: #EF4444;
     --status-info-bg: rgba(59, 130, 246, 0.1);
     --status-info-text: #3B82F6;
+    --primary: #f59e0b;
+    --text-color: #fff;
 }
 
 [data-theme="light"] {
@@ -56,6 +58,8 @@
     --text-primary: #0A0A0B;
     --text-secondary: #495057;
     --text-tertiary: #868E96;
+    --primary: #f59e0b;
+    --text-color: #000000;
     
     --border-color: #E9ECEF;
     --border-color-hover: #DEE2E6;
@@ -101,6 +105,17 @@ body {
     min-height: 100vh;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+}
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.logo-text b {
+    color:var(--text-color);
+    font-weight: 700;
 }
 
 a {
@@ -254,7 +269,7 @@ button {
 }
 .header-action-btn:hover {
     color: var(--text-primary);
-    border-color: var(--border-color-hover);
+   border:1px solid var(--primary);
     background-color: var(--bg-tertiary);
     transform: translateY(-1px);
 }
@@ -267,10 +282,13 @@ button {
     width: auto;
     padding: 0 14px;
     border-radius: var(--border-radius-md);
+    /* border:1px solid var(--primary); */
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.05em;
 }
+
+
 
 .notification-badge {
     position: absolute;

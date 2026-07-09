@@ -62,9 +62,7 @@ body.dark-mode {
 
    
 
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    
 }
 
 .services-badge-dot {
@@ -142,7 +140,7 @@ body.dark-mode {
 }
 
 .services-content p {
-    color: #666;
+    color: #cccbcb;
     line-height: 1.7;
     font-size: 16px;
     max-width: 760px;
@@ -215,7 +213,14 @@ body.dark-mode {
 
 .services-grid-section {
     padding: 110px 8%;
-    background: var(--bg-color);
+    background:
+    radial-gradient(circle at top right,
+        rgba(245,158,11,.30),
+        transparent 40%),
+    radial-gradient(circle at bottom left,
+        rgba(251,191,36,.25),
+        transparent 45%),
+    #fff8e8;
 }
 
 .section-title {
@@ -241,11 +246,7 @@ body.dark-mode {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    
 }
 
 .services-card-badge-dot {
@@ -436,11 +437,12 @@ body.dark-mode .section-title p {
 
 .process-section {
     padding: 110px 8%;
-    background: linear-gradient(to bottom,#fafafa,#f4f4f4);
+    background: var(--tint-1);
+    transition: background 0.4s ease;
 }
 
 body.dark-mode .process-section {
-    background: linear-gradient(to bottom,#0f0f0f,#151515);
+    background: var(--tint-1);
 }
 
 .process-badge {
@@ -459,11 +461,7 @@ body.dark-mode .process-section {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    
 }
 
 .process-badge-dot {
@@ -612,11 +610,12 @@ body.dark-mode .timeline-card p {
 
 .studio-audio-section {
     padding: 110px 8%;
-    background: linear-gradient(to bottom,#fafafa,#f4f4f4);
+    background: var(--bg-color);
+    transition: background 0.4s ease;
 }
 
 body.dark-mode .studio-audio-section {
-    background: linear-gradient(to bottom,#0f0f0f,#151515);
+    background: var(--bg-color);
 }
 
 .section-audio-badge {
@@ -635,11 +634,7 @@ body.dark-mode .studio-audio-section {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    
 }
 
 .section-audio-badge-dot {
@@ -694,6 +689,7 @@ body.dark-mode .studio-player {
 
 .studio-player:hover {
     transform: translateY(-8px);
+    border:1px solid var(--primary);
 }
 
 .sample-info h3 {
@@ -768,7 +764,15 @@ body.dark-mode .sample-info p {
 
 .why-choose-section {
     padding: 110px 8%;
-    background: var(--bg-color);
+    background:
+    radial-gradient(circle at top right,
+        rgba(245,158,11,.30),
+        transparent 40%),
+    radial-gradient(circle at bottom left,
+        rgba(251,191,36,.25),
+        transparent 45%),
+    #fff8e8;
+    transition: background 0.4s ease;
 }
 
 .why-choose-badge {
@@ -787,11 +791,7 @@ body.dark-mode .sample-info p {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+   
 }
 
 .why-choose-badge-dot {

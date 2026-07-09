@@ -12,6 +12,9 @@
     --hover-bg: rgba(0,0,0,0.04);
     --text-color-rgb: 0,0,0;
     --primary: #f59e0b;
+    
+    --tint-1: #fffbf0;
+    --tint-2: #fef9e7;
 }
 
 body.dark-mode {
@@ -21,6 +24,9 @@ body.dark-mode {
     --hover-bg: rgba(255,255,255,0.06);
     --text-color-rgb: 255,255,255;
     --primary: #f59e0b;
+    
+    --tint-1: #0d0d0d;
+    --tint-2: #111111;
 }
 
 body {
@@ -81,7 +87,7 @@ body.dark-mode .navbar {
 
 .logo-text b {
     color:var(--text-color);
-    font-weight: 300;
+    font-weight: bold;
 }
 
 
@@ -176,14 +182,15 @@ body.dark-mode .navbar {
     justify-content: center;
 
     border-radius: 12px;
-    
 
     background: var(--primary);
     color: var(--text-color);
 
-    font-size: 15px;
+    font-size: 14px;
+    padding-left:6px;
+    padding-right:6px;
     
-
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.35s ease;
 }
@@ -839,14 +846,16 @@ body.dark-mode .footer-policy a {
 }
 
 .footer-contact i {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
     text-align: center;
     color: var(--text-color);
     flex-shrink: 0;
 }
 .footer-contact svg{
     color:var(--primary);
+    width:14px;
+    height:14px;
 }
 
 

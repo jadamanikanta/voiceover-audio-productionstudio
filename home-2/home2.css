@@ -52,11 +52,6 @@
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
 }
 
 .hero-v2-badge-dot {
@@ -200,6 +195,7 @@ body.dark-mode .stat-box{
     font-size: 28px;
     color: var(--primary);
     margin-bottom: 6px;
+    text-align: center;
 }
 
 .stat-box p {
@@ -218,7 +214,7 @@ body.dark-mode .stat-box{
     justify-content:center;
     align-items:center;
 
-    min-height:550px;
+    min-height:480px;
 
     overflow:hidden;
     border-radius:32px;
@@ -231,8 +227,8 @@ body.dark-mode .stat-box{
 
     background:
     linear-gradient(
-        rgba(255,255,255,.25),
-        rgba(255,255,255,.25)
+       rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
     ),
     url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f");
 
@@ -634,7 +630,15 @@ body.dark-mode .floating-card p {
 
 .trusted-section {
     padding: 100px 8%;
-    background: linear-gradient(to bottom, transparent, rgba(245,158,11,0.03));
+    background:
+    radial-gradient(circle at top right,
+        rgba(245,158,11,.30),
+        transparent 40%),
+    radial-gradient(circle at bottom left,
+        rgba(251,191,36,.25),
+        transparent 45%),
+    #fff8e8;
+    transition: background 0.4s ease;
     text-align: center;
 }
 
@@ -654,11 +658,6 @@ body.dark-mode .floating-card p {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
 }
 
 .trusted-v2-badge-dot {
@@ -959,8 +958,8 @@ body.dark-mode .brand-card{
 
 .voice-categories {
     padding: 110px 8%;
-    background:
-        radial-gradient(circle at top right, rgba(59,130,246,0.05), transparent 35%);
+    background: var(--bg-color);
+    transition: background 0.4s ease;
     text-align: center;
 }
 
@@ -980,11 +979,7 @@ body.dark-mode .brand-card{
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    
 }
 
 .category-v2-badge-dot {
@@ -1141,7 +1136,14 @@ body.dark-mode .voice-card p {
 .projects-section {
     padding: 110px 8%;
     background:
-        radial-gradient(circle at top left, rgba(59,130,246,0.05), transparent 35%);
+    radial-gradient(circle at top right,
+        rgba(245,158,11,.30),
+        transparent 40%),
+    radial-gradient(circle at bottom left,
+        rgba(251,191,36,.25),
+        transparent 45%),
+    #fff8e8;
+    transition: background 0.4s ease;
     text-align: center;
 }
 
@@ -1161,11 +1163,7 @@ body.dark-mode .voice-card p {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    
 }
 
 .projects-v2-badge-dot {
@@ -1288,8 +1286,8 @@ body.dark-mode .projects-heading p {
 .pricing-section {
     padding: 110px 8%;
     text-align: center;
-    background:
-        radial-gradient(circle at center, rgba(245,158,11,0.05), transparent 40%);
+    background: var(--bg-color);
+    transition: background 0.4s ease;
 }
 
 
@@ -1309,11 +1307,7 @@ body.dark-mode .projects-heading p {
 
     color: var(--text-color);
 
-    border: 1px solid rgba(245, 158, 11, 0.15);
-
-    background: rgba(245, 158, 11, 0.05);
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+   
 }
 
 .pricing-v2-badge-dot {
@@ -1402,6 +1396,9 @@ body.dark-mode .pricing-card p {
 .pricing-card ul li {
     padding: 10px 0;
     color: #666;
+}
+.pricing-card ul li span{
+    padding-right: 8px;
 }
 
 body.dark-mode .pricing-card ul li {

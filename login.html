@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="dark">
+<html lang="en" dir="ltr" >
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>Login - VoxStudio</title>
 
     <link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
+    
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -16,11 +17,39 @@
             darkMode: 'class'
         }
     </script>
-
     <style>
-        * {
+          * {
             box-sizing: border-box;
         }
+
+:root {
+    
+    --primary: #f59e0b;
+    --text-color:rgb(7, 7, 7);
+
+}
+
+body.dark-mode {
+    
+    --primary: #f59e0b;
+
+    --text-color:rgb(252, 251, 251);
+   
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+
+
+   
+
+
+      
 
         .bar {
             width: 4px;
@@ -88,26 +117,16 @@
         .logo-wrap:hover {
             opacity: .8;
         }
-
-        .logo-icon {
-            width: 34px;
-            height: 34px;
+        .logo-wrap svg{
+            width: 25px;
+            height: 25px;
             color: currentColor;
         }
 
-        .logo-text {
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+        
 
-        .logo-text b {
-            color: inherit;
-        }
 
-        /* =========================
-   Mobile (360px - 480px)
-========================= */
+        
 @media (max-width: 360px) {
 
     body {
@@ -244,7 +263,10 @@
         right: 20px;
     }
 }
+   
     </style>
+
+    
 </head>
 
 <body
@@ -282,9 +304,9 @@ class="login-card relative z-10 w-full max-w-md rounded-3xl p-8 shadow-2xl backd
         <!-- Logo -->
         <a href="../index.html" class="logo-wrap mb-8">
             <i data-lucide="mic" class="logo-icon"></i>
-            <span class="logo-text">
-                VOX <b>Studio</b>
-            </span>
+           <span class="logo-text">
+    VOX<b class="text-black dark:text-white">Studio</b>
+</span>
         </a>
 
         <!-- Heading -->

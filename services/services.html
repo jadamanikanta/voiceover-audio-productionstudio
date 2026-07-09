@@ -339,6 +339,15 @@ fetch("../components/footer.html")
 
     const cards = document.querySelectorAll(".service-card");
 
+    cards.forEach(card => {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", () => {
+            let service = card.getAttribute("data-service");
+            if (service === "sound") service = "sounddesign";
+            window.location.href = `services-details.html?service=${service}`;
+        });
+    });
+
 window.addEventListener("scroll", () => {
     cards.forEach(card => {
         const top = card.getBoundingClientRect().top;

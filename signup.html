@@ -20,6 +20,21 @@
 </script>
 
 <style>
+    :root {
+    
+    --primary: #f59e0b;
+    --text-color:rgb(7, 7, 7);
+
+}
+
+body.dark-mode {
+    
+    --primary: #f59e0b;
+
+    --text-color:rgb(252, 251, 251);
+   
+}
+
     * {
         margin: 0;
         padding: 0;
@@ -58,21 +73,20 @@
         opacity: .8;
     }
 
-    .logo-icon {
-        width: clamp(28px, 4vw, 38px);
-        height: clamp(28px, 4vw, 38px);
-        color: currentColor;
-    }
+    .logo-wrap svg{
+            width: 25px;
+            height: 25px;
+            color: currentColor;
+        }
 
     .logo-text {
         font-size: clamp(24px, 4vw, 34px);
         font-weight: 700;
         letter-spacing: 1px;
+        color:var(--primary);
     }
 
-    .logo-text b {
-        color: inherit;
-    }
+    
 
    .signup-card {
     max-height: 95vh;
@@ -174,9 +188,9 @@
     <a href="../index.html" class="logo-wrap mb-4">
         <i data-lucide="mic" class="logo-icon"></i>
 
-        <span class="logo-text">
-            VOX <b>Studio</b>
-        </span>
+       <span class="logo-text">
+    VOX<b class="text-black dark:text-white">Studio</b>
+</span>
     </a>
 
     <!-- Heading -->
