@@ -222,6 +222,16 @@ body.dark-mode {
         transparent 45%),
     #fff8e8;
 }
+body.dark-mode .services-grid-section {
+    background:
+        radial-gradient(circle at top right,
+            rgba(245,158,11,.18),
+            transparent 40%),
+        radial-gradient(circle at bottom left,
+            rgba(251,191,36,.12),
+            transparent 45%),
+        linear-gradient(135deg, #0b0b0b, #111111);
+}
 
 .section-title {
     text-align: center;
@@ -773,6 +783,16 @@ body.dark-mode .sample-info p {
         transparent 45%),
     #fff8e8;
     transition: background 0.4s ease;
+}
+body.dark-mode .why-choose-section {
+    background:
+        radial-gradient(circle at top right,
+            rgba(245,158,11,.18),
+            transparent 40%),
+        radial-gradient(circle at bottom left,
+            rgba(251,191,36,.12),
+            transparent 45%),
+        linear-gradient(135deg, #0b0b0b, #111111);
 }
 
 .why-choose-badge {

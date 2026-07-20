@@ -641,6 +641,16 @@ body.dark-mode .floating-card p {
     transition: background 0.4s ease;
     text-align: center;
 }
+body.dark-mode .trusted-section {
+    background:
+        radial-gradient(circle at top right,
+            rgba(245,158,11,.18),
+            transparent 40%),
+        radial-gradient(circle at bottom left,
+            rgba(251,191,36,.12),
+            transparent 45%),
+        linear-gradient(135deg, #0b0b0b, #111111);
+}
 
 .trusted-v2-badge {
     display: inline-flex;
@@ -1145,6 +1155,16 @@ body.dark-mode .voice-card p {
     #fff8e8;
     transition: background 0.4s ease;
     text-align: center;
+}
+body.dark-mode .projects-section {
+    background:
+        radial-gradient(circle at top right,
+            rgba(245,158,11,.18),
+            transparent 40%),
+        radial-gradient(circle at bottom left,
+            rgba(251,191,36,.12),
+            transparent 45%),
+        linear-gradient(135deg, #0b0b0b, #111111);
 }
 
 .projects-v2-badge {
