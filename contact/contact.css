@@ -51,6 +51,9 @@
     
     transition: 0.3s;
 }
+.hero-btn:hover{
+    transform: translateY(-4px);
+}
 
 
 
@@ -115,7 +118,7 @@ CONTACT SECTION
 ==================================================*/
 
 .contact-section{
-    padding:100px 8%;
+    padding:50px 8%;
     position:relative;
     overflow:hidden;
 
@@ -202,7 +205,7 @@ LEFT PANEL
 
 .contact-left{
 
-    padding:45px;
+    padding:25px;
 
     border-radius:30px;
 
@@ -249,7 +252,7 @@ LEFT PANEL
 
 .contact-left h2{
 
-    font-size:clamp(2rem,3vw,3rem);
+    font-size:25px;
 
     color:var(--text-color);
 
@@ -261,7 +264,7 @@ LEFT PANEL
 
 .contact-description{
 
-    color:rgba(var(--text-color-rgb),.75);
+    color:12px;
 
     line-height:1.9;
 
@@ -282,7 +285,7 @@ CONTACT DETAILS
 
     gap:18px;
 
-    margin-bottom:40px;
+    margin-bottom:20px;
 
 }
 
@@ -294,7 +297,7 @@ CONTACT DETAILS
 
     gap:18px;
 
-    padding:18px 22px;
+    padding:10px;
 
     border-radius:18px;
 
@@ -367,7 +370,7 @@ SERVICES
 
 .studio-services{
 
-    padding:28px;
+    padding:12px;
 
     border-radius:20px;
 
@@ -387,7 +390,7 @@ SERVICES
 
     color:var(--text-color);
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
 
@@ -411,7 +414,7 @@ SERVICES
 
     gap:12px;
 
-    margin-bottom:16px;
+    margin-bottom:10px;
 
     color:rgba(var(--text-color-rgb),.82);
 
@@ -439,7 +442,7 @@ RIGHT PANEL
 
 .contact-right{
 
-    padding:45px;
+    padding:15px 45px;
 
     border-radius:30px;
 
@@ -458,7 +461,7 @@ FORM HEADER
 
 .form-header{
 
-    margin-bottom:35px;
+    margin-bottom:25px;
 
 }
 
@@ -489,7 +492,7 @@ FORM HEADER
 
     color:var(--text-color);
 
-    font-size:2rem;
+    font-size:30px;
 
     margin-bottom:12px;
 
@@ -497,7 +500,7 @@ FORM HEADER
 
 .form-header p{
 
-    color:rgba(var(--text-color-rgb),.75);
+    color:14px;
 
     line-height:1.8;
 
@@ -526,7 +529,7 @@ INPUT GROUP
 
     width:100%;
 
-    padding:18px 20px;
+    padding:10px;
 
     border-radius:16px;
 
@@ -546,7 +549,7 @@ INPUT GROUP
 
 .input-group textarea{
 
-    min-height:170px;
+    min-height:40px;
 
     resize:none;
 
@@ -686,7 +689,7 @@ BUTTON
 
     width:100%;
 
-    padding:18px;
+    padding:12px;
 
     border:none;
 

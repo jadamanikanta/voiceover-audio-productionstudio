@@ -73,7 +73,7 @@
 }
 
 .blog-hero-overlay p{
-    font-size:12px;
+    font-size:14px;
     color:var(--text-light);
     line-height:1.8;
     max-width:700px;
@@ -317,6 +317,10 @@ body.dark .blog-hero-overlay p{
     color: var(--text-color);
     border-radius: 8px;
     text-decoration: none;
+}
+.read-btn:hover{
+    transform: translateY(-4px);
+    color:var(--bg-color);
 }
 
 
@@ -751,11 +755,13 @@ body.dark-mode .faq-section {
     overflow: hidden;
     transition: 0.4s ease;
     padding: 0 22px;
+    
 }
 
 .faq-answer p {
     padding-bottom: 20px;
     line-height: 1.7;
+    color:#838282;
 }
 
 @media (max-width: 768px) {

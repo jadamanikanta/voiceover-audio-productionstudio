@@ -160,7 +160,7 @@ body.dark-mode {
     box-shadow:
         0 10px 25px rgba(245,158,11,0.25);
     transition: all 0.4s ease;
-    animation: fadeUpHero 1.9s ease forwards;
+    
 }
 
 .services-content a:hover {
@@ -951,6 +951,8 @@ body.dark-mode .why-card p {
         grid-template-columns: 1fr;
     }
 }
+
+
 
 .services-cta {
    padding: 100px 8% 40px;
