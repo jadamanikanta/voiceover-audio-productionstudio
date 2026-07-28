@@ -621,8 +621,7 @@ body.dark .blog-hero-overlay p{
 .cta-buttons a:first-child {
     background: var(--primary);
     color: var(--text-color);
-    box-shadow:
-        0 0 25px rgba(245,158,11,0.4);
+    
 }
 
 .cta-buttons a:last-child {
@@ -633,6 +632,7 @@ body.dark .blog-hero-overlay p{
 
 .cta-buttons a:hover {
     transform: translateY(-4px) scale(1.05);
+    color:white;
 }
 
 @keyframes pulseGlow {

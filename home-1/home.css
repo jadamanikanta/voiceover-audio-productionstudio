@@ -41,13 +41,12 @@ body.dark-mode {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 95px);
   width: 100%;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 2rem 0;
-  
+  padding: 1rem 0 2rem;
 }
 
 /* Fullscreen Video Background */
@@ -161,14 +160,14 @@ body.dark-mode {
 /* Hero Container Layout */
 .hero-container {
   position: relative;
-  width: 100%;
-  max-width: 1400px;
+  width: 90%;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
   z-index: 10;
 }
 
@@ -311,6 +310,7 @@ body.dark-mode {
 
 .btn-primary:hover {
   transform: translateY(-3px);
+  color:white;
   
 }
 
@@ -338,6 +338,7 @@ body.dark-mode {
 .btn-secondary:hover {
   
   transform: translateY(-3px);
+  color:white;
 }
 
 .btn-secondary:focus, .btn-primary:focus {
@@ -441,6 +442,14 @@ body.dark-mode {
   opacity: 0.1;
   animation: rotateCW 50s linear infinite;
 }
+@media(max-width:360px){
+
+    .ring-3{
+        width:100%;
+        height:100%;
+    }
+
+}
 
 @keyframes rotateCW {
   from { transform: rotate(0deg); }
@@ -463,6 +472,14 @@ body.dark-mode {
   z-index: 3;
   pointer-events: none;
   opacity: 0.85;
+}
+
+@media (max-width:768px){
+
+    .waveform-svg-container{
+        width:100%;
+    }
+
 }
 
 .waveform-svg {
@@ -755,9 +772,9 @@ body.dark-mode {
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 5rem;
+    gap: 3rem;
     padding-inline: 2rem;
-    padding-block: 7rem 3rem;
+    padding-block: 1.5rem 2rem;
     justify-items: center;
   }
 
@@ -790,7 +807,7 @@ body.dark-mode {
 
 @media (max-width: 768px) {
   .hero-container {
-    padding-block: 6rem 3rem;
+    padding-block: 1rem 2rem;
   }
   .visual-wrapper {
     max-width: 440px;
@@ -814,8 +831,8 @@ body.dark-mode {
 @media (max-width: 480px) {
   .hero-container {
     padding-inline: 1.25rem;
-    padding-block: 5rem 3rem;
-    gap: 3.5rem;
+    padding-block: 1rem 1.5rem;
+    gap: 2.5rem;
   }
 
   .badge {
@@ -865,7 +882,7 @@ body.dark-mode {
 
   .card-2 {
     bottom: 15%;
-    inset-inline-end: -8%;
+    inset-inline-end: 0;
     width: 120px;
     padding: 0.75rem;
   }
@@ -879,12 +896,12 @@ body.dark-mode {
 
 @media (max-width: 360px) {
   .visual-wrapper {
-    max-width: 290px;
+    max-width: 250px;
   }
   .card-1 {
     top: 2%;
-    inset-inline-start: -4%;
-    width: 115px;
+    inset-inline-start: 0;
+    width: 110px;
     padding: 0.5rem 0.65rem;
   }
   .card-1 .track-title {
@@ -896,10 +913,29 @@ body.dark-mode {
   .card-1 .card-tag {
     font-size: 0.55rem;
   }
-  .card-2 {
-    bottom: 12%;
-    inset-inline-end: -5%;
-  }
+  .card-2{
+        right:0;
+        inset-inline-end:0;
+        width:105px;
+    }
+
+    .card-3{
+        left:15px;
+        inset-inline-start:15px;
+    }
+    .mic-container{
+        width:65%;
+    }
+    .main-heading{
+
+        font-size:22px;
+        line-height:1.2;
+    }
+
+    .subheading{
+
+        font-size:13px;
+    }
 }
 
 
@@ -1523,10 +1559,17 @@ body.dark-mode .demo-card:hover {
 }
 
 .why-choose-section {
-    padding: 100px 8%;
+    padding: 110px 0;
     background: var(--tint-2);
     transition: background 0.4s ease;
     overflow: hidden;
+    width: 100%;
+}
+
+.why-choose-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .why-header {
@@ -1723,8 +1766,9 @@ body.dark-mode .why-card p {
 }
 
 .testimonial-section {
-    padding: 100px 8%;
+    padding: 110px 0;
     overflow: hidden;
+    width: 100%;
     background:
     radial-gradient(circle at top right,
         rgba(245,158,11,.30),
@@ -1734,6 +1778,13 @@ body.dark-mode .why-card p {
         transparent 45%),
     #fff8e8;
     transition: background 0.5s;
+}
+
+.testimonial-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 body.dark-mode .testimonial-section {
@@ -2476,8 +2527,10 @@ body.dark-mode .faq-answer p {
 }
 
 .cta-banner {
-    margin: 60px 8% 10px;
-    padding: 80px;
+    width: 90%;
+    max-width: 1300px;
+    margin: 60px auto 30px;
+    padding: 70px 40px;
     border-radius: 30px;
     background: linear-gradient(135deg,#111827,#1f2937,#111827);
     text-align: center;
@@ -2532,9 +2585,8 @@ body.dark-mode .faq-answer p {
 
 .cta-btn:hover {
     transform: translateY(-5px);
-    box-shadow:
-        0 12px 28px rgba(245,158,11,0.4),
-        0 0 30px rgba(245,158,11,0.35);
+    
+    color:white;
 }
 
 @keyframes glowButton {

@@ -127,6 +127,7 @@
 
 .about-buttons a:hover {
     transform: translateY(-4px);
+    color:white;
 }
 
 @keyframes heroFade {
@@ -314,6 +315,7 @@ body.dark-mode .story-features div {
 
 .story-content a:hover {
     transform: translateY(-4px);
+    color:white;
 }
 
 @keyframes fadeStory {
@@ -916,6 +918,7 @@ font-size:14px;
 
 .cta-actions a:hover {
     transform: translateY(-4px) scale(1.04);
+    color:white;
 }
 
 @keyframes glowMove {

@@ -238,7 +238,7 @@ body.dark-mode .pricing-heading p {
     border-radius: 28px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(12px);
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     transition: 0.45s;
     animation: priceFade 1s ease forwards;
 }
@@ -306,7 +306,7 @@ body.dark-mode .pricing-card ul li {
 
 .featured-plan {
     transform: scale(1.05);
-    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    border:1px solid var(--primary);
 }
 
 .badge {
@@ -1000,6 +1000,7 @@ html[dir="rtl"] .table-wrapper{
 
 .primary-btn:hover {
     transform: translateY(-4px) scale(1.05);
+    color:white;
 }
 
 .secondary-btn {
@@ -1010,6 +1011,7 @@ html[dir="rtl"] .table-wrapper{
 
 .secondary-btn:hover {
     transform: translateY(-4px) scale(1.05);
+    color:white;
 }
 
 @keyframes fadeUpCTA {

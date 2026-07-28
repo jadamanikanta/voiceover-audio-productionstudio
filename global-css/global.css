@@ -29,6 +29,12 @@ body.dark-mode {
     --tint-2: #111111;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: var(--bg-color);
@@ -99,24 +105,7 @@ body.dark-mode .navbar {
     opacity: 0.85;
 }
 
-@media (max-width: 360px) {
 
-    .logo-wrap {
-        gap: 6px;
-    }
-
-    .logo-icon {
-        width: 22px;
-        height: 22px;
-        font-size: 22px;
-    }
-
-    .logo-text {
-        font-size: 18px;
-        letter-spacing: 0.5px;
-    }
-
-}
 
 .nav-menu {
     display: flex;
@@ -195,6 +184,10 @@ body.dark-mode .navbar {
     transition: all 0.35s ease;
 }
 
+.mobile-login-btn{
+    display:none;
+}
+
 
 
 
@@ -208,7 +201,7 @@ body.dark-mode .navbar {
     justify-content: center;
 
     border-radius: 12px;
-    border: 2px solid rgba(var(--text-color-rgb), 0.6);
+    border: 2px solid rgba(var(--text-color-rgb), 0.8);
 
     background: transparent;
     color: var(--text-color);
@@ -286,6 +279,210 @@ body.dark-mode .navbar {
     transform: rotate(-45deg) translateY(-10px);
 }
 
+@media (max-width:768px){
+
+    .nav-container{
+        width:94%;
+        height:72px;
+        justify-content:flex-start;
+    }
+
+    .logo{
+        flex-shrink:0;
+    }
+
+    .nav-actions{
+        margin-left:auto;
+        display:flex;
+        align-items:center;
+        gap:8px;
+    }
+
+    .desktop-login{
+        display:none;
+    }
+
+    .mobile-actions{
+        display:block;
+        margin-top:18px;
+    }
+
+    .hamburger{
+        display:flex;
+    }
+
+    .nav-menu{
+
+        position:fixed;
+
+        top:72px;
+        left:0;
+
+        width:100%;
+
+        background:var(--bg-color);
+
+        transform:translateY(-120%);
+
+        transition:.35s ease;
+
+        border-top:1px solid var(--border-color);
+
+        z-index:998;
+    }
+
+    .nav-menu.active{
+        transform:translateY(0);
+    }
+
+    .nav-links{
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:0;
+
+        padding:20px;
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+        width:100%;
+        padding:15px 0;
+    }
+
+}
+/* Desktop */
+
+.mobile-actions{
+    display:none;
+}
+
+/* Tablet & Mobile */
+
+@media(max-width:768px){
+
+    .desktop-login{
+        display:none;
+    }
+
+    .mobile-actions{
+        display:block;
+    }
+    .mobile-login-btn{
+         width: 52px;
+    height: 42px;
+    text-align: center;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: var(--text-color);
+
+    font-size: 14px;
+    padding-left:6px;
+    padding-right:6px;
+    
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    }
+
+}
+@media (max-width:360px){
+
+    .nav-container{
+
+        width:96%;
+        height:64px;
+
+        justify-content:flex-start;
+        gap:0;
+    }
+
+    .logo{
+
+        flex-shrink:0;
+    }
+
+    .logo-wrap{
+
+        gap:6px;
+    }
+
+    .logo-text{
+
+        font-size:18px;
+    }
+
+    .logo-icon{
+
+        width:22px;
+        height:22px;
+    }
+
+    .nav-actions{
+
+        margin-left:auto;
+
+        gap:4px;
+
+        flex-shrink:0;
+    }
+
+    #rtl-toggle{
+
+        width:34px;
+        height:34px;
+
+        font-size:10px;
+
+        border-radius:8px;
+    }
+
+    #theme-toggle{
+
+        width:34px;
+        height:34px;
+
+        font-size:15px;
+    }
+
+    .hamburger{
+
+        display:flex;
+    }
+
+    .hamburger span{
+
+        width:20px;
+    }
+    .mobile-login-btn{
+         width: 52px;
+    height: 42px;
+    text-align: center;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+    color: var(--text-color);
+
+    font-size: 14px;
+    padding-left:6px;
+    padding-right:6px;
+    
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    }
+
+}
 
 
 @media (max-width: 900px) {
@@ -328,6 +525,9 @@ body.dark-mode .navbar {
     }
 }
 
+@media(max-width:360px){
+
+}
 
 
 .mobile-actions {
@@ -573,9 +773,9 @@ body.dark-mode .navbar {
 }
 
 .footer-brand p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+     color:var(--text-color);
     max-width: 320px;
 }
 
@@ -641,26 +841,35 @@ body.dark-mode .footer-brand p {
 .footer-services ul li {
     margin-bottom: 12px;
 }
+.footer-links ul li a{
+    text-decoration: none;
+    color:var(--text-color)
+}
 
 
 
 .footer-links ul li a:hover {
     padding-left: 6px;
+    text-decoration: none;
 }
 
 .footer-links ul li {
     font-size: 15px;
-    color: #777;
+
+    
 }
-.footer-services ul li {
+.footer-services ul li a{
     font-size: 15px;
-    color: #777;
+    
+    
+    
 }
+
 .footer-links ul li :hover{
     
     color: var(--primary);
 }
-.footer-services ul li :hover {
+.footer-services ul li a:hover {
     
     color: var(--primary);
 }
@@ -670,25 +879,25 @@ body.dark-mode .footer-brand p {
     align-items: center;
     gap: 10px;
     font-size: 15px;
-    color: #777;
+    
     margin-bottom: 14px;
 }
 
 body.dark-mode .footer-services ul li,
 body.dark-mode .footer-contact p {
-    color: #aaa;
+    color:var(--text-color);
 }
 
 .contact-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #777;
+     color:var(--text-color);
     min-width: 18px;
 }
 
 body.dark-mode .contact-icon {
-    color: #aaa;
+     color:var(--text-color);
 }
 
 .contact-social {
@@ -712,11 +921,11 @@ body.dark-mode .contact-icon {
 
 .footer-copy {
     font-size: 14px;
-    color: #777;
+    color:var(--text-color);
 }
 
 body.dark-mode .footer-copy {
-    color: #aaa;
+     color:var(--text-color);
 }
 
 .footer-policy {
@@ -728,7 +937,7 @@ body.dark-mode .footer-copy {
 .footer-policy a {
     text-decoration: none;
     font-size: 14px;
-    color: #777;
+     color:var(--text-color);
     transition: 0.3s ease;
 }
 
@@ -848,7 +1057,7 @@ body.dark-mode .footer-policy a {
     gap: 10px;
     margin: 8px 0;
     color: var(--text-color);
-    opacity: 0.85;
+    
     font-size: 14px;
 }
 
@@ -869,12 +1078,12 @@ body.dark-mode .footer-policy a {
 .footer-services ul li a {
     text-decoration: none;
     color: var(--text-color);
-    opacity: 0.8;
+   
     transition: 0.3s;
 }
 
 .footer-services ul li a:hover {
-    color: var(--text-color);
+    color: var(--primary);
     padding-left: 5px;
 }
 
