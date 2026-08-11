@@ -1,135 +1,1161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
-<title>404 | VOX Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | VOXStudio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>:root {
+    --primary: #f59e0b;
+    --primary-light: #fbbf24;
+
+    --bg-color: #f8fafc;
+    --text-color: #111827;
+
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+
+    --muted-color: #64748b;
+
+    --grid-color: rgba(15, 23, 42, 0.045);
+    --shadow: rgba(15, 23, 42, 0.08);
+}
+
+html.dark-mode {
+    --bg-color: #09090b;
+    --text-color: #f8fafc;
+
+    --card-bg: #111827;
+    --border-color: #252b36;
+
+    --muted-color: #94a3b8;
+
+    --grid-color: rgba(255, 255, 255, 0.035);
+    --shadow: rgba(0, 0, 0, 0.35);
+}
 
 
-<script src="https://cdn.tailwindcss.com"></script>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
+html,
 body {
-    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 
-.wave {
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.vox-404-page {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
     display: flex;
-    gap: 5px;
-    align-items: flex-end;
-    height: 60px;
-}
-
-.bar {
-    width: 6px;
-    background: #22c55e;
-    animation: waveAnim 1s infinite ease-in-out;
-}
-
-.bar:nth-child(2) { animation-delay: 0.1s; }
-.bar:nth-child(3) { animation-delay: 0.2s; }
-.bar:nth-child(4) { animation-delay: 0.3s; }
-.bar:nth-child(5) { animation-delay: 0.4s; }
-
-@keyframes waveAnim {
-    0%, 100% { height: 10px; }
-    50% { height: 60px; }
+    align-items: center;
+    justify-content: center;
 }
 
 
-.glow {
-    text-shadow: 0 0 20px rgba(34,197,94,0.8);
+/* =========================
+   BACKGROUND
+========================= */
+
+.vox-404-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    top: -280px;
+    right: -200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 158, 11, 0.10);
+
+    filter: blur(25px);
+
+    pointer-events: none;
 }
 
 
-.bg-animate {
-    background: radial-gradient(circle at 20% 20%, rgba(34,197,94,0.15), transparent),
-                radial-gradient(circle at 80% 80%, rgba(59,130,246,0.15), transparent);
-    animation: moveBg 8s linear infinite alternate;
+.vox-404-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    bottom: -250px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 158, 11, 0.07);
+
+    filter: blur(25px);
+
+    pointer-events: none;
 }
 
-@keyframes moveBg {
-    from { background-position: 0 0, 100% 100%; }
-    to { background-position: 100% 100%, 0 0; }
+
+/* =========================
+   GRID
+========================= */
+
+.vox-404-page {
+    background-image:
+        linear-gradient(
+            var(--grid-color) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            var(--grid-color) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
 }
-</style>
+
+
+/* =========================
+   LOGO
+========================= */
+
+.vox-404-logo {
+    position: absolute;
+
+    top: 30px;
+    left: 40px;
+
+    z-index: 20;
+}
+
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: var(--text-color);
+}
+
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+
+    color: var(--text-color);
+
+    display: inline-block;
+
+    transition: 0.3s ease;
+
+    filter:
+        drop-shadow(
+            0 4px 10px rgba(0, 0, 0, 0.25)
+        );
+}
+
+
+.logo-text {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+}
+
+
+.logo-text b {
+    color: var(--text-color);
+
+    font-weight: 700;
+}
+
+
+.logo-wrap:hover .logo-icon {
+    transform:
+        scale(1.15)
+        rotate(-8deg);
+}
+
+
+.logo-wrap:hover .logo-text {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.vox-404-controls {
+    position: absolute;
+
+    top: 30px;
+    right: 40px;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.vox-404-control {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    background: var(--card-bg);
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+
+.vox-404-control:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+.vox-404-control svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+.vox-404-rtl {
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.vox-404-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(900px, calc(100% - 40px));
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================
+   404 VISUAL
+========================= */
+
+.vox-404-visual {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.vox-404-number {
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(
+        100px,
+        15vw,
+        190px
+    );
+
+    line-height: 0.75;
+
+    font-weight: 800;
+
+    letter-spacing: -10px;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        2px var(--primary);
+}
+
+
+/* =========================
+   CENTER
+========================= */
+
+.vox-404-center {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.vox-404-mic {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245, 158, 11, 0.20),
+            rgba(245, 158, 11, 0.03)
+        );
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.45);
+
+    box-shadow:
+        0 20px 60px
+        rgba(245, 158, 11, 0.14);
+}
+
+
+.vox-404-mic svg {
+    width: 44px;
+    height: 44px;
+
+    color: var(--primary);
+}
+
+
+/* =========================
+   WAVE
+========================= */
+
+.vox-404-wave {
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.vox-404-wave span {
+    width: 4px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    opacity: 0.75;
+}
+
+
+.vox-404-wave span:nth-child(1) {
+    height: 12px;
+}
+
+.vox-404-wave span:nth-child(2) {
+    height: 22px;
+}
+
+.vox-404-wave span:nth-child(3) {
+    height: 32px;
+}
+
+.vox-404-wave span:nth-child(4) {
+    height: 20px;
+}
+
+.vox-404-wave span:nth-child(5) {
+    height: 38px;
+}
+
+.vox-404-wave span:nth-child(6) {
+    height: 24px;
+}
+
+.vox-404-wave span:nth-child(7) {
+    height: 32px;
+}
+
+.vox-404-wave span:nth-child(8) {
+    height: 20px;
+}
+
+.vox-404-wave span:nth-child(9) {
+    height: 12px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.vox-404-label {
+    display: inline-flex;
+
+    padding: 7px 14px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.35);
+
+    border-radius: 50px;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.vox-404-content h1 {
+    margin: 17px 0 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(
+        36px,
+        4vw,
+        58px
+    );
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+}
+
+
+.vox-404-content h1 span {
+    color: var(--primary);
+}
+
+
+.vox-404-content p {
+    width: min(560px, 100%);
+
+    color: var(--muted-color);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.vox-404-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+
+.vox-404-actions a {
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+
+.vox-404-actions svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+.vox-404-primary-btn {
+    background: var(--primary);
+
+    color: #111827;
+
+    box-shadow:
+        0 10px 25px
+        rgba(245, 158, 11, 0.18);
+}
+
+
+.vox-404-primary-btn:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+}
+
+
+.vox-404-secondary-btn {
+    background: var(--card-bg);
+
+    color: var(--text-color);
+
+    border:
+        1px solid var(--border-color);
+}
+
+
+.vox-404-secondary-btn:hover {
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RTL
+========================= */
+
+html[dir="rtl"] .vox-404-logo {
+    left: auto;
+    right: 40px;
+}
+
+
+html[dir="rtl"] .vox-404-controls {
+    right: auto;
+    left: 40px;
+}
+
+
+html[dir="rtl"] .vox-404-content {
+    direction: rtl;
+}
+
+
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px) {
+
+    .vox-404-logo {
+        top: 25px;
+        left: 30px;
+    }
+
+    html[dir="rtl"] .vox-404-logo {
+        left: auto;
+        right: 30px;
+    }
+
+    .vox-404-controls {
+        top: 25px;
+        right: 30px;
+    }
+
+    html[dir="rtl"] .vox-404-controls {
+        right: auto;
+        left: 30px;
+    }
+
+    .vox-404-number {
+        font-size: 135px;
+    }
+
+    .vox-404-mic {
+        width: 85px;
+        height: 85px;
+    }
+
+    .vox-404-mic svg {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+
+    .vox-404-logo {
+        top: 20px;
+        left: 22px;
+    }
+
+    html[dir="rtl"] .vox-404-logo {
+        left: auto;
+        right: 22px;
+    }
+
+    .vox-404-controls {
+        top: 20px;
+        right: 22px;
+    }
+
+    html[dir="rtl"] .vox-404-controls {
+        right: auto;
+        left: 22px;
+    }
+
+    .logo-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .logo-text {
+        font-size: 21px;
+    }
+
+    .vox-404-control {
+        width: 40px;
+        height: 40px;
+    }
+
+    .vox-404-content {
+        width: calc(100% - 30px);
+    }
+
+    .vox-404-visual {
+        gap: 8px;
+    }
+
+    .vox-404-number {
+        font-size: 95px;
+        letter-spacing: -6px;
+    }
+
+    .vox-404-mic {
+        width: 70px;
+        height: 70px;
+    }
+
+    .vox-404-mic svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .vox-404-wave {
+        gap: 3px;
+    }
+
+    .vox-404-wave span {
+        width: 3px;
+    }
+
+    .vox-404-content h1 {
+        font-size: 38px;
+    }
+
+    .vox-404-content p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================
+   360px
+========================= */
+
+@media (max-width: 360px) {
+
+    .vox-404-logo {
+        top: 15px;
+        left: 15px;
+    }
+
+    html[dir="rtl"] .vox-404-logo {
+        left: auto;
+        right: 15px;
+    }
+
+    .vox-404-controls {
+        top: 15px;
+        right: 15px;
+        gap: 6px;
+    }
+
+    html[dir="rtl"] .vox-404-controls {
+        right: auto;
+        left: 15px;
+    }
+
+    .logo-icon {
+        width: 23px;
+        height: 23px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .vox-404-control {
+        width: 35px;
+        height: 35px;
+        border-radius: 9px;
+    }
+
+    .vox-404-rtl {
+        font-size: 9px;
+    }
+
+    .vox-404-content {
+        width: calc(100% - 20px);
+    }
+
+    .vox-404-visual {
+        gap: 3px;
+        margin-bottom: 17px;
+    }
+
+    .vox-404-number {
+        font-size: 65px;
+        letter-spacing: -4px;
+        -webkit-text-stroke: 1.5px var(--primary);
+    }
+
+    .vox-404-center {
+        gap: 9px;
+    }
+
+    .vox-404-mic {
+        width: 55px;
+        height: 55px;
+    }
+
+    .vox-404-mic svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .vox-404-wave {
+        height: 25px;
+        gap: 2px;
+    }
+
+    .vox-404-wave span {
+        width: 2px;
+    }
+
+    .vox-404-label {
+        padding: 5px 10px;
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+
+    .vox-404-content h1 {
+        margin: 13px 0 9px;
+        font-size: 29px;
+        letter-spacing: -1px;
+    }
+
+    .vox-404-content p {
+        font-size: 11px;
+        line-height: 1.6;
+        max-width: 310px;
+    }
+
+    .vox-404-actions {
+        width: 100%;
+        margin-top: 18px;
+        gap: 8px;
+    }
+
+    .vox-404-actions a {
+        min-height: 42px;
+        padding: 0 13px;
+        font-size: 10px;
+    }
+
+    .vox-404-actions svg {
+        width: 14px;
+        height: 14px;
+    }
+}</style>
 </head>
 
-<body class="bg-gray-900 text-white bg-animate transition duration-500">
+<body>
+
+    <main class="vox-404-page">
+
+        <!-- LOGO -->
+
+        <div class="vox-404-logo">
+
+            <a href="index.html" class="logo-wrap">
+
+                <i
+                    data-lucide="mic"
+                    class="logo-icon"
+                ></i>
+
+                <span class="logo-text">
+                    VOX<b>Studio</b>
+                </span>
+
+            </a>
+
+        </div>
 
 
-<div class="absolute top-5 right-5">
-    <button onclick="toggleTheme()" class="px-4 py-2 bg-white text-black rounded-full text-sm font-semibold">
-        Toggle Mode
-    </button>
-</div>
+        <!-- TOP CONTROLS -->
+
+        <div class="vox-404-controls">
+
+            <button
+                type="button"
+                id="rtl-toggle"
+                class="vox-404-control vox-404-rtl"
+            >
+                RTL
+            </button>
+
+            <button
+                type="button"
+                id="theme-toggle"
+                class="vox-404-control"
+            >
+                <i data-lucide="moon"></i>
+            </button>
+
+        </div>
 
 
-<div class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+        <!-- 404 CONTENT -->
 
-    
-    <div class="wave mb-6">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+        <section class="vox-404-content">
 
-    
-    <h1 class="text-7xl md:text-9xl font-bold glow">404</h1>
+            <div class="vox-404-visual">
 
-    <h2 class="text-2xl md:text-3xl mt-4 font-semibold">
-        Lost in the Soundscape 🎙️
-    </h2>
+                <span class="vox-404-number">
+                    4
+                </span>
 
-    <p class="text-gray-400 mt-3 max-w-md">
-        The page you're looking for has gone silent…  
-        Maybe it's still in post-production or got muted.
-    </p>
+                <div class="vox-404-center">
 
-    
-    <div class="mt-8 flex gap-4 flex-wrap justify-center">
-        <a href="../index.html" class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-full font-semibold shadow-lg transition">
-            🎧 Back to Studio
-        </a>
+                    <div class="vox-404-mic">
 
-        <button onclick="playSound()" class="px-6 py-3 border border-gray-500 hover:bg-gray-800 rounded-full transition">
-            🔊 Play Sound
-        </button>
-    </div>
+                        <i data-lucide="mic"></i>
 
-    
-    <p class="text-gray-500 text-sm mt-12">
-        VOX Studio • Premium Audio Production
-    </p>
+                    </div>
 
-</div>
+                    <div class="vox-404-wave">
 
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
 
-<audio id="errorSound">
-    <source src="../services/audio/sample3.mp3" type="audio/mp3">
-</audio>
+                    </div>
 
-<script>
+                </div>
 
-function playSound() {
-    document.getElementById("errorSound").play();
-}
+                <span class="vox-404-number">
+                    4
+                </span>
+
+            </div>
 
 
-function toggleTheme() {
-    document.body.classList.toggle("bg-gray-900");
-    document.body.classList.toggle("bg-white");
-    document.body.classList.toggle("text-white");
-    document.body.classList.toggle("text-black");
-}
-</script>
+            <span class="vox-404-label">
+                SIGNAL LOST
+            </span>
+
+
+            <h1>
+                This Page Went
+                <span>Off Air.</span>
+            </h1>
+
+
+            <p>
+                Looks like the track you're looking for doesn't exist.
+                The page may have been moved or the URL might be incorrect.
+            </p>
+
+
+            <div class="vox-404-actions">
+
+                <a
+                    href="index.html"
+                    class="vox-404-primary-btn"
+                >
+                    <i data-lucide="house"></i>
+                    Back To Home
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="vox-404-secondary-btn"
+                >
+                    Contact Studio
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>document.addEventListener("DOMContentLoaded", () => {
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
+
+    const rtlToggle =
+        document.getElementById("rtl-toggle");
+
+
+    const savedTheme =
+        localStorage.getItem("website-theme") || "light";
+
+    const savedDirection =
+        localStorage.getItem("website-direction") || "ltr";
+
+
+    if (savedTheme === "dark") {
+
+        html.classList.add("dark-mode");
+        body.classList.add("dark-mode");
+
+    } else {
+
+        html.classList.remove("dark-mode");
+        body.classList.remove("dark-mode");
+    }
+
+
+    html.setAttribute("dir", savedDirection);
+
+
+    if (themeToggle) {
+
+        themeToggle.innerHTML =
+            savedTheme === "dark"
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+    }
+
+
+    if (rtlToggle) {
+
+        rtlToggle.textContent =
+            savedDirection === "rtl"
+                ? "LTR"
+                : "RTL";
+    }
+
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", () => {
+
+            const isDark =
+                html.classList.contains("dark-mode");
+
+
+            if (isDark) {
+
+                html.classList.remove("dark-mode");
+                body.classList.remove("dark-mode");
+
+                localStorage.setItem(
+                    "website-theme",
+                    "light"
+                );
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="moon"></i>';
+
+            } else {
+
+                html.classList.add("dark-mode");
+                body.classList.add("dark-mode");
+
+                localStorage.setItem(
+                    "website-theme",
+                    "dark"
+                );
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="sun"></i>';
+            }
+
+
+            if (typeof lucide !== "undefined") {
+                lucide.createIcons();
+            }
+
+        });
+    }
+
+
+    if (rtlToggle) {
+
+        rtlToggle.addEventListener("click", () => {
+
+            const isRTL =
+                html.getAttribute("dir") === "rtl";
+
+
+            if (isRTL) {
+
+                html.setAttribute("dir", "ltr");
+
+                localStorage.setItem(
+                    "website-direction",
+                    "ltr"
+                );
+
+                rtlToggle.textContent = "RTL";
+
+            } else {
+
+                html.setAttribute("dir", "rtl");
+
+                localStorage.setItem(
+                    "website-direction",
+                    "rtl"
+                );
+
+                rtlToggle.textContent = "LTR";
+            }
+
+        });
+    }
+
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+});</script>
 
 </body>
 </html>

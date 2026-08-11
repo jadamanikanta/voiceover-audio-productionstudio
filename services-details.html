@@ -3,18 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="logo.png">
     <title>VOX Studio | Service Details</title>
 
-    <link rel="stylesheet" href="../global-css/global.css">
-    <link rel="stylesheet" href="./services-details.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="services-details.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="transition-colors duration-300">
 
-    <div id="navbar"></div>
+    <header class="navbar">
+  <div class="nav-container">
+
+    
+    <div class="logo">
+  <a href="index.html" class="logo-wrap">
+    <i data-lucide="mic" class="logo-icon"></i>
+    <span class="logo-text">VOX<b>Studio</b></span>
+  </a>
+</div>
+
+    
+    <nav class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+
+        
+        <li class="dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle" data-page="home">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="home2.html" class="nav-link" data-page="home">Home v2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="nav-link">About</a></li>
+
+        
+        <li><a href="services.html" class="nav-link">Services</a></li>
+
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+        
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+
+       <li><a href="login.html" class="mobile-login-btn">login</a></li>
+
+      </ul>
+
+      
+    </nav>
+
+    
+    <div class="nav-actions">
+
+      <button id="rtl-toggle" class="icon-btn rtl-btn" aria-label="Toggle RTL">
+        RTL
+      </button>
+
+      
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+           <i data-lucide="moon"></i>
+       </button>
+
+
+       <a href="login.html" class="nav-btn login-btn ">
+        Login
+    </a>
+
+      
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+</header>
 
     <section id="hero-section" class="hero-section relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden py-24">
         <div class="absolute inset-0 bg-black/65 z-1"></div>
@@ -291,8 +363,140 @@
             </div>
         </div>
     </section>
-    <div id="footer"></div>
-    <script src="../global-js/global.js"></script>
-    <script src="./services-details.js"></script>
+    <footer class="footer">
+    <div class="footer-container">
+
+        
+        <div class="footer-brand">
+
+            
+            <div class="logo">
+                <a href="index.html" class="logo-wrap">
+    <i data-lucide="mic" class="logo-icon"></i>
+    <span class="logo-text">VOX<b>Studio</b></span>
+  </a>
+            </div>
+
+            <p>
+    Professional voiceover, dubbing, podcast editing, and premium audio production for modern creators and brands.
+    We craft clear, engaging, and studio-quality audio with precision, creativity, and attention to every detail.
+    Bring your story to life with powerful sound that connects with your audience and leaves a lasting impact.
+</p>
+
+
+           
+            <div class="social-icons">
+                <ul>
+                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="footer-links">
+            <h3 style="
+position: relative;
+display: inline-block;
+padding-bottom: 2px;
+">
+Quick Links
+<span style="
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:60%;
+height:2px;
+background:#f59e0b;
+
+"></span>
+</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </div>
+
+        
+<div class="footer-services">
+    <h3 style="
+position: relative;
+display: inline-block;
+padding-bottom: 2px;
+">
+Studio Services
+<span style="
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:60%;
+height:2px;
+background:#f59e0b;
+
+"></span>
+</h3>
+    <ul>
+        <li><a href="services-details.html?service=voiceover">Voice Recording</a></li>
+        <li><a href="services-details.html?service=podcast">Podcast Editing</a></li>
+        <li><a href="services-details.html?service=music">Audio Mixing</a></li>
+        <li><a href="services-details.html?service=sounddesign">Sound Design</a></li>
+        <li><a href="404page.html">404 Page</a></li>
+        <li><a href="coming-soon.html">Coming Soon</a></li>
+    </ul>
+    
+</div>
+
+
+        
+        <div class="footer-contact">
+            <h3 style="
+position: relative;
+display: inline-block;
+padding-bottom: 2px;
+">
+contact
+<span style="
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:60%;
+height:2px;
+background:#f59e0b;
+
+"></span>
+</h3>
+            <p><i data-lucide="mail"></i> info@voxstudio.com</p>
+<p><i data-lucide="phone"></i> +91 9999999999</p>
+<p><i data-lucide="map-pin"></i> Hyderabad, India</p>
+<p><i data-lucide="clock"></i> Mon - Sat : 9AM - 7PM</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-copy">
+            © 2026 VOX Studio. All rights reserved.
+        </div>
+
+        <div class="footer-policy">
+            <a href="terms&conditions.html">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
+   
+    <script src="services-details.js"></script>
 </body>
 </html>

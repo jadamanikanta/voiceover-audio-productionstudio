@@ -1,185 +1,1404 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="64x64" href="../global-images/logo.png">
-<title>Coming Soon | VOX Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <title>Coming Soon | VOXStudio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>:root {
+    --primary: #f59e0b;
+    --primary-light: #fbbf24;
+
+    --bg-color: #f8fafc;
+    --text-color: #111827;
+
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+
+    --muted-color: #64748b;
+
+    --grid-color: rgba(15, 23, 42, 0.045);
+    --shadow: rgba(15, 23, 42, 0.08);
+}
+
+html.dark-mode {
+    --bg-color: #09090b;
+    --text-color: #f8fafc;
+
+    --card-bg: #111827;
+    --border-color: #252b36;
+
+    --muted-color: #94a3b8;
+
+    --grid-color: rgba(255, 255, 255, 0.035);
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
 body {
-    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 
-.wave {
+body {
+    font-family: "Inter", sans-serif;
+
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.vox-coming-page {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    overflow: hidden;
+
     display: flex;
-    gap: 6px;
-    height: 60px;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        linear-gradient(
+            var(--grid-color) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            var(--grid-color) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
 }
-.bar {
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.vox-coming-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    top: -280px;
+    right: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 158, 11, 0.10);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+.vox-coming-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    bottom: -280px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(245, 158, 11, 0.07);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.vox-coming-logo {
+    position: absolute;
+
+    top: 30px;
+    left: 40px;
+
+    z-index: 20;
+}
+
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: var(--text-color);
+}
+
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+
+    color: var(--text-color);
+
+    display: inline-block;
+
+    transition: 0.3s ease;
+
+    filter:
+        drop-shadow(
+            0 4px 10px rgba(0, 0, 0, 0.25)
+        );
+}
+
+
+.logo-text {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+}
+
+
+.logo-text b {
+    color: var(--text-color);
+
+    font-weight: 700;
+}
+
+
+.logo-wrap:hover .logo-icon {
+    transform:
+        scale(1.15)
+        rotate(-8deg);
+}
+
+
+.logo-wrap:hover .logo-text {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.vox-coming-controls {
+    position: absolute;
+
+    top: 30px;
+    right: 40px;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.vox-coming-control {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    background: var(--card-bg);
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+
+.vox-coming-control:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+.vox-coming-control svg {
+    width: 19px;
+    height: 19px;
+}
+
+
+.vox-coming-rtl {
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.vox-coming-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(850px, calc(100% - 40px));
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.vox-coming-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 14px;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.35);
+
+    border-radius: 50px;
+
+    background:
+        rgba(245, 158, 11, 0.08);
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+
+.vox-coming-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(245, 158, 11, 0.10);
+}
+
+
+/* =========================
+   MICROPHONE
+========================= */
+
+.vox-coming-icon {
+    margin-top: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.vox-coming-mic {
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245, 158, 11, 0.20),
+            rgba(245, 158, 11, 0.03)
+        );
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.45);
+
+    box-shadow:
+        0 20px 60px
+        rgba(245, 158, 11, 0.14);
+}
+
+
+.vox-coming-mic svg {
+    width: 38px;
+    height: 38px;
+
+    color: var(--primary);
+}
+
+
+/* =========================
+   SOUND WAVE
+========================= */
+
+.vox-coming-waves {
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.vox-coming-waves span {
+    width: 4px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    opacity: 0.75;
+}
+
+
+.vox-coming-waves span:nth-child(1) {
+    height: 10px;
+}
+
+.vox-coming-waves span:nth-child(2) {
+    height: 19px;
+}
+
+.vox-coming-waves span:nth-child(3) {
+    height: 27px;
+}
+
+.vox-coming-waves span:nth-child(4) {
+    height: 17px;
+}
+
+.vox-coming-waves span:nth-child(5) {
+    height: 33px;
+}
+
+.vox-coming-waves span:nth-child(6) {
+    height: 22px;
+}
+
+.vox-coming-waves span:nth-child(7) {
+    height: 29px;
+}
+
+.vox-coming-waves span:nth-child(8) {
+    height: 18px;
+}
+
+.vox-coming-waves span:nth-child(9) {
+    height: 25px;
+}
+
+.vox-coming-waves span:nth-child(10) {
+    height: 15px;
+}
+
+.vox-coming-waves span:nth-child(11) {
+    height: 9px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.vox-coming-content h1 {
+    margin-top: 18px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(
+        40px,
+        5vw,
+        64px
+    );
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    font-weight: 800;
+}
+
+
+.vox-coming-content h1 span {
+    color: var(--primary);
+
+    display: block;
+}
+
+
+.vox-coming-description {
+    width: min(570px, 100%);
+
+    margin-top: 13px;
+
+    color: var(--muted-color);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.vox-countdown {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    gap: 10px;
+}
+
+
+.vox-count-box {
+    width: 72px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.vox-count-box strong {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    color: var(--text-color);
+
+    font-weight: 700;
+}
+
+
+.vox-count-box span {
+    color: var(--muted-color);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.vox-count-separator {
+    color: var(--primary);
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-top: -12px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.vox-coming-btn {
+    min-height: 46px;
+
+    margin-top: 25px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px
+        rgba(245, 158, 11, 0.18);
+
+    transition: 0.3s ease;
+}
+
+
+.vox-coming-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+.vox-coming-btn:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.vox-coming-status {
+    margin-top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--muted-color);
+
+    font-size: 10px;
+}
+
+
+.vox-coming-status span {
     width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
     background: #22c55e;
-    animation: wave 1s infinite ease-in-out;
-}
-.bar:nth-child(2){animation-delay:.1s}
-.bar:nth-child(3){animation-delay:.2s}
-.bar:nth-child(4){animation-delay:.3s}
-.bar:nth-child(5){animation-delay:.4s}
 
-@keyframes wave {
-    0%,100%{height:10px}
-    50%{height:60px}
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.10);
 }
 
 
-.bg-animate {
-    background: radial-gradient(circle at 20% 20%, rgba(34,197,94,0.2), transparent),
-                radial-gradient(circle at 80% 80%, rgba(59,130,246,0.2), transparent);
-    animation: moveBg 8s linear infinite alternate;
-}
-@keyframes moveBg {
-    from {background-position:0 0,100% 100%;}
-    to {background-position:100% 100%,0 0;}
+/* =========================
+   DECORATIVE CIRCLES
+========================= */
+
+.vox-coming-circle {
+    position: absolute;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
 }
 
 
-.glass {
-    backdrop-filter: blur(15px);
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+.vox-circle-one {
+    width: 350px;
+    height: 350px;
+
+    left: -220px;
+    top: 30%;
 }
-</style>
+
+
+.vox-circle-two {
+    width: 280px;
+    height: 280px;
+
+    right: -180px;
+    bottom: 10%;
+}
+
+
+/* =========================
+   RTL
+========================= */
+
+html[dir="rtl"] .vox-coming-logo {
+    left: auto;
+    right: 40px;
+}
+
+
+html[dir="rtl"] .vox-coming-controls {
+    right: auto;
+    left: 40px;
+}
+
+
+html[dir="rtl"] .vox-coming-content {
+    direction: rtl;
+}
+
+
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px) {
+
+    .vox-coming-logo {
+        top: 25px;
+        left: 30px;
+    }
+
+    html[dir="rtl"] .vox-coming-logo {
+        left: auto;
+        right: 30px;
+    }
+
+    .vox-coming-controls {
+        top: 25px;
+        right: 30px;
+    }
+
+    html[dir="rtl"] .vox-coming-controls {
+        right: auto;
+        left: 30px;
+    }
+
+    .vox-coming-content h1 {
+        font-size: 52px;
+    }
+
+    .vox-coming-mic {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+
+    .vox-coming-logo {
+        top: 20px;
+        left: 22px;
+    }
+
+    html[dir="rtl"] .vox-coming-logo {
+        left: auto;
+        right: 22px;
+    }
+
+    .vox-coming-controls {
+        top: 20px;
+        right: 22px;
+    }
+
+    html[dir="rtl"] .vox-coming-controls {
+        right: auto;
+        left: 22px;
+    }
+
+    .logo-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .logo-text {
+        font-size: 21px;
+    }
+
+    .vox-coming-control {
+        width: 40px;
+        height: 40px;
+    }
+
+    .vox-coming-content {
+        width: calc(100% - 30px);
+    }
+
+    .vox-coming-content h1 {
+        font-size: 40px;
+    }
+
+    .vox-coming-description {
+        font-size: 13px;
+    }
+
+    .vox-count-box {
+        width: 65px;
+    }
+
+    .vox-count-box strong {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================
+   360px
+========================= */
+
+@media (max-width: 360px) {
+
+    .vox-coming-logo {
+        top: 15px;
+        left: 15px;
+    }
+
+    html[dir="rtl"] .vox-coming-logo {
+        left: auto;
+        right: 15px;
+    }
+
+    .vox-coming-controls {
+        top: 15px;
+        right: 15px;
+
+        gap: 6px;
+    }
+
+    html[dir="rtl"] .vox-coming-controls {
+        right: auto;
+        left: 15px;
+    }
+
+    .logo-icon {
+        width: 23px;
+        height: 23px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .vox-coming-control {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 9px;
+    }
+
+    .vox-coming-rtl {
+        font-size: 9px;
+    }
+
+    .vox-coming-content {
+        width: calc(100% - 20px);
+    }
+
+    .vox-coming-badge {
+        padding: 6px 10px;
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    .vox-coming-icon {
+        margin-top: 13px;
+        gap: 8px;
+    }
+
+    .vox-coming-mic {
+        width: 58px;
+        height: 58px;
+    }
+
+    .vox-coming-mic svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .vox-coming-waves {
+        gap: 2px;
+        height: 23px;
+    }
+
+    .vox-coming-waves span {
+        width: 2px;
+    }
+
+    .vox-coming-content h1 {
+        margin-top: 12px;
+
+        font-size: 28px;
+
+        letter-spacing: -1px;
+    }
+
+    .vox-coming-description {
+        margin-top: 8px;
+
+        font-size: 10px;
+
+        line-height: 1.55;
+
+        max-width: 310px;
+    }
+
+    .vox-countdown {
+        margin-top: 17px;
+
+        gap: 3px;
+    }
+
+    .vox-count-box {
+        width: 55px;
+        gap: 3px;
+    }
+
+    .vox-count-box strong {
+        font-size: 21px;
+    }
+
+    .vox-count-box span {
+        font-size: 7px;
+        letter-spacing: 0.5px;
+    }
+
+    .vox-count-separator {
+        font-size: 16px;
+    }
+
+    .vox-coming-btn {
+        min-height: 40px;
+
+        margin-top: 18px;
+
+        padding: 0 15px;
+
+        font-size: 10px;
+    }
+
+    .vox-coming-status {
+        margin-top: 12px;
+        font-size: 8px;
+    }
+}</style>
 </head>
 
-<body class="bg-gray-900 text-white bg-animate transition duration-500">
+<body>
 
+    <main class="vox-coming-page">
 
-<button onclick="toggleTheme()" class="absolute top-5 right-5 px-4 py-2 bg-white text-black rounded-full text-sm">
-    Toggle
-</button>
+        <!-- LOGO -->
 
+        <div class="vox-coming-logo">
 
+            <a href="index.html" class="logo-wrap">
 
-<div class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+                <i
+                    data-lucide="mic"
+                    class="logo-icon"
+                ></i>
 
-    
-    <div class="wave mb-6">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+                <span class="logo-text">
+                    VOX<b>Studio</b>
+                </span>
 
-    
-    <h1 onclick="goHome()" class="text-5xl md:text-7xl font-bold mb-4">
-        🎙️ VOX Studio
-    </h1>
+            </a>
 
-    <h2 class="text-2xl md:text-3xl mb-4 font-semibold">
-        We're Crafting Something Amazing
-    </h2>
-
-    <p class="text-gray-400 max-w-md mb-8">
-        Our studio is in production mode 🎧  
-        Stay tuned for premium voiceovers, dubbing & audio magic.
-    </p>
-
-    
-    <div class="flex gap-6 mb-10 text-center">
-        <div>
-            <p id="days" class="text-3xl font-bold">00</p>
-            <span class="text-sm text-gray-400">Days</span>
         </div>
-        <div>
-            <p id="hours" class="text-3xl font-bold">00</p>
-            <span class="text-sm text-gray-400">Hours</span>
-        </div>
-        <div>
-            <p id="minutes" class="text-3xl font-bold">00</p>
-            <span class="text-sm text-gray-400">Minutes</span>
-        </div>
-        <div>
-            <p id="seconds" class="text-3xl font-bold">00</p>
-            <span class="text-sm text-gray-400">Seconds</span>
-        </div>
-    </div>
 
-    
-    <div class="glass p-6 rounded-2xl w-full max-w-md">
-        <p class="mb-4 font-medium">Get notified when we launch 🚀</p>
-        <div class="flex gap-2">
-            <input type="email" placeholder="Enter your email"
-                class="flex-1 px-4 py-2 rounded-full text-black outline-none">
-            <button onclick="subscribe()" 
-                class="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-full">
-                Join
+
+        <!-- TOP CONTROLS -->
+
+        <div class="vox-coming-controls">
+
+            <button
+                type="button"
+                id="rtl-toggle"
+                class="vox-coming-control vox-coming-rtl"
+            >
+                RTL
             </button>
+
+            <button
+                type="button"
+                id="theme-toggle"
+                class="vox-coming-control"
+            >
+                <i data-lucide="moon"></i>
+            </button>
+
         </div>
-    </div>
-    
-
-    
-    <button onclick="playSound()" class="mt-8 text-sm text-gray-400 hover:text-white">
-        🔊 Tap for Studio Sound
-    </button>
-
-    <p class="text-gray-500 text-sm mt-10">
-        © 2026 VOX Studio • Audio Production
-    </p>
-</div>
-
-<audio id="sound">
-    <source src="../services/audio/sample2.mp3" type="audio/mp3">
-</audio>
-
-<script>
-
-const launchDate = new Date("April 30, 2026 00:00:00").getTime();
-
-setInterval(() => {
-    const now = new Date().getTime();
-    const gap = launchDate - now;
-
-    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
-    const h = Math.floor((gap / (1000 * 60 * 60)) % 24);
-    const m = Math.floor((gap / (1000 * 60)) % 60);
-    const s = Math.floor((gap / 1000) % 60);
-
-    document.getElementById("days").innerText = d;
-    document.getElementById("hours").innerText = h;
-    document.getElementById("minutes").innerText = m;
-    document.getElementById("seconds").innerText = s;
-}, 1000);
 
 
-function subscribe() {
-    alert("You're on the list 🎉");
-}
+        <!-- MAIN CONTENT -->
+
+        <section class="vox-coming-content">
+
+            <div class="vox-coming-badge">
+
+                <span class="vox-coming-dot"></span>
+
+                SOMETHING NEW IS LOADING
+
+            </div>
 
 
-function playSound() {
-    document.getElementById("sound").play();
-}
+            <div class="vox-coming-icon">
+
+                <div class="vox-coming-mic">
+
+                    <i data-lucide="mic"></i>
+
+                </div>
+
+                <div class="vox-coming-waves">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
 
 
-function toggleTheme() {
-    document.body.classList.toggle("bg-gray-900");
-    document.body.classList.toggle("bg-white");
-    document.body.classList.toggle("text-white");
-    document.body.classList.toggle("text-black");
-}
+            <h1>
+                We’re Tuning
+                <span>Something Great.</span>
+            </h1>
 
-function goHome() {
-  window.location.href = "../index.html";
-}
-</script>
+
+            <p class="vox-coming-description">
+                Our new VOXStudio experience is currently in production.
+                We're fine-tuning every detail to bring you something
+                worth listening to.
+            </p>
+
+
+            <!-- COUNTDOWN -->
+
+            <div class="vox-countdown">
+
+                <div class="vox-count-box">
+
+                    <strong id="days">00</strong>
+
+                    <span>Days</span>
+
+                </div>
+
+
+                <div class="vox-count-separator">
+                    :
+                </div>
+
+
+                <div class="vox-count-box">
+
+                    <strong id="hours">00</strong>
+
+                    <span>Hours</span>
+
+                </div>
+
+
+                <div class="vox-count-separator">
+                    :
+                </div>
+
+
+                <div class="vox-count-box">
+
+                    <strong id="minutes">00</strong>
+
+                    <span>Minutes</span>
+
+                </div>
+
+
+                <div class="vox-count-separator">
+                    :
+                </div>
+
+
+                <div class="vox-count-box">
+
+                    <strong id="seconds">00</strong>
+
+                    <span>Seconds</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CTA -->
+
+            <a
+                href="index.html"
+                class="vox-coming-btn"
+            >
+                Explore VOXStudio
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+
+            <div class="vox-coming-status">
+
+                <span></span>
+
+                Studio is currently recording
+
+            </div>
+
+        </section>
+
+
+        <!-- DECORATIVE CIRCLES -->
+
+        <div class="vox-coming-circle vox-circle-one"></div>
+
+        <div class="vox-coming-circle vox-circle-two"></div>
+
+    </main>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    const themeToggle =
+        document.getElementById("theme-toggle");
+
+    const rtlToggle =
+        document.getElementById("rtl-toggle");
+
+
+    const savedTheme =
+        localStorage.getItem("website-theme") || "light";
+
+    const savedDirection =
+        localStorage.getItem("website-direction") || "ltr";
+
+
+    /* THEME */
+
+    if (savedTheme === "dark") {
+
+        html.classList.add("dark-mode");
+        body.classList.add("dark-mode");
+
+    } else {
+
+        html.classList.remove("dark-mode");
+        body.classList.remove("dark-mode");
+
+    }
+
+
+    /* DIRECTION */
+
+    html.setAttribute("dir", savedDirection);
+
+
+    /* THEME ICON */
+
+    if (themeToggle) {
+
+        themeToggle.innerHTML =
+            savedTheme === "dark"
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+
+    }
+
+
+    /* RTL BUTTON */
+
+    if (rtlToggle) {
+
+        rtlToggle.textContent =
+            savedDirection === "rtl"
+                ? "LTR"
+                : "RTL";
+
+    }
+
+
+    /* DARK MODE */
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", () => {
+
+            const isDark =
+                html.classList.contains("dark-mode");
+
+
+            if (isDark) {
+
+                html.classList.remove("dark-mode");
+                body.classList.remove("dark-mode");
+
+                localStorage.setItem(
+                    "website-theme",
+                    "light"
+                );
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="moon"></i>';
+
+            } else {
+
+                html.classList.add("dark-mode");
+                body.classList.add("dark-mode");
+
+                localStorage.setItem(
+                    "website-theme",
+                    "dark"
+                );
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="sun"></i>';
+
+            }
+
+
+            if (typeof lucide !== "undefined") {
+                lucide.createIcons();
+            }
+
+        });
+
+    }
+
+
+    /* RTL */
+
+    if (rtlToggle) {
+
+        rtlToggle.addEventListener("click", () => {
+
+            const isRTL =
+                html.getAttribute("dir") === "rtl";
+
+
+            if (isRTL) {
+
+                html.setAttribute("dir", "ltr");
+
+                localStorage.setItem(
+                    "website-direction",
+                    "ltr"
+                );
+
+                rtlToggle.textContent = "RTL";
+
+            } else {
+
+                html.setAttribute("dir", "rtl");
+
+                localStorage.setItem(
+                    "website-direction",
+                    "rtl"
+                );
+
+                rtlToggle.textContent = "LTR";
+
+            }
+
+        });
+
+    }
+
+
+    /* COUNTDOWN */
+
+    const launchDate =
+        new Date("2026-12-31T23:59:59").getTime();
+
+
+    function updateCountdown() {
+
+        const now = new Date().getTime();
+
+        const difference =
+            launchDate - now;
+
+
+        if (difference <= 0) {
+
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (difference %
+                    (1000 * 60 * 60 * 24)) /
+                    (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference %
+                    (1000 * 60 * 60)) /
+                    (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference %
+                    (1000 * 60)) /
+                    1000
+            );
+
+
+        document.getElementById("days").textContent =
+            String(days).padStart(2, "0");
+
+        document.getElementById("hours").textContent =
+            String(hours).padStart(2, "0");
+
+        document.getElementById("minutes").textContent =
+            String(minutes).padStart(2, "0");
+
+        document.getElementById("seconds").textContent =
+            String(seconds).padStart(2, "0");
+    }
+
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    /* LUCIDE */
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+});
+    </script>
 
 </body>
 </html>

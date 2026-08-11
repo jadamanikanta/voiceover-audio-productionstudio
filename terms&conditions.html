@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms & Conditions | VOXStudio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+:root {
+    --primary: #f59e0b;
+    --primary-light: #fbbf24;
+
+    --bg-color: #f8fafc;
+    --text-color: #111827;
+
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+
+    --muted-color: #64748b;
+    --shadow: rgba(15, 23, 42, 0.06);
+}
+
+html.dark-mode {
+    --bg-color: #09090b;
+    --text-color: #f8fafc;
+
+    --card-bg: #111827;
+    --border-color: #252b36;
+
+    --muted-color: #94a3b8;
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: var(--bg-color);
+    color: var(--text-color);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.vox-terms-page {
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    background-image:
+        linear-gradient(
+            var(--shadow) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            var(--shadow) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+}
+
+
+/* TOP */
+
+.vox-terms-top {
+    width: min(1300px, 90%);
+
+    margin: 0 auto;
+
+    padding: 25px 0 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+}
+
+
+.logo-wrap {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+}
+
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+
+    color: var(--text-color);
+
+    transition: 0.3s ease;
+
+    filter:
+        drop-shadow(
+            0 4px 10px rgba(0, 0, 0, 0.25)
+        );
+}
+
+
+.logo-text {
+    font-size: 24px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+    letter-spacing: 1px;
+}
+
+
+.logo-text b {
+    color: var(--text-color);
+}
+
+
+.logo-wrap:hover .logo-icon {
+    transform:
+        scale(1.15)
+        rotate(-8deg);
+}
+
+
+.vox-terms-controls {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.vox-terms-control {
+    width: 42px;
+    height: 42px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 11px;
+
+    background: var(--card-bg);
+
+    color: var(--text-color);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.vox-terms-control:hover {
+    color: var(--primary);
+
+    border-color: var(--primary);
+}
+
+
+.vox-terms-rtl {
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* HERO */
+
+.vox-terms-hero {
+    width: min(800px, 90%);
+
+    margin: 10px auto 25px;
+
+    text-align: center;
+
+    flex-shrink: 0;
+}
+
+
+.vox-terms-hero-icon {
+    width: 48px;
+    height: 48px;
+
+    margin: 0 auto 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(245, 158, 11, 0.10);
+
+    border:
+        1px solid
+        rgba(245, 158, 11, 0.25);
+}
+
+
+.vox-terms-hero-icon svg {
+    width: 23px;
+    height: 23px;
+
+    color: var(--primary);
+}
+
+
+.vox-terms-eyebrow {
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.vox-terms-hero h1 {
+    margin-top: 5px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+
+.vox-terms-hero h1 span {
+    color: var(--primary);
+}
+
+
+.vox-terms-hero p {
+    margin: 8px auto 0;
+
+    max-width: 560px;
+
+    color: var(--muted-color);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* CARDS */
+
+.vox-terms-content {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    flex: 1;
+
+    min-height: 0;
+}
+
+
+.vox-term-card {
+    min-height: 0;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 16px;
+
+    background: var(--card-bg);
+
+    box-shadow:
+        0 12px 30px var(--shadow);
+
+    transition: 0.3s ease;
+}
+
+
+.vox-term-card:hover {
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
+}
+
+
+.vox-term-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(245, 158, 11, 0.10);
+
+    color: var(--primary);
+}
+
+
+.vox-term-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.vox-term-card span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.vox-term-card h2 {
+    margin-bottom: 5px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.vox-term-card p {
+    color: var(--muted-color);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* BOTTOM */
+
+.vox-terms-bottom {
+    width: min(1100px, 90%);
+
+    margin: 18px auto 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-shrink: 0;
+}
+
+
+.vox-terms-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.vox-terms-note svg {
+    width: 16px;
+    height: 16px;
+
+    flex-shrink: 0;
+
+    color: var(--primary);
+}
+
+
+.vox-terms-note p {
+    color: var(--muted-color);
+
+    font-size: 10px;
+}
+
+
+.vox-contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 14px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: var(--primary);
+
+    color: #111827;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+
+.vox-contact-btn svg {
+    width: 13px;
+    height: 13px;
+}
+
+
+.vox-contact-btn:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* RTL */
+
+html[dir="rtl"] .vox-terms-page {
+    direction: rtl;
+}
+
+
+html[dir="rtl"] .vox-term-card,
+html[dir="rtl"] .vox-terms-bottom {
+    direction: rtl;
+}
+
+
+/* 1024 */
+
+@media (max-width: 1024px) {
+
+    .vox-terms-top {
+        width: 92%;
+    }
+
+    .vox-terms-content,
+    .vox-terms-bottom {
+        width: 92%;
+    }
+
+    .vox-term-card {
+        padding: 15px;
+    }
+
+    .vox-term-card h2 {
+        font-size: 16px;
+    }
+
+    .vox-term-card p {
+        font-size: 10px;
+    }
+}
+
+
+/* 768 */
+
+@media (max-width: 768px) {
+
+    .vox-terms-top {
+        padding-top: 18px;
+    }
+
+    .logo-text {
+        font-size: 21px;
+    }
+
+    .logo-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .vox-terms-control {
+        width: 38px;
+        height: 38px;
+    }
+
+    .vox-terms-hero {
+        margin-top: 5px;
+
+        margin-bottom: 18px;
+    }
+
+    .vox-terms-hero h1 {
+        font-size: 35px;
+    }
+
+    .vox-terms-hero p {
+        font-size: 11px;
+    }
+
+    .vox-terms-content {
+        gap: 10px;
+    }
+
+    .vox-term-card {
+        padding: 12px;
+
+        gap: 10px;
+
+        border-radius: 12px;
+    }
+
+    .vox-term-icon {
+        width: 35px;
+        height: 35px;
+
+        border-radius: 9px;
+    }
+
+    .vox-term-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .vox-term-card h2 {
+        font-size: 14px;
+    }
+
+    .vox-term-card p {
+        font-size: 9px;
+
+        line-height: 1.5;
+    }
+
+    .vox-terms-bottom {
+        margin-top: 12px;
+
+        margin-bottom: 18px;
+    }
+}
+
+
+/* 360 */
+
+@media (max-width: 360px) {
+
+    .vox-terms-top {
+        width: calc(100% - 22px);
+
+        padding-top: 12px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        width: 23px;
+        height: 23px;
+    }
+
+    .vox-terms-controls {
+        gap: 5px;
+    }
+
+    .vox-terms-control {
+        width: 32px;
+        height: 32px;
+
+        border-radius: 8px;
+    }
+
+    .vox-terms-hero {
+        width: calc(100% - 22px);
+
+        margin-bottom: 12px;
+    }
+
+    .vox-terms-hero-icon {
+        width: 38px;
+        height: 38px;
+
+        margin-bottom: 5px;
+    }
+
+    .vox-terms-hero-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .vox-terms-eyebrow {
+        font-size: 7px;
+    }
+
+    .vox-terms-hero h1 {
+        font-size: 27px;
+
+        letter-spacing: -1px;
+    }
+
+    .vox-terms-hero p {
+        margin-top: 5px;
+
+        font-size: 9px;
+    }
+
+    .vox-terms-content {
+        width: calc(100% - 22px);
+
+        gap: 7px;
+    }
+
+    .vox-term-card {
+        padding: 8px;
+
+        gap: 7px;
+
+        border-radius: 9px;
+    }
+
+    .vox-term-icon {
+        width: 27px;
+        height: 27px;
+
+        border-radius: 7px;
+    }
+
+    .vox-term-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .vox-term-card span {
+        font-size: 7px;
+    }
+
+    .vox-term-card h2 {
+        margin-bottom: 2px;
+
+        font-size: 11px;
+    }
+
+    .vox-term-card p {
+        font-size: 7px;
+
+        line-height: 1.4;
+    }
+
+    .vox-terms-bottom {
+        width: calc(100% - 22px);
+
+        margin-top: 8px;
+        margin-bottom: 10px;
+
+        gap: 8px;
+    }
+
+    .vox-terms-note p {
+        font-size: 7px;
+    }
+
+    .vox-terms-note svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .vox-contact-btn {
+        padding: 7px 9px;
+
+        font-size: 7px;
+    }
+
+    .vox-contact-btn svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+    <main class="vox-terms-page">
+
+        <div class="vox-terms-top">
+
+            <a href="index.html" class="logo-wrap">
+
+                <i data-lucide="mic" class="logo-icon"></i>
+
+                <span class="logo-text">
+                    VOX<b>Studio</b>
+                </span>
+
+            </a>
+
+            <div class="vox-terms-controls">
+
+                <button
+                    type="button"
+                    id="rtl-toggle"
+                    class="vox-terms-control vox-terms-rtl"
+                >
+                    RTL
+                </button>
+
+                <button
+                    type="button"
+                    id="theme-toggle"
+                    class="vox-terms-control"
+                >
+                    <i data-lucide="moon"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <section class="vox-terms-hero">
+
+            <div class="vox-terms-hero-icon">
+                <i data-lucide="file-text"></i>
+            </div>
+
+            <span class="vox-terms-eyebrow">
+                LEGAL INFORMATION
+            </span>
+
+            <h1>
+                Terms <span>&</span> Conditions
+            </h1>
+
+            <p>
+                Please review the terms that apply when using
+                VOXStudio services and facilities.
+            </p>
+
+        </section>
+
+
+        <section class="vox-terms-content">
+
+            <div class="vox-term-card">
+
+                <div class="vox-term-icon">
+                    <i data-lucide="mic-2"></i>
+                </div>
+
+                <div>
+                    <span>01</span>
+
+                    <h2>Our Services</h2>
+
+                    <p>
+                        VOXStudio provides professional voiceover,
+                        recording, podcasting, editing and complete
+                        audio production services.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vox-term-card">
+
+                <div class="vox-term-icon">
+                    <i data-lucide="calendar-check"></i>
+                </div>
+
+                <div>
+                    <span>02</span>
+
+                    <h2>Bookings & Payments</h2>
+
+                    <p>
+                        Sessions must be booked in advance. Required
+                        deposits or payments must be completed before
+                        production begins.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vox-term-card">
+
+                <div class="vox-term-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+
+                <div>
+                    <span>03</span>
+
+                    <h2>Client Responsibilities</h2>
+
+                    <p>
+                        Clients must provide accurate project details,
+                        obtain required permissions and use studio
+                        equipment responsibly.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="vox-term-card">
+
+                <div class="vox-term-icon">
+                    <i data-lucide="copyright"></i>
+                </div>
+
+                <div>
+                    <span>04</span>
+
+                    <h2>Content & Rights</h2>
+
+                    <p>
+                        Clients are responsible for the content they
+                        provide. Ownership and licensing requirements
+                        should be agreed before production.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="vox-terms-bottom">
+
+            <div class="vox-terms-note">
+
+                <i data-lucide="info"></i>
+
+                <p>
+                    By using VOXStudio services, you acknowledge
+                    and agree to these Terms & Conditions.
+                </p>
+
+            </div>
+
+            <a href="contact.html" class="vox-contact-btn">
+                Contact VOXStudio
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <script>document.addEventListener("DOMContentLoaded", () => {
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const rtlToggle = document.getElementById("rtl-toggle");
+
+
+    const savedTheme =
+        localStorage.getItem("website-theme") || "light";
+
+    const savedDirection =
+        localStorage.getItem("website-direction") || "ltr";
+
+
+    /* APPLY SAVED THEME */
+
+    if (savedTheme === "dark") {
+
+        html.classList.add("dark-mode");
+        body.classList.add("dark-mode");
+
+    } else {
+
+        html.classList.remove("dark-mode");
+        body.classList.remove("dark-mode");
+
+    }
+
+
+    /* APPLY SAVED DIRECTION */
+
+    html.setAttribute("dir", savedDirection);
+
+
+    /* THEME BUTTON */
+
+    if (themeToggle) {
+
+        themeToggle.innerHTML =
+            savedTheme === "dark"
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+
+    }
+
+
+    /* RTL BUTTON */
+
+    if (rtlToggle) {
+
+        rtlToggle.textContent =
+            savedDirection === "rtl"
+                ? "LTR"
+                : "RTL";
+
+    }
+
+
+    /* DARK / LIGHT TOGGLE */
+
+    if (themeToggle) {
+
+        themeToggle.addEventListener("click", () => {
+
+            const isDark =
+                html.classList.contains("dark-mode");
+
+
+            if (isDark) {
+
+                html.classList.remove("dark-mode");
+                body.classList.remove("dark-mode");
+
+                localStorage.setItem(
+                    "website-theme",
+                    "light"
+                );
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="moon"></i>';
+
+            } else {
+
+                html.classList.add("dark-mode");
+                body.classList.add("dark-mode");
+
+                localStorage.setItem(
+                    "website-theme",
+                    "dark"
+                );
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="sun"></i>';
+
+            }
+
+
+            if (typeof lucide !== "undefined") {
+                lucide.createIcons();
+            }
+
+        });
+
+    }
+
+
+    /* RTL / LTR TOGGLE */
+
+    if (rtlToggle) {
+
+        rtlToggle.addEventListener("click", () => {
+
+            const currentDirection =
+                html.getAttribute("dir") || "ltr";
+
+
+            if (currentDirection === "rtl") {
+
+                html.setAttribute("dir", "ltr");
+
+                localStorage.setItem(
+                    "website-direction",
+                    "ltr"
+                );
+
+                rtlToggle.textContent = "RTL";
+
+            } else {
+
+                html.setAttribute("dir", "rtl");
+
+                localStorage.setItem(
+                    "website-direction",
+                    "rtl"
+                );
+
+                rtlToggle.textContent = "LTR";
+
+            }
+
+        });
+
+    }
+
+
+    /* LUCIDE ICONS */
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+});</script>
+
+</body>
+
+</html>

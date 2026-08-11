@@ -216,8 +216,12 @@ body.dark-mode .navbar {
 /* Theme Icon */
 #theme-toggle {
     width: 42px;
-    font-size: 18px;
+    
     border-radius:50%;
+}
+#theme-toggle svg{
+    width:20px;
+    height:20px;
 }
 
 /* Hover Effect */
@@ -484,7 +488,105 @@ body.dark-mode .navbar {
 
 }
 
+@media (max-width: 1024px) {
 
+    .nav-container {
+        width: 94%;
+        height: 78px;
+    }
+
+    .logo-wrap {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        font-size: 26px;
+    }
+
+    .logo-text {
+        font-size: 21px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 7px 0;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .login-btn {
+        width: 48px;
+        height: 40px;
+        font-size: 13px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #theme-toggle,
+    #rtl-toggle {
+        width: 44px;
+        height: 40px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    #theme-toggle {
+        width: 40px;
+        border-radius: 50%;
+        font-size: 17px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 150px;
+        padding: 10px 0;
+        margin-top: 8px;
+        background: var(--bg-color);
+        border: 1px solid rgba(var(--text-color-rgb), 0.15);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        z-index: 999;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li {
+        width: 100%;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 10px 15px;
+        white-space: nowrap;
+    }
+
+    .dropdown-menu a:hover {
+        background: rgba(var(--text-color-rgb), 0.06);
+    }
+}
 @media (max-width: 900px) {
 
     .nav-menu {

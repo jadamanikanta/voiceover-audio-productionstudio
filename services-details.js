@@ -9,7 +9,7 @@ const servicesData = {
             badge: "Professional Voice Over",
             title: "Bring Every Script to Life with <span class='gradient-text'>Studio-Grade</span> Voices",
             desc: "Audition elite voice talents, record in state-of-the-art acoustic booths, and receive broadcast-ready voiceovers with pristine clarity and depth. Perfect for commercials, corporate narratives, and digital campaigns.",
-            bgImage: "../global-images/voiceover-bg.jpg",
+            bgImage: "voiceover-bg.jpg",
             btnPrimaryText: "Book Your Session",
             btnSecondaryText: "Listen to Samples"
         },
@@ -20,7 +20,7 @@ const servicesData = {
                 "Whether you require a warm conversational tone for an explainer video, an energetic voice for a high-impact product commercial, or a cinematic resonance for a trailer, our team of directors works with you to match the perfect talent and direct them to hit the precise tone.",
                 "Every recording is delivered fully polished, edited, and leveled, meeting industry loudness standards (such as LUFS for broadcast and digital platforms). Elevate your content with a voice that connects instantly with your target audience."
             ],
-            image: "../global-images/voice-over.jpg",
+            image: "voice-over.jpg",
             checklist: [
                 "Acoustically isolated vocal booths (NC-15 rating)",
                 "Elite vocal chain: Neumann U87, Avalon 737, and Apollo interfaces",
@@ -146,7 +146,7 @@ const servicesData = {
         cta: {
             title: "Ready to Capture Your Perfect Brand Voice?",
             desc: "Submit your script today for a free review and matching quote. Let's create an audio asset that sets your brand apart in digital media.",
-            bgImage: "../global-images/voiceover-bg.jpg",
+            bgImage: "voiceover-bg.jpg",
             btnPrimaryText: "Book Your Session",
             btnSecondaryText: "Contact Our Team"
         }
@@ -160,7 +160,7 @@ const servicesData = {
             badge: "Professional Podcast Editing",
             title: "Distraction-Free, <span class='gradient-text'>Broadcast-Ready</span> Podcast Production",
             desc: "We clean up background hums, balance dialogue levels, insert show assets, and master your episodes so they sound professional on Apple Podcasts, Spotify, and YouTube.",
-            bgImage: "../global-images/podcast-editing.jpg",
+            bgImage: "podcast-editing.jpg",
             btnPrimaryText: "Polish Your Episode",
             btnSecondaryText: "Hear Before & After"
         },
@@ -171,7 +171,7 @@ const servicesData = {
                 "Our dedicated editors manually listen to your tracks to cut out filler words ('ums', 'ahs', 'you knows'), remove awkward silence pauses, and smooth over crosstalk. We balance all hosts' volumes dynamically using compression and levels match, keeping host and guest levels equal.",
                 "Finally, we clean up noise issues (room air conditioning hum, hiss, line static) and master the final mix to the international standard of -16 LUFS for stereo podcasts. You receive a clean, engaging show ready to build your subscriber base."
             ],
-            image: "../global-images/audiobook.png",
+            image: "audiobook.png",
             checklist: [
                 "Advanced vocal de-noising & echo reduction",
                 "Removal of filler words, stutters, and dead air space",
@@ -299,7 +299,7 @@ const servicesData = {
         cta: {
             title: "Ready to Sound Like a Top-Tier Podcast?",
             desc: "Send us a raw 10-minute clip of your podcast. We'll edit and master it for free so you can hear the professional difference.",
-            bgImage: "../global-images/podcast-editing.jpg",
+            bgImage: "podcast-editing.jpg",
             btnPrimaryText: "Send Free Sample Clip",
             btnSecondaryText: "View Monthly Plans"
         }
@@ -313,7 +313,7 @@ const servicesData = {
             badge: "Immersive Sound Design",
             title: "Crafting Cinematic <span class='gradient-text'>Immersive Worlds</span> Through Audio",
             desc: "Custom foley, synthetic soundscapes, UI sound effects, and spatial audio designed to amplify visual impact and create deep audience immersion.",
-            bgImage: "../global-images/sound-design.jpg",
+            bgImage: "sound-design.jpg",
             btnPrimaryText: "Design Your Soundscape",
             btnSecondaryText: "Watch Showreel"
         },
@@ -324,7 +324,7 @@ const servicesData = {
                 "Our team combines field recording, foley performance, and advanced modular synthesis. We create satisfying UI feedback sounds for app menus, immersive ambient beds for game levels, massive cinematic soundscapes for movie trailers, and detailed foley layers for product videos.",
                 "Every element is carefully positioned in the frequency spectrum to prevent muddy mixes. We mix and deliver in formats ranging from standard stereo to immersive Dolby Atmos 5.1/7.1 setups, ensuring your audio translates perfectly on theaters, TV, and mobile headphones."
             ],
-            image: "../global-images/animation.png",
+            image: "animation.png",
             checklist: [
                 "Bespoke foley recording and custom sound effects generation",
                 "Advanced modular synthesis & organic texture layering",
@@ -450,7 +450,7 @@ const servicesData = {
         cta: {
             title: "Ready to Supercharge Your Visuals with Custom SFX?",
             desc: "Send us a sequence from your project today. Our engineers will review and advise on the ideal foley, ambient, and impact layering necessary.",
-            bgImage: "../global-images/sound-design.jpg",
+            bgImage: "sound-design.jpg",
             btnPrimaryText: "Consult Our Sound Team",
             btnSecondaryText: "View Sound Showreel"
         }
@@ -464,7 +464,7 @@ const servicesData = {
             badge: "Bespoke Music Production",
             title: "Compose Your Brand's Identity with <span class='gradient-text'>Original Soundtracks</span>",
             desc: "Custom audio branding, epic trailer scores, commercial jingles, and modern digital compositions crafted from scratch by award-winning music producers.",
-            bgImage: "../global-images/music-production.jpg",
+            bgImage: "music-production.jpg",
             btnPrimaryText: "Start Composing",
             btnSecondaryText: "Listen to Portfolio"
         },
@@ -475,7 +475,7 @@ const servicesData = {
                 "At VOX Studio, we compose across multiple genres, including orchestral cinematic scoring, modern synthwave, urban beats, organic acoustic arrangements, and corporate acoustic-pop. Our team utilizes real acoustic instruments, high-end virtual orchestras, and vintage analog gear.",
                 "We compositionally structure each track to complement your script voiceover, ensuring the music ducks dynamically and builds to a climax at the perfect visual hook. The output is a professional stereo or surround mix, fully mastered for streaming, web, or television."
             ],
-            image: "../global-images/studio.jpg",
+            image: "studio.jpg",
             checklist: [
                 "Bespoke music composition across multiple modern genres",
                 "Recording of real guitars, keyboards, and acoustic elements",
@@ -601,7 +601,7 @@ const servicesData = {
         cta: {
             title: "Ready to Create Your Custom Signature Soundtrack?",
             desc: "Connect with our composing directors to share your references. Let's design a sonic signature that defines your brand value.",
-            bgImage: "../global-images/music-production.jpg",
+            bgImage: "music-production.jpg",
             btnPrimaryText: "Book Composer Consultation",
             btnSecondaryText: "Hear Brand Portfolios"
         }
@@ -860,34 +860,191 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lucide.createIcons();
 
-    loadHeaderAndFooter();
+    
 
     initializeScrollAnimations();
 });
 
-function loadHeaderAndFooter() {
-    fetch("../components/navbar.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("navbar").innerHTML = data;
+const currentPage = window.location.pathname.split('/').pop();
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && href.includes('services.html')) {
-                    link.classList.add('active');
-                }
+const pageMap = {
+    
+    
+    "services-details.html": "services.html",
+
+    
+};
+
+const activeHref = pageMap[currentPage];
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    if (link.getAttribute('href') === activeHref) {
+        link.classList.add('active');
+    }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const rtlToggle = document.getElementById("rtl-toggle");
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+    const navbar = document.querySelector(".navbar");
+
+    const savedTheme = localStorage.getItem("website-theme") || "light";
+    const savedDirection = localStorage.getItem("website-direction") || "ltr";
+
+    if (savedTheme === "dark") {
+        body.classList.add("dark-mode");
+    } else {
+        body.classList.remove("dark-mode");
+    }
+
+    html.setAttribute("dir", savedDirection);
+
+    if (themeToggle) {
+        themeToggle.innerHTML =
+            savedTheme === "dark"
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+    }
+
+    if (rtlToggle) {
+        rtlToggle.textContent =
+            savedDirection === "rtl" ? "LTR" : "RTL";
+    }
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+
+            const isDark = body.classList.contains("dark-mode");
+
+            if (isDark) {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("website-theme", "light");
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="moon"></i>';
+
+            } else {
+                body.classList.add("dark-mode");
+                localStorage.setItem("website-theme", "dark");
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="sun"></i>';
+            }
+
+            if (typeof lucide !== "undefined") {
+                lucide.createIcons();
+            }
+        });
+    }
+
+    if (rtlToggle) {
+        rtlToggle.addEventListener("click", () => {
+
+            const isRTL = html.getAttribute("dir") === "rtl";
+
+            if (isRTL) {
+                html.setAttribute("dir", "ltr");
+                localStorage.setItem("website-direction", "ltr");
+                rtlToggle.textContent = "RTL";
+            } else {
+                html.setAttribute("dir", "rtl");
+                localStorage.setItem("website-direction", "rtl");
+                rtlToggle.textContent = "LTR";
+            }
+        });
+    }
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+
+            if (navMenu) {
+                navMenu.classList.remove("active");
+            }
+
+            if (hamburger) {
+                hamburger.classList.remove("active");
+            }
+        });
+    });
+
+    document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+
+        toggle.addEventListener("click", e => {
+
+            if (window.innerWidth <= 1024) {
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                const dropdown = toggle.closest(".dropdown");
+
+                document.querySelectorAll(".dropdown").forEach(item => {
+                    if (item !== dropdown) {
+                        item.classList.remove("active");
+                    }
+                });
+
+                dropdown.classList.toggle("active");
+            }
+        });
+    });
+
+    document.addEventListener("click", e => {
+
+        if (!e.target.closest(".dropdown")) {
+
+            document.querySelectorAll(".dropdown").forEach(dropdown => {
+                dropdown.classList.remove("active");
             });
 
-            initializeNavbar();
-        });
+        }
+    });
 
-    fetch("../components/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-            lucide.createIcons();
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+
+        const linkPage = href.split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+
+    if (navbar) {
+        window.addEventListener("scroll", () => {
+
+            navbar.style.boxShadow =
+                window.scrollY > 50
+                    ? "0 12px 30px rgba(0,0,0,0.08)"
+                    : "none";
+
         });
-}
+    }
+
+});
 
 let currentSlide = 0;
 function setupTestimonialSlider() {

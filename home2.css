@@ -81,9 +81,7 @@
     }
 }
 
-/* ========================================
-   LEFT CONTENT
-======================================== */
+
 
 .hero-left h1 {
     font-size: 58px;
@@ -147,6 +145,7 @@ body.dark-mode .hero-left p {
 .btn-primary:hover,
 .btn-secondary:hover {
     transform: translateY(-4px);
+    color:white;
 }
 
 /* ========================================

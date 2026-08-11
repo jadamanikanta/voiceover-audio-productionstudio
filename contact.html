@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="64x64" href="logo.png">
+    <title>VOX Studio | Voiceover & Audio Production</title>
+
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="contact.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    
+</head>
+<body>
+
+    <header class="navbar">
+  <div class="nav-container">
+
+    
+    <div class="logo">
+  <a href="index.html" class="logo-wrap">
+    <i data-lucide="mic" class="logo-icon"></i>
+    <span class="logo-text">VOX<b>Studio</b></span>
+  </a>
+</div>
+
+    
+    <nav class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+
+        
+        <li class="dropdown">
+          <a href="index.html" class="nav-link dropdown-toggle" data-page="home">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="home2.html" class="nav-link" data-page="home">Home v2</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html" class="nav-link">About</a></li>
+
+        
+        <li><a href="services.html" class="nav-link">Services</a></li>
+
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+        
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+
+       <li><a href="login.html" class="mobile-login-btn">login</a></li>
+
+      </ul>
+
+      
+    </nav>
+
+    
+    <div class="nav-actions">
+
+      <button id="rtl-toggle" class="icon-btn rtl-btn" aria-label="Toggle RTL">
+        RTL
+      </button>
+
+      
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+           <i data-lucide="moon"></i>
+       </button>
+
+
+       <a href="login.html" class="nav-btn login-btn ">
+        Login
+    </a>
+
+      
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+     
+   <section class="contact-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Let’s Create Powerful Audio Together</h1>
+        <p>Reach out for voiceovers, dubbing, podcast editing, and custom audio production.</p>
+        <a href="#contact-form" class="hero-btn">Request Custom Demo</a>
+    </div>
+
+</section>
+
+
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="contact-left">
+
+            <span class="contact-badge">
+                <i data-lucide="headphones"></i>
+                Contact Studio
+            </span>
+
+            <h2>
+                Let's Create <span class="gradient-text">Amazing Audio</span> Together
+            </h2>
+
+            <p class="contact-description">
+                Bring your ideas to life with crystal-clear voice recordings,
+                podcast production, dubbing, audio editing, and professional
+                sound design. 
+            </p>
+
+            <!-- Contact Details -->
+
+            <div class="contact-details">
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
+
+                    <div class="detail-content">
+                        <h4>Phone</h4>
+                        <p>+91 0000000000</p>
+                    </div>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
+
+                    <div class="detail-content">
+                        <h4>Email</h4>
+                        <p>hello@studio.com</p>
+                    </div>
+
+                </div>
+
+                <div class="detail-item">
+
+                    <div class="detail-icon">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+
+                    <div class="detail-content">
+                        <h4>Studio Location</h4>
+                        <p>Bangalore, Karnataka, India</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Studio Working Hours & Guarantee -->
+            <div class="studio-hours-box">
+                <div class="hours-header">
+                    <i data-lucide="clock"></i>
+                    <div>
+                        <h4>Studio Operating Hours</h4>
+                        <p>Mon - Sat: 9:00 AM - 9:00 PM IST | Express turnarounds available</p>
+                    </div>
+                </div>
+                <div class="guarantee-pills">
+                    <span class="pill"><i data-lucide="zap"></i> 24h Delivery</span>
+                    <span class="pill"><i data-lucide="shield-check"></i> Broadcast Quality</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="contact-right">
+
+            <div class="form-header">
+
+                <span>
+                    <i data-lucide="send"></i>
+                    Send a Project Request
+                </span>
+
+                <h3>Tell Us About Your Project</h3>
+
+                <p>
+                    Fill out the form below and our team will get back to you
+                    within 24 hours.
+                </p>
+
+            </div>
+
+            <form class="contact-form">
+
+                <!-- Name -->
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="name"
+                        required
+                    >
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <input
+                        type="email"
+                        id="email"
+                        required
+                    >
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="input-group">
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        required
+                    >
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                </div>
+
+
+                <!-- Service -->
+
+                <div class="input-group select-group">
+
+                    <select
+                        id="service"
+                        required
+                    >
+
+                        <option value="" disabled selected></option>
+
+                        <option>
+                            Voice Over
+                        </option>
+
+                        <option>
+                            Podcast Production
+                        </option>
+
+                        <option>
+                            Audio Editing
+                        </option>
+
+                        <option>
+                            Audio Mixing
+                        </option>
+
+                        <option>
+                            Mastering
+                        </option>
+
+                        <option>
+                            Dubbing
+                        </option>
+
+                        <option>
+                            Commercial Recording
+                        </option>
+
+                    </select>
+
+                    <label for="service">
+                        Select Service
+                    </label>
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div class="input-group textarea-group">
+
+                    <textarea
+                        id="message"
+                        required
+                    ></textarea>
+
+                    <label for="message">
+                        Tell us about your project...
+                    </label>
+
+                </div>
+
+
+                <!-- Button -->
+
+                <button
+                    class="contact-btn"
+                    type="submit"
+                >
+
+                    <i data-lucide="send"></i>
+
+                    Send Project Request
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="studio-map-section">
+    
+    <div class="studio-map-heading">
+        
+        <h2>Visit Our Recording Studio</h2>
+        <p>
+            Step into our professional recording space, designed for crystal-clear
+            voiceovers, dubbing, podcasts, audiobooks, commercials, and audio production.
+            We're ready to bring your voice to life.
+        </p>
+    </div>
+    
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Bengaluru,Karnataka&output=embed" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
+
+        <div class="floating-map-card">
+            <h3>Visit Our Studio</h3>
+            <p>Professional recording environment for voiceovers, dubbing, podcasts, and audio mastering.</p>
+            <span> Hyderabad, India</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="final-cta">
+
+    <div class="cta-overlay"></div>
+
+    <div class="cta-content">
+        <h2>Ready to Bring Your Voice Project to Life?</h2>
+        <p>Let’s create professional voiceovers, dubbing, podcasts, and audio experiences tailored to your brand.</p>
+
+        <div class="cta-buttons">
+            <a href="tel:+919876543210" class="cta-call-btn"> Call Now</a>
+            <a href="mailto:studio@voxstudio.com" class="cta-email-btn">Send Email</a>
+        </div>
+    </div>
+
+</section>
+
+    <footer class="footer">
+    <div class="footer-container">
+
+        
+        <div class="footer-brand">
+
+            
+            <div class="logo">
+                <a href="index.html" class="logo-wrap">
+    <i data-lucide="mic" class="logo-icon"></i>
+    <span class="logo-text">VOX<b>Studio</b></span>
+  </a>
+            </div>
+
+            <p>
+    Professional voiceover, dubbing, podcast editing, and premium audio production for modern creators and brands.
+    We craft clear, engaging, and studio-quality audio with precision, creativity, and attention to every detail.
+    Bring your story to life with powerful sound that connects with your audience and leaves a lasting impact.
+</p>
+
+
+           
+            <div class="social-icons">
+                <ul>
+                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" class="google"><i class="fab fa-google-plus-g"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        
+        <div class="footer-links">
+            <h3 style="
+position: relative;
+display: inline-block;
+padding-bottom: 2px;
+">
+Quick Links
+<span style="
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:60%;
+height:2px;
+background:#f59e0b;
+
+"></span>
+</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </div>
+
+        
+<div class="footer-services">
+    <h3 style="
+position: relative;
+display: inline-block;
+padding-bottom: 2px;
+">
+Studio Services
+<span style="
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:60%;
+height:2px;
+background:#f59e0b;
+
+"></span>
+</h3>
+    <ul>
+        <li><a href="services-details.html?service=voiceover">Voice Recording</a></li>
+        <li><a href="services-details.html?service=podcast">Podcast Editing</a></li>
+        <li><a href="services-details.html?service=music">Audio Mixing</a></li>
+        <li><a href="services-details.html?service=sounddesign">Sound Design</a></li>
+        <li><a href="404page.html">404 Page</a></li>
+        <li><a href="coming-soon.html">Coming Soon</a></li>
+    </ul>
+    
+</div>
+
+
+        
+        <div class="footer-contact">
+            <h3 style="
+position: relative;
+display: inline-block;
+padding-bottom: 2px;
+">
+contact
+<span style="
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:0;
+width:60%;
+height:2px;
+background:#f59e0b;
+
+"></span>
+</h3>
+            <p><i data-lucide="mail"></i> info@voxstudio.com</p>
+<p><i data-lucide="phone"></i> +91 9999999999</p>
+<p><i data-lucide="map-pin"></i> Hyderabad, India</p>
+<p><i data-lucide="clock"></i> Mon - Sat : 9AM - 7PM</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-copy">
+            © 2026 VOX Studio. All rights reserved.
+        </div>
+
+        <div class="footer-policy">
+            <a href="terms&conditions.html">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
+
+    
+
+    
+    
+    
+    <script src="../global-js/global.js"></script>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <script>
+        
+document.addEventListener("DOMContentLoaded", () => {
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const rtlToggle = document.getElementById("rtl-toggle");
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+    const navbar = document.querySelector(".navbar");
+
+    const savedTheme = localStorage.getItem("website-theme") || "light";
+    const savedDirection = localStorage.getItem("website-direction") || "ltr";
+
+    if (savedTheme === "dark") {
+        html.classList.add("dark-mode");
+        body.classList.add("dark-mode");
+    } else {
+        html.classList.remove("dark-mode");
+        body.classList.remove("dark-mode");
+    }
+
+    html.setAttribute("dir", savedDirection);
+
+    if (themeToggle) {
+        themeToggle.innerHTML =
+            savedTheme === "dark"
+                ? '<i data-lucide="sun"></i>'
+                : '<i data-lucide="moon"></i>';
+    }
+
+    if (rtlToggle) {
+        rtlToggle.textContent =
+            savedDirection === "rtl" ? "LTR" : "RTL";
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+
+            const isDark = html.classList.contains("dark-mode");
+
+            if (isDark) {
+                html.classList.remove("dark-mode");
+                body.classList.remove("dark-mode");
+
+                localStorage.setItem("website-theme", "light");
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="moon"></i>';
+
+            } else {
+                html.classList.add("dark-mode");
+                body.classList.add("dark-mode");
+
+                localStorage.setItem("website-theme", "dark");
+
+                themeToggle.innerHTML =
+                    '<i data-lucide="sun"></i>';
+            }
+
+            if (typeof lucide !== "undefined") {
+                lucide.createIcons();
+            }
+        });
+    }
+
+    if (rtlToggle) {
+        rtlToggle.addEventListener("click", () => {
+
+            const isRTL = html.getAttribute("dir") === "rtl";
+
+            if (isRTL) {
+                html.setAttribute("dir", "ltr");
+                localStorage.setItem("website-direction", "ltr");
+                rtlToggle.textContent = "RTL";
+            } else {
+                html.setAttribute("dir", "rtl");
+                localStorage.setItem("website-direction", "rtl");
+                rtlToggle.textContent = "LTR";
+            }
+        });
+    }
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (navMenu) {
+                navMenu.classList.remove("active");
+            }
+
+            if (hamburger) {
+                hamburger.classList.remove("active");
+            }
+        });
+    });
+
+    document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+
+        toggle.addEventListener("click", e => {
+
+            if (window.innerWidth <= 1024) {
+
+                e.preventDefault();
+                e.stopPropagation();
+
+                const dropdown = toggle.closest(".dropdown");
+
+                document.querySelectorAll(".dropdown").forEach(item => {
+                    if (item !== dropdown) {
+                        item.classList.remove("active");
+                    }
+                });
+
+                dropdown.classList.toggle("active");
+            }
+        });
+    });
+
+    document.addEventListener("click", e => {
+
+        if (!e.target.closest(".dropdown")) {
+            document.querySelectorAll(".dropdown").forEach(dropdown => {
+                dropdown.classList.remove("active");
+            });
+        }
+    });
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (!href) return;
+
+        const linkPage = href.split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+
+    if (navbar) {
+        window.addEventListener("scroll", () => {
+            navbar.style.boxShadow =
+                window.scrollY > 50
+                    ? "0 12px 30px rgba(0,0,0,0.08)"
+                    : "none";
+        });
+    }
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+});
+
+    
+    </script>
+    
+</body>
+</html>

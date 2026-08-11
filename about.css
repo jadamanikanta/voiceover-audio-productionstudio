@@ -19,7 +19,7 @@
     padding: 50px 8%;
     overflow: hidden;
     background:
-        url('../global-images/about-bg.jpg') center/cover no-repeat;
+        url('about-bg.jpg') center/cover no-repeat;
 }
 
 .about-overlay {

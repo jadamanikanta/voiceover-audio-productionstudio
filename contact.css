@@ -439,22 +439,13 @@ body.dark-mode .hours-header p {
 }
 
 
-/*==================================================
-FORM HEADER
-==================================================*/
+
+
+
+
 
 .form-header{
-
-    margin-bottom:25px;
-
-}
-
-/*==================================================
-FORM HEADER
-==================================================*/
-
-.form-header{
-    margin-bottom:25px;
+    
 }
 
 .form-header span{
@@ -483,7 +474,7 @@ FORM HEADER
 
 .form-header h3{
     color:var(--text-color);
-    font-size:32px;
+    font-size:43px;
     font-weight:700;
     margin-bottom:10px;
 }

@@ -1046,6 +1046,7 @@ body.dark-mode .why-card p {
 
 .primary-btn:hover {
     transform: translateY(-4px) scale(1.05);
+    color:white;
 }
 
 .secondary-btn {
@@ -1056,6 +1057,7 @@ body.dark-mode .why-card p {
 
 .secondary-btn:hover {
     transform: translateY(-4px) scale(1.05);
+    color:white;
 }
 
 @keyframes fadeUpCTA {

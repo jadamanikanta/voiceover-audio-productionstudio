@@ -100,10 +100,11 @@
 
 .primary-btn:hover{
     transform:translateY(-4px);
+    color:white;
     
 }
 
-/* Dark Mode */
+
 
 body.dark .blog-badge{
     background:rgba(245,158,11,.15);
@@ -230,7 +231,8 @@ body.dark .blog-hero-overlay p{
 
 .blog-card:hover {
     transform: translateY(-8px);
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  
+    border:1px solid var(--primary);
 }
 
 .blog-card img {
