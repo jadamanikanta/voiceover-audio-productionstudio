@@ -12,6 +12,13 @@
     color: white;
 }
 
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 10%, var(--primary) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .blog-hero-overlay{
     max-width:800px;
     margin:auto;
@@ -119,7 +126,7 @@ body.dark .blog-hero-overlay p{
     color:#bfc4cf;
 }
 
-/* Responsive */
+
 
 @media (max-width:768px){
 
@@ -226,12 +233,11 @@ body.dark .blog-hero-overlay p{
     border-radius: 18px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    transition: 0.4s;
+    
 }
 
 .blog-card:hover {
     transform: translateY(-8px);
-  
     border:1px solid var(--primary);
 }
 
@@ -255,14 +261,14 @@ body.dark .blog-hero-overlay p{
 
 .blog-content h3 {
     margin: 12px 0;
-    min-height: 60px; /* Same heading area */
+    min-height: 60px; 
     line-height: 1.4;
     color: var(--text-color);
 }
 .blog-content p {
     line-height: 1.8;
     color: var(--text-color);
-    flex-grow: 1; /* Pushes button/link down */
+    flex-grow: 1; 
 }
 
 .blog-content a {
@@ -282,8 +288,11 @@ body.dark .blog-hero-overlay p{
     padding: 10px 18px;
     border: none;
     background: var(--primary);
-    color: white;
+    color: rgb(8, 8, 8);
     border-radius: 10px;
+}
+.pagination button:hover{
+    color:white;
 }
 
 .latest-updates {

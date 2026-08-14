@@ -328,8 +328,8 @@ body.dark-mode {
 }
 
 .btn-secondary {
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
+ 
+  border: 1px solid var(--secondary);
   color: var(--text-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -338,7 +338,7 @@ body.dark-mode {
 .btn-secondary:hover {
   
   transform: translateY(-3px);
-  color:white;
+  
 }
 
 .btn-secondary:focus, .btn-primary:focus {
@@ -943,15 +943,26 @@ body.dark-mode {
 .services-section {
     padding: 110px 0;
   
-    background:  radial-gradient(circle at top right,
-        rgba(245,158,11,.35),
+   background:
+    radial-gradient(circle at top right,
+        rgba(245,158,11,.30),
         transparent 40%),
-        radial-gradient(circle at bottom left,
-        rgba(245,158,11,.25),
+    radial-gradient(circle at bottom left,
+        rgba(251,191,36,.25),
         transparent 45%),
-        #fff1cc;
+    #fff8e8;
 }
 
+body.dark-mode .services-section {
+   background:
+        radial-gradient(circle at top right,
+            rgba(245,158,11,.18),
+            transparent 40%),
+        radial-gradient(circle at bottom left,
+            rgba(251,191,36,.12),
+            transparent 45%),
+        linear-gradient(135deg, #0b0b0b, #111111);
+}
 .services-container {
     width: 90%;
     max-width: 1300px;

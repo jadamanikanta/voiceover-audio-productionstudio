@@ -6,9 +6,12 @@
 }
 
 
-/* =========================================
-   BLOG HERO
-========================================= */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 10%, var(--primary) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 .vox-blog-hero {
     position: relative;
@@ -106,6 +109,8 @@
     font-weight: 800;
     letter-spacing: -2.5px;
 }
+
+
 
 .vox-blog-intro {
     max-width: 760px;
@@ -1022,7 +1027,7 @@ body.dark-mode .vox-related-card:hover {
 }
 
 .vox-blog-bottom-cta > a:hover {
-    background: #fbbf24;
+    color:white;
     transform: translateY(-3px);
 }
 

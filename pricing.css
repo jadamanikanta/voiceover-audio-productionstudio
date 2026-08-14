@@ -148,7 +148,7 @@ h1, h2 {
     padding: 14px 32px;
     border-radius: 12px;
     background: #f59e0b;
-    color: #fff;
+    color: #111111;
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s ease;
@@ -156,6 +156,7 @@ h1, h2 {
 
 .pricing-btn:hover {
     transform: translateY(-3px);
+    color:white;
 }
 
 @media (max-width: 768px) {
@@ -294,7 +295,7 @@ body.dark-mode .pricing-card ul li {
     padding: 13px 28px;
     border-radius: 14px;
     background: var(--primary);
-    color: white;
+    color: rgb(19, 18, 18);
     text-decoration: none;
     font-weight: 600;
     transition: 0.35s;
@@ -302,6 +303,7 @@ body.dark-mode .pricing-card ul li {
 
 .pricing-card a:hover {
     transform: scale(1.05);
+    color:white;
 }
 
 .featured-plan {
@@ -359,7 +361,7 @@ body.dark-mode .pricing-card ul li {
 }
 
 .section-title p{
-    color:var(--text-color);
+    color: #777;
 }
 
 /* Grid */
@@ -644,7 +646,7 @@ html[dir="rtl"] .addon::before {
 }
 
 .compare-section .section-title p{
-    color:var(--text-light);
+    color: #777;
 }
 
 /*==============================

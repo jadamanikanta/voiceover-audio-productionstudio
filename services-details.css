@@ -156,7 +156,7 @@ body.dark-mode {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    color:white;
     transform: rotate(45deg);
     transition: 0.5s;
     opacity: 0;
@@ -166,6 +166,20 @@ body.dark-mode {
     left: 120%;
     opacity: 1;
     transition: all 0.6s ease-in-out;
+}
+
+#hero-btn-primary:hover {
+    color: #ffffff !important;
+     transform: translateY(-3px);
+}
+
+#hero-btn-secondary {
+    border-color: #f59e0b !important;
+}
+
+#hero-btn-secondary:hover {
+    border-color: #f59e0b !important;
+     transform: translateY(-3px);
 }
 
 .about-animate {
@@ -404,4 +418,18 @@ body.dark-mode .testimonial-card {
 }
 .timeline-center {
     background-color: var(--border-color);
+}
+
+#cta-btn-primary:hover {
+    color: #ffffff !important;
+}
+
+#cta-btn-secondary {
+    border-color: #f59e0b !important;
+}
+
+#cta-btn-secondary:hover {
+    border-color: #f59e0b !important;
+    
+    
 }

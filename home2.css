@@ -136,16 +136,17 @@ body.dark-mode .hero-left p {
 }
 
 .btn-secondary {
-    background: var(--primary);
+    border: 1px solid var(--primary);
     color: var(--text-color);
-
-    border: 1px solid rgba(245,158,11,.3);
+}
+.btn-primary:hover{
+    color:white;
 }
 
 .btn-primary:hover,
 .btn-secondary:hover {
     transform: translateY(-4px);
-    color:white;
+    
 }
 
 /* ========================================
@@ -1618,6 +1619,7 @@ body.dark-mode .pricing-card ul li {
 
 .cta-buttons a:hover {
     transform: translateY(-4px) scale(1.05);
+    color:white;
 }
 
 @keyframes pulseGlow {
