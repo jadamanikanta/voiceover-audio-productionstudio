@@ -224,7 +224,7 @@ body.dark .blog-hero-overlay p{
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -541,6 +541,13 @@ body.dark .blog-hero-overlay p{
 
     .update-box {
         padding: 22px;
+    }
+}
+
+@media (max-width:360px){
+    .blog-hero-section {
+        height: 60vh;
+        padding: 20px;
     }
 }
 

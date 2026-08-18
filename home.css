@@ -41,7 +41,7 @@ body.dark-mode {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: calc(100vh - 95px);
+  min-height: 95vh;
   width: 100%;
   display: flex;
   align-items: center;

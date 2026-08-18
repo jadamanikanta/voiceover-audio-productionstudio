@@ -192,7 +192,7 @@ button {
 }
 
 .dashboard-header h1{
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .header-left {
@@ -2058,6 +2058,16 @@ button {
     }
     .search-box-wrapper {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .dashboard-header h1 {
+        font-size: 12px !important;
+        line-height: 1.4;
+        max-width: 250px;
+        word-break: normal;
+        overflow-wrap: break-word;
     }
 }
 

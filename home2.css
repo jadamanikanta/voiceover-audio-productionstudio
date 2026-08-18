@@ -6,7 +6,7 @@
     min-height:90vh;
     display:flex;
     align-items:center;
-    padding:40px 0;
+    padding:20px 0;
     overflow:hidden;
     width:100%;
 }
@@ -84,14 +84,14 @@
 
 
 .hero-left h1 {
-    font-size: 58px;
+    font-size: 45px;
     line-height: 1.1;
     margin: 20px 0;
     color: var(--text-color);
 }
 
 .hero-left p {
-    font-size: 17px;
+    font-size: 14px;
     line-height: 1.8;
     max-width: 560px;
 
