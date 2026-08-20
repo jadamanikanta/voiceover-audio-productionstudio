@@ -41,15 +41,15 @@ body.dark-mode {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 95vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 1rem 0 2rem;
+  padding: 5.5rem 0 4rem;
 }
 
-/* Fullscreen Video Background */
+
 .video-bg-container {
   position: absolute;
   top: 0;
@@ -163,7 +163,7 @@ body.dark-mode {
   width: 90%;
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0;
+  padding: 2.25rem 0 0;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
@@ -177,6 +177,7 @@ body.dark-mode {
   flex-direction: column;
   align-items: flex-start;
   text-align: start;
+  padding-top: 0.5rem;
 }
 
 /* Staggered Fade Up Animations */
@@ -201,6 +202,7 @@ body.dark-mode {
 
 /* Badge Styling */
 .badge-wrapper {
+  margin-top: 0.75rem;
   margin-bottom: 1.5rem;
 }
 

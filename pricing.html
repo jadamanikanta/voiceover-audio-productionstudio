@@ -7,7 +7,7 @@
     <title>VOX Studio | Voiceover & Audio Production</title>
 
     <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="/pricing.css">
+    <link rel="stylesheet" href="pricing.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -109,7 +109,7 @@
 </section>
 
 
- <section class="pricing-section">
+ <section class="pricing-section" id="pricing">
 
     <div class="pricing-heading">
         <span class="pricing-plans-badge"><span class="pricing-plan-badge-dot"></span>Pricing Plans</span>
@@ -360,8 +360,8 @@
     </p>
 
     <div class="pricing-cta-buttons">
-        <a href="../contact/contact.html" class="cta-btn primary-btn">Get Started</a>
-        <a href="../pricing/pricing.html" class="cta-btn secondary-btn">Compare Plans</a>
+        <a href="contact.html" class="cta-btn primary-btn">Get Started</a>
+        <a href="#pricing" class="cta-btn secondary-btn">Compare Plans</a>
     </div>
 </div>
 </section>
@@ -686,17 +686,19 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("result").innerText = "$" + price;
 } 
 
-const cta = document.querySelector('.cta-box');
+const cta = document.querySelector('.pricing-cta') || document.querySelector('.cta-box');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      cta.classList.add('show');
-    }
-  });
-}, { threshold: 0.3 });
+if (cta) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cta.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
 
-observer.observe(cta);
+    observer.observe(cta);
+}
 
     </script>
     

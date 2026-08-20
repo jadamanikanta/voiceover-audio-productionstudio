@@ -44,7 +44,7 @@ body {
 }
 
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -52,7 +52,7 @@ body {
     background: rgba(255,255,255,0.88);
     border-bottom: 1px solid var(--border-color);
     z-index: 999;
-    transition: all 0.35s ease;
+    
 }
 
 body.dark-mode .navbar {
@@ -320,7 +320,7 @@ body.dark-mode .navbar {
 
         position:fixed;
 
-        top:72px;
+        top:100%;
         left:0;
 
         width:100%;

@@ -6,7 +6,7 @@
     min-height:90vh;
     display:flex;
     align-items:center;
-    padding:20px 0;
+    padding:110px 0;
     overflow:hidden;
     width:100%;
 }
@@ -33,9 +33,7 @@
     align-items:center;
 }
 
-/* ========================================
-   BADGE
-======================================== */
+
 
 .hero-v2-badge {
     display: inline-flex;
@@ -104,9 +102,7 @@ body.dark-mode .hero-left p {
     color: #b0b0b0;
 }
 
-/* ========================================
-   BUTTONS
-======================================== */
+
 
 .hero-buttons {
     display: flex;
@@ -278,9 +274,6 @@ body.dark-mode .hero-right::before{
 
 
 
-/* ========================================
-   AUDIO CIRCLE
-======================================== */
 
 .audio-circle{
     position:absolute;
@@ -313,9 +306,7 @@ body.dark-mode .hero-right::before{
 
 
 
-/* ========================================
-   AUDIO WAVES
-======================================== */
+
 
 .wave-box{
     position:relative;
@@ -422,9 +413,7 @@ body.dark-mode .floating-card p {
     left: 20px;
 }
 
-/* ========================================
-   TABLET
-======================================== */
+
 
 @media (max-width: 992px) {
 
@@ -552,7 +541,7 @@ body.dark-mode .floating-card p {
     }
 }
 
-@media (max-width:992px){
+@media (max-width:1024px){
 
     .hero{
         min-height:auto;

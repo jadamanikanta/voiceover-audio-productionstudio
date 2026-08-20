@@ -15,7 +15,7 @@
 }
 
 
-.dark {
+body.dark-mode {
   --bg-color: #020617;
   --text-color: #e2e8f0;
   --border-color: rgba(255,255,255,0.1);
@@ -56,12 +56,12 @@ h1, h2 {
 
 
 .pricing-hero {
-    min-height: 85vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 20px;
+    padding: 120px 20px 70px;
 
     background:
         linear-gradient(
@@ -84,23 +84,18 @@ h1, h2 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
-    padding: 10px 20px;
-
+    padding: 10px 22px;
     border-radius: 999px;
-
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-
     color: white;
-
-    
-
-    
-
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.08);
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
 }
 
 .pricing-badge-dot {
@@ -231,27 +226,34 @@ body.dark-mode .pricing-heading p {
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
     margin-top: 45px;
+    align-items: stretch;
 }
 
 .pricing-card {
     position: relative;
-    padding:20px 30px;
+    padding: 35px 30px;
     border-radius: 28px;
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(12px);
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border: 1px solid var(--border-color);
+    box-shadow: rgba(14, 30, 37, 0.08) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 16px 0px;
     transition: 0.45s;
     animation: priceFade 1s ease forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
 }
 
 body.dark-mode .pricing-card {
     background: rgba(20,20,20,0.85);
+    border-color: rgba(255,255,255,0.08);
 }
 
 .pricing-card:hover {
     transform: translateY(-12px);
-    border:1px solid var(--primary);
-    box-shadow:none;
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(245,158,11,0.18);
 }
 
 .pricing-card h3 {
@@ -278,12 +280,18 @@ body.dark-mode .pricing-card p {
 .pricing-card ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 30px;
+    margin: 20px 0 30px;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .pricing-card ul li {
     padding: 10px 0;
     color: #666;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
 }
 
 body.dark-mode .pricing-card ul li {
@@ -291,7 +299,9 @@ body.dark-mode .pricing-card ul li {
 }
 
 .pricing-card a {
-    display: inline-block;
+    display: block;
+    width: 100%;
+    text-align: center;
     padding: 13px 28px;
     border-radius: 14px;
     background: var(--primary);
@@ -302,8 +312,8 @@ body.dark-mode .pricing-card ul li {
 }
 
 .pricing-card a:hover {
-    transform: scale(1.05);
-    color:white;
+    transform: scale(1.03);
+    color: white;
 }
 
 .featured-plan {
@@ -791,37 +801,29 @@ html[dir="rtl"] .addon::before {
     Dark Mode
 ==============================*/
 
-body.dark .table-wrapper{
-
+body.dark-mode .table-wrapper{
     background:#181b22;
-
     border-color:#2b2f37;
 }
 
-body.dark .compare-table tbody tr:nth-child(even){
-
+body.dark-mode .compare-table tbody tr:nth-child(even){
     background:rgba(255,255,255,.03);
 }
 
-body.dark .compare-table td{
-
+body.dark-mode .compare-table td{
     border-color:#2d3139;
-
     color:#d9d9d9;
 }
 
-body.dark .compare-table td:first-child{
-
+body.dark-mode .compare-table td:first-child{
     color:#fff;
 }
 
-body.dark .compare-table tbody tr:hover td{
-
+body.dark-mode .compare-table tbody tr:hover td{
     background:rgba(245,158,11,.12);
 }
 
-body.dark .compare-table td:last-child{
-
+body.dark-mode .compare-table td:last-child{
     background:rgba(245,158,11,.12);
 }
 
